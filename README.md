@@ -1,1 +1,3 @@
-# Natick-Disabilities-Website
+# Natick Disabilities Website
+
+A website for Natick
