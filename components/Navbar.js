@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const Nav = styled.nav`
   height = 80px;
@@ -11,7 +12,11 @@ const Nav = styled.nav`
 const Navbar = () => {
   return (
     <Nav>
-        <h1>Navbar</h1>
+        <h1><Link href = "/index">Home </ Link></h1>
+        <h1><Link href = "/about">About</Link></h1>
+        <h1><Link href = "/info">Information</Link></h1>
+        <h1><Link href = "/events">Events</Link></h1>
+        <h1><Link href = "/people">People</Link></h1>
     </Nav>
   );
 };

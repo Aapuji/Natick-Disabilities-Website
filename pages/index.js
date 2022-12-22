@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
-import styles from '../styles/Home.module.css'
+
 
 export default function Home() {
   return (
@@ -11,7 +11,6 @@ export default function Home() {
         <title>Natick Commission on Disability</title>
       </Head>
       <Navbar />
-      <h1>Home</h1>
     </div>
   );
 }
