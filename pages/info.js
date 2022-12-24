@@ -1,16 +1,30 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
+import Head from 'next/head';
+import styled from 'styled-components';
 
+const Hero = styled.div`
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+`;
 
-export default function Information() {
+const Heading = styled.h1`
+  color: #000;
+  font-size: 10rem;
+  font-weight: 900;
+`;
+
+export default function Info() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Natick Commission on Disability</title>
+        <title>Information</title>
+        <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navbar />
-      <h1>Information</h1>
-    </div>
+      <Hero>
+        <Heading>INFORMATION</Heading>
+      </Hero>
+    </>
   );
 }

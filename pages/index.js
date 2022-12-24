@@ -1,16 +1,31 @@
-//This file is the home page
-import Head from 'next/head'
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
 
+import Head from 'next/head';
+import styled from 'styled-components';
+
+const Hero = styled.div`
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+`;
+
+const Heading = styled.h1`
+  color: #000;
+  font-size: 10rem;
+  font-weight: 900;
+`;
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Natick Commission on Disability</title>
+        <title>Home</title>
+        <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navbar />
-    </div>
+      <Hero>
+        <Heading>Home</Heading>
+      </Hero>
+    </>
   );
 }
