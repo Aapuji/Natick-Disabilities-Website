@@ -1,20 +1,11 @@
-import styled from 'styled-components';
 import Link from 'next/link';
-
-const FooterSection = styled.div`
-  background: #000;
-  color: #fff;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+import styles from '../styles/main.module.css';
 
 const Footer = () => {
   return (
-    <FooterSection>
+    <footer className={styles.footerSection}>
       <p>Next 2021 All Rights Reserved</p>
-    </FooterSection>
+    </footer>
   );
 };
 

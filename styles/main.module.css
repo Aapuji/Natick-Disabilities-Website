@@ -1,0 +1,35 @@
+.nav {
+    height: 80px;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.styledLink {
+    padding: 0rem 2rem;
+}
+
+.footerSection{
+    background: #000;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.heading{
+    color: #000;
+    font-size: 10rem;
+    font-weight: 900;
+}

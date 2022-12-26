@@ -1,42 +1,30 @@
-import styled from 'styled-components';
 import Link from 'next/link';
+import styles from '../styles/main.module.css';
 
-const Nav = styled.nav`
-  height: 80px;
-  background: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-`;
-
-const StyledLink = styled.a`
-  padding: 0rem 2rem;
-`;
 
 const Navbar = () => {
   return (
-    <Nav>
+    <nav className = {styles.mainNav}>
       <div>
         <Link href='/' passHref>
-          <StyledLink>NOCD</StyledLink>
+          <Link className= {styles.styledLink}>NOCD</Link>
         </Link>
       </div>
       <div>
         <Link href='/about' passHref>
-          <StyledLink>About</StyledLink>
+          <Link className= {styles.styledLink}>About</Link>
         </Link>
         <Link href='/info' passHref>
-          <StyledLink>Information</StyledLink>
+          <Link className= {styles.styledLink}>Information</Link>
         </Link>
         <Link href='/events' passHref>
-          <StyledLink>Events</StyledLink>
+          <Link className= {styles.styledLink}>Events</Link>
         </Link>
         <Link href='/people' passHref>
-          <StyledLink>People</StyledLink>
+          <Link className= {styles.styledLink}>People</Link>
         </Link>
       </div>
-    </Nav>
+    </nav>
   );
 };
 
