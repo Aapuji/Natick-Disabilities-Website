@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap');
 
 .wholeNav {
+    position: sticky;
     height: 80px;
     background: rgb(55, 62, 111);
     display: flex;
@@ -21,17 +22,6 @@
     font-size: 2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .nav {
     font-family: 'Roboto Slab', serif;
     font-size: 1.6rem;
@@ -43,11 +33,23 @@
     padding: 10px;
   }
 
+.nav li:hover:after{
+    color: #fff;
+}
+
+
 .nav li {
     display: inline;
 }
 
-
+.headingHome{
+    position: absolute;
+    top: 90px;
+    color: #000;
+    font-size: 1.9rem;
+    font-weight: 900;
+    
+}
 
 
 

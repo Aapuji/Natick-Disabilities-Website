@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <body className = {styles.body}>
       <div className= {styles.hero}>
-        <h1 className= {styles.heading}>HOME</h1>
+        <p className= {styles.headingHome}>Welcome to the Official Natick Commission on Disability Website</p>
       </div>
       </body>
     </>
