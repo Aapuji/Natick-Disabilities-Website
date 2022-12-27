@@ -4,43 +4,23 @@ import styles from '../styles/main.module.css'
 const Navbar = () => {
   return (
     <nav className = {styles.mainNav}>
-        <div href='/' passHref>
-          <Link className= {styles.styledLink}>
-            <a>
-            NOCD
-            </a>
-          </Link>
-        </div>
-      <div>
-        <div href='/about' passHref>
-          <Link className= {styles.styledLink}>
-            <a>
-            About
-            </a>
-          </Link>
-        </div>
-        <div href='/info' passHref>
-          <Link className= {styles.styledLink}>
-            <a>
-            Information
-            </a>
-          </Link>
-        </div>
-        <div href='/events' passHref>
-          <Link className= {styles.styledLink}>
-            <a>
-            Events
-            </a>
-          </Link>
-        </div>
-        <div href='/people' passHref>
-          <Link className= {styles.styledLink}>
-            <a>
-            People
-            </a>
-          </Link>
-        </div>
+      <div className = {styles.commissionLogo}>
+        <Link className = {styles.styledLink} href = '/'>NCOD</Link>
       </div>
+      <ul className = {styles.right}>
+          <li>
+            <Link className = {styles.styledLink} href = '/about'>About</Link>
+          </li>
+          <li>
+            <Link className = {styles.styledLink} href = '/info'>Information</Link>
+          </li>
+          <li>
+            <Link className = {styles.styledLink} href = '/events'>Events</Link>
+          </li>
+          <li>
+            <Link className = {styles.styledLink} href = '/people'>People</Link>
+          </li>
+      </ul>
     </nav>
   );
 };
