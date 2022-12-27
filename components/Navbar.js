@@ -9,9 +9,6 @@ const Navbar = () => {
       </div>
       <ul className = {styles.nav}>
           <li>
-            <Link className = {styles.styledLink} href = '/'>Home</Link>
-          </li>
-          <li>
             <Link className={styles.styledLink} href='/'>Home</Link>
           </li>
           <li>
