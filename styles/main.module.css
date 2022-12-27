@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap');
 
-.mainNav {
+.wholeNav {
     height: 80px;
-    background: blue;
+    background: rgb(55, 62, 111);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: rgb(238, 197, 98);
 }
-
 
 .styledLink {
     padding-left: 1rem;
@@ -17,7 +17,7 @@
 
 .commissionLogo{
     font-family: 'Roboto Slab', serif;
-    margin-top: 0rem;
+    margin-top: -0.5rem;
     font-size: 2rem;
 }
 
@@ -32,7 +32,7 @@
 
 
 
-.right {
+.nav {
     font-family: 'Roboto Slab', serif;
     font-size: 1.6rem;
     position: absolute;
@@ -43,7 +43,7 @@
     padding: 10px;
   }
 
-.right li {
+.nav li {
     display: inline;
 }
 

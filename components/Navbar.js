@@ -3,11 +3,14 @@ import styles from '../styles/main.module.css'
 
 const Navbar = () => {
   return (
-    <nav className = {styles.mainNav}>
+    <nav className = {styles.wholeNav}>
       <div className = {styles.commissionLogo}>
         <Link className = {styles.styledLink} href = '/'>NCOD</Link>
       </div>
-      <ul className = {styles.right}>
+      <ul className = {styles.nav}>
+          <li>
+            <Link className = {styles.styledLink} href = '/'>Home</Link>
+          </li>
           <li>
             <Link className = {styles.styledLink} href = '/about'>About</Link>
           </li>
@@ -24,8 +27,8 @@ const Navbar = () => {
     </nav>
   );
 };
-
 export default Navbar;
+
 /*
 const Navbar = () => {
   return (
