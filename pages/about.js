@@ -8,11 +8,11 @@ export default function About() {
         <title>About</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <body className = {styles.body}>
+      {/* <body className = {styles.body}>
       <div className= {styles.hero}>
         <h1 className= {styles.heading}>ABOUT</h1>
       </div>
-      </body>
+      </body> */}
     </>
   );
 }

@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+// TODO: Use and Import Reset.CSS 
 import '../styles/globals.css';
 import '../styles/main.module.css'
 

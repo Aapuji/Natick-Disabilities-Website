@@ -3,14 +3,15 @@ import Navbar from './navbar';
 import styles from '../styles/main.module.css'
 
 
-export default function Layout({ children }) {
-  return (
-    <div>
-      <Navbar />
-      <body className = {styles.body}>
-      {children}
-      </body>
-      <Footer />
-    </div>
-  );
+const Layout = ({ children }) => {
+  console.log('IN LAYOUT');
+  return <>
+    <Navbar />
+      <div className = {styles.body}>
+        {children}
+      </div>
+    <Footer />
+  </>;
 }
+
+export default Layout;

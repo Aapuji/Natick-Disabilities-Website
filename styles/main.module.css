@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap');
 
+/* NAV */
+
 .wholeNav {
     position: sticky;
     height: 80px;
@@ -42,7 +44,9 @@
     display: inline;
 }
 
-.headingHome{
+/* HEADING & HERO IMG */
+
+.headingHome {
     position: absolute;
     top: 90px;
     color: rgb(55, 62, 111);
@@ -51,6 +55,37 @@
     
 }
 
+#heroImg {
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+#heroImgText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+#heroImgText h1 {
+    font-size: 56px;
+    padding: 15px;
+    /* color: var(--cyan); */
+    color: black;
+}
+
+#heroImgText p {
+    padding: 15px 15px 25px;
+}
+
+#heroImgText hr {
+    width: 50px;
+    background-color: #e45541;
+    height: 3px;
+    border: none;
+}
 
 
 
@@ -58,6 +93,7 @@
 
 
 
+/* FOOTER */
 
 .footerSection{
     background: #000;
@@ -68,15 +104,7 @@
     align-items: center;
 }
 
-.hero {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-}
-
-.heading{
+.heading {
     color: #000;
     font-size: 10rem;
     font-weight: 900;

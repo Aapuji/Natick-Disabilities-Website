@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Natick Commission on Disability</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <body className = {styles.body}>
-      <div className= {styles.hero}>
-        <p className= {styles.headingHome}>Welcome to the Official Natick Commission on Disability Website</p>
+      {/* <body className={styles.body}>
+      <div>
+        <p className={styles.headingHome}>Welcome to the Official Natick Commission on Disability Website</p>
       </div>
-      </body>
+      </body> */}
     </>
   );
 }
