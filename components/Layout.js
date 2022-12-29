@@ -4,7 +4,6 @@ import styles from '../styles/main.module.css'
 
 
 const Layout = ({ children }) => {
-  console.log('IN LAYOUT');
   return <>
     <Navbar />
       <div className = {styles.body}>
