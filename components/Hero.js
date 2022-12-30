@@ -1,9 +1,7 @@
 
 import styles from '../styles/main.module.css';
-import Image from 'next/image'
-
-const IMAGE_URL = 
-    'https://t4.ftcdn.net/jpg/03/36/99/11/360_F_336991124_1ZjU91D3aZjk2OJmEaJAu4OrE3OKgXCY.jpg';
+import Image from 'next/image';
+import bgImg from '../public/bg.jpg';
 
 const Hero = () => {
     return <>
@@ -13,12 +11,11 @@ const Hero = () => {
                 <p>Lorem ipsum dolor sit amet</p>
             </div>
 
-            <Image 
-                priority
-                fill
-                src = {IMAGE_URL}
+            <Image
+                fill 
+                src = {bgImg}
                 id = "heroImg" 
-                alt = 'NCOD Hero Image'
+                alt = '/'
             /> 
         </header>
     </>;

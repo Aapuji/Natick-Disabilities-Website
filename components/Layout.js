@@ -1,5 +1,6 @@
 import Footer from './Footer';
 import Navbar from './navbar';
+import Hero from './Hero'
 import styles from '../styles/main.module.css'
 
 
@@ -9,6 +10,7 @@ const Layout = ({ children }) => {
       <div className = {styles.body}>
         {children}
       </div>
+      <Hero />
     <Footer />
   </>;
 }

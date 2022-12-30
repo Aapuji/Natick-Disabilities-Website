@@ -11,7 +11,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       
-      <Hero />
+      
 {/*
       <div>
         <p className={styles.headingHome}>Welcome to the Official Natick Commission on Disability Website</p>
