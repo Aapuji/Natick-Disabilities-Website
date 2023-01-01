@@ -3,7 +3,7 @@
 ## Branches
 
 ### Pull Requests
-When creating a pull request for a branch, notify the other contributer about the pull request. They can look it over to see if there are any errors or mistakes, or anything they want you to fix. If both agree, then the request can be accepted and merged. However, if your change is rather small, and it doesn't affect any other branches (eg. adding an npm script while the other branch is working on building the pages), then you can accept your own pull request without the other person's approval.
+When creating a pull request for a branch, notify the other contributer about the pull request. They can look it over to see if there are any errors or mistakes, or anything they want you to fix. If both agree, then the request can be accepted and merged. However, if your change is rather small, and it doesn't affect any other branches (eg. adding an npm script while the other branch is working on building the pages), then you can override the requirement for the other person's approval.
 
 Make sure to **always** create a pull request, don't just directly merge your changes.
 
@@ -40,4 +40,4 @@ Commit messages are places to put information and descriptions about what was ad
   * What you got stuck on; errors and warnings (eg. hydration error, syntax error on line 54)
   * Give your thoughts and ideas and what you tried to fix the error (eg. used `for` loop instead of `forEach`)
   * List future areas of work (eg. add hero image component)
-
+* However, if the changes are miniscule, or don't need much explaining, then descriptive commit messages are not required
