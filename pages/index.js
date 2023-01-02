@@ -1,22 +1,12 @@
-
 import Head from 'next/head';
+import Layout from '../components/Layout';
 import styles from '../styles/main.module.css';
-import Hero from '../components/hero';
 
 export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Natick Commission on Disability</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      
-      
-{/*
-      <div>
-        <p className={styles.headingHome}>Welcome to the Official Natick Commission on Disability Website</p>
-      </div>
-  */}
-    </>
-  );
+  return <>
+    <Layout title="Natick Commission on Disability" home>
+      <h1>Welcome to the Natick Commission on Disability!</h1>
+      <h1>HELLO</h1>
+    </Layout>
+  </>;
 }

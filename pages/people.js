@@ -1,21 +1,13 @@
 import Head from 'next/head';
+import Layout from '../components/Layout';
 import styles from '../styles/main.module.css'
 
-const People = () => {
+export default function People() {
   console.log('STYLES.BODY: ' + styles.body);
-  return (
-    <>
-      <Head>
-        <title>People</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <div className = {styles.body}>
-        <div className= {styles.hero}>
-          <h1 className= {styles.heading}>PEOPLE</h1>
-        </div>
-      </div>
-    </>
-  );
+  return <>
+    <Layout title="Natick Commission on Disability">
+      <h1>People</h1>
+      <h1>HELLO</h1>
+    </Layout>
+  </>;
 }
-
-export default People;
