@@ -1,18 +1,12 @@
 import Head from 'next/head';
+import Layout from '../components/Layout';
 import styles from '../styles/main.module.css'
 
 export default function Info() {
-  return (
-    <>
-      <Head>
-        <title>Information</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      {/* <body className = {styles.body}>
-      <div className= {styles.hero}>
-        <h1 className= {styles.heading}>INFORMATION</h1>
-      </div>
-      </body> */}
-    </>
-  );
+  return <>
+    <Layout title="Natick Commission on Disability">
+      <h1>Info</h1>
+      <h1>HELLO</h1>
+    </Layout>
+  </>;
 }
