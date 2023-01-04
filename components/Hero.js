@@ -1,31 +1,24 @@
 import Image from 'next/image';
-import styles from '../styles/main.module.css';
+import styles from '../styles/Hero.module.css';
 import utils from '../styles/utils.module.css';
-import heroStyles from '../styles/Hero.module.css';
 import bgImg from '../public/bg.jpg';
 
 const Hero = () => {
   return <>
-    <header className={`container ${heroStyles.heroHeader}`}>
+    <header className={`container ${styles.heroHeader}`}>
       <Image
         className={utils.back}
-        fill 
-        src = {bgImg}
+        fill
+        // src = {bgImg}
         id = "heroImg" 
         alt = '/'
+        style={{backgroundColor: 'whitesmoke'}}
       /> 
       <div id={styles.heroImgText}>
-        <h1 role="title">Natick Commission on Disabilities</h1>
-        <p>Lorem ipsum dolor sit amet</p>
+        <h1 className={utils.center} role="title">Natick Commission on Disabilities</h1>
       </div>
     </header>
   </>;
 };
 
 export default Hero;
-/*
-
-img
-Header
-
-*/

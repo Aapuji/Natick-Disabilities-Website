@@ -1,3 +1,26 @@
 .back {
     z-index: -1;
 }
+
+.bgWhite {
+    background-color: white;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.center {
+    text-align: center;
+}
+
+.imgContainer {
+    position: relative;
+    /* border: 10px solid blue; To Test */
+}
+
+.borderless {
+    margin: none;
+    border: none;
+    padding: none;
+}

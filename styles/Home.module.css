@@ -1,0 +1,12 @@
+#main {
+  width: 100%;
+  height: fit-content;
+  background-color: aqua;
+}
+
+.sectionHeaderImg {
+  width: 80%;
+  height: 50px;
+  margin: auto;
+  /* background-color: green; */
+}
