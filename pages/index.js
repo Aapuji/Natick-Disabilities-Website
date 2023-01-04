@@ -12,7 +12,7 @@ export default function Home() {
         <section id="emergencyInfo">
           <div className={`${styles.sectionHeaderImg} ${utils.imgContainer}`}>  
             <Image
-              // src = {bgImg} // Will be like the header images in https://natickma.gov
+              //src = {bgImg} Will be like the header images in https://natickma.gov
               fill
               name="Emergency Information Title Image" 
               alt='/'
@@ -26,3 +26,11 @@ export default function Home() {
     </Layout>
   </>;
 }
+
+/*
+
+
+
+
+
+*/

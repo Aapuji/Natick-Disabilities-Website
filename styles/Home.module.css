@@ -5,8 +5,17 @@
 }
 
 .sectionHeaderImg {
+  /*
   width: 80%;
   height: 50px;
-  margin: auto;
+  */
+  background-color: GREEN;
+  background-image: url("../public/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  /*margin: auto;*/
   /* background-color: green; */
 }
