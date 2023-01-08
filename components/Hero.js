@@ -9,9 +9,9 @@ const Hero = () => {
       <Image
         className={utils.back}
         fill
-        src = {bgImg}
-        id = "heroImg" 
-        alt = '/'
+        // src={bgImg}
+        id={styles.heroImg}
+        alt='/'
         style={{border: 'yellow solid 0px'}}
       /> 
       <div id={styles.heroImgText}>

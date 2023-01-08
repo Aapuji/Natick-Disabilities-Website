@@ -26,3 +26,10 @@ a {
 .container {
   display: flex;
 }
+
+hr {
+  margin: none;
+  border: none;
+  padding: none;
+  background-color: white;
+}

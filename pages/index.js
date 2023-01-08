@@ -7,7 +7,10 @@ export default function Home() {
   return <>
     <Layout title="Natick Commission on Disability" home>
       <main id={styles.main}>
-        <Section id="emergencyInfo" imgName="Emergency Information" title="Emergency Information">
+        <hr />
+        <Section id="emergencyInfo" imgName="Emergency Information" title="Emergency Information" subtitle="Emergency Information">
+          <br />
+          <br />
         </Section>
       </main>
     </Layout>
