@@ -1,3 +1,11 @@
+.contentFont {
+    font-family: 'Libre Baskerville', Times, serif
+}
+
+.headingFont {
+    font-family: 'Oxygen', Arial, sans-serif;
+}
+
 .back {
     z-index: -1;
 }

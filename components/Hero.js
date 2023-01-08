@@ -9,10 +9,10 @@ const Hero = () => {
       <Image
         className={utils.back}
         fill
-        // src = {bgImg}
+        src = {bgImg}
         id = "heroImg" 
         alt = '/'
-        style={{backgroundColor: 'whitesmoke'}}
+        style={{border: 'yellow solid 0px'}}
       /> 
       <div id={styles.heroImgText}>
         <h1 className={utils.center} role="title">Natick Commission on Disabilities</h1>

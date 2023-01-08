@@ -1,11 +1,12 @@
-import Link from 'next/link'
-import styles from '../styles/Navbar.module.css'
+import Link from 'next/link';
+import styles from '../styles/Navbar.module.css';
+import utils from '../styles/utils.module.css';
 
 const Navbar = () => {
   return (
     <nav className = {styles.wholeNav}>
       <div className = {styles.commissionLogo}>
-        <Link className = {styles.styledLink} href = '/'>NCOD</Link>
+        <Link className={`${styles.styledLink}`} href = '/'>NCOD</Link>
       </div>
       <ul className = {styles.nav}>
           <li>
