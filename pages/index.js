@@ -3,7 +3,12 @@ import Section from '../components/Section';
 import styles from '../styles/Home.module.css';
 import utils from '../styles/utils.module.css';
 
-export default function Home() {
+const WP_SERVER = 'http://natick-commission-on-disability.local';
+
+export default function Home({ posts }) {
+
+  console.log(posts);
+
   return <>
     <Layout title="Natick Commission on Disability" home>
       <main id={styles.main}>
@@ -21,6 +26,51 @@ export default function Home() {
 
         </Section>
       </main>
+      <div>
+        <ul>
+          {
+            posts.nodes.map(post => {
+              if (post.categories.nodes[0].name === 'Home Page') {
+                return <li key={post.id}>{post.title}: {post.content}</li>;
+              }
+            })
+          }
+        </ul>
+      </div>
     </Layout>
   </>;
+}
+
+export async function getStaticProps() {
+  const res = await fetch(WP_SERVER + '/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: `
+        query HomePageQuery {
+          posts {
+            nodes {
+              title
+              content
+              date
+              id
+              categories {
+                nodes {
+                  name
+                }
+              }
+            }
+          }
+        }
+      `,
+    })
+  });
+
+  const json = await res.json();
+
+  return {
+    props: {
+      posts: json.data.posts
+    }
+  }
 }
