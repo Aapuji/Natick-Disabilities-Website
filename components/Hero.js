@@ -8,10 +8,11 @@ const Hero = () => {
     <header className={`container ${styles.heroHeader}`}>
       <Image
         className={utils.back}
+        priority
         fill
-        // src={bgImg}
+        src={bgImg}
         id={styles.heroImg}
-        alt='/'
+        alt='Background Hero Image for Header'
         style={{border: 'yellow solid 0px'}}
       /> 
       <div id={styles.heroImgText}>

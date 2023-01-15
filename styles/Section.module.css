@@ -14,3 +14,7 @@
   composes: contentFont from 'utils.module.css';
   font-style: italic;
 }
+
+.section {
+  text-align: center;
+}

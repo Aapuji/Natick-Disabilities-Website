@@ -13,14 +13,13 @@ const Section = ({ children,
     imgStyle = {} 
 }) => {
   return <>
-    <section id={id} className={className} style={style}>
+    <section id={id} className={styles.section + ' ' + className} style={style}>
       <div className={`${homeStyles.sectionHeaderImg} ${utils.imgWrapper}`}>
         <Image
-            //src = {bgImg} Will be like the header images in https://natickma.gov
+            src='/../public/bg.jpg' // Will be like the header images in https://natickma.gov
             fill
-            name={`${imgName} Section Image`} 
-            alt='/'
-            style={imgStyle}
+            name={`${imgName} Introductory Banner`} 
+            alt={`${imgName} Introductory Banner`}
         />
       </div>
       { title ? <h1 className={styles.header}>{title}</h1> : <></> }

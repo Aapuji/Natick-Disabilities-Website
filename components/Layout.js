@@ -16,9 +16,7 @@ const Layout = ({ children, title, desc, home }) => {
     </Head>
     <Navbar />
     { home ? <Hero /> : <></> }
-    <div>
-      {children}
-    </div>
+    {children}
     <Footer />
   </>;
 }
