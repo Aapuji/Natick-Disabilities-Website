@@ -16,13 +16,10 @@ const Navbar = () => {
             <Link className = {styles.styledLink} href = '/about'>About</Link>
           </li>
           <li>
-            <Link className = {styles.styledLink} href = '/info'>Information</Link>
+              <Link className = {styles.styledLink} href = '/resources'>Resources</Link>
           </li>
           <li>
             <Link className = {styles.styledLink} href = '/events'>Events</Link>
-          </li>
-          <li>
-            <Link className = {styles.styledLink} href = '/people'>People</Link>
           </li>
       </ul>
     </nav>

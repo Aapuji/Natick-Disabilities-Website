@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import styles from '../styles/main.module.css'
+import styles from '../styles/About.module.css'
 
 export default function About() {
   return <>

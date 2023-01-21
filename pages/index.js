@@ -12,7 +12,7 @@ export default function Home({ posts }) {
   return <>
     <Layout title="Natick Commission on Disability" home>
       <main id={styles.main}>
-        {/* <hr />
+        <hr />
         <Section id="emergencyInfo" imgName="Emergency Information" title="Emergency Information" subtitle="Get guidance and support.">
           <br />
           <br />
@@ -24,8 +24,8 @@ export default function Home({ posts }) {
         </Section>
         <Section id="recentEvents" imgName="Recent Events" title="Recent and Upcoming Events" subtitle="Stay up to date with the latest events.">
 
-        </Section> */}
-        {
+        </Section> 
+        {/*
           posts.nodes.map(post => {
             let title = post.title;
             let subtitle = '';
@@ -48,12 +48,13 @@ export default function Home({ posts }) {
               <br />
             </Section>
           })
-        }
+        */}
       </main>
     </Layout>
   </>;
 }
 
+/*
 export async function getStaticProps() {
   const res = await fetch(WP_SERVER + '/graphql', {
     method: 'POST',
@@ -82,8 +83,9 @@ export async function getStaticProps() {
     }
   }
 }
+*/
 
-const removeTags = (content, tags) => content.replace( new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g' ), '');
-const removeP = content => removeTags(content, ['p']); 
+// const removeTags = (content, tags) => content.replace( new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g' ), '');
+// const removeP = content => removeTags(content, ['p']); 
 
-const splitContent = content => content.split('\n').filter(el => el !== '');
+// const splitContent = content => content.split('\n').filter(el => el !== '');
