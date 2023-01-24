@@ -5,9 +5,9 @@ import utils from '../styles/utils.module.css';
 
 const WP_SERVER = process.env.WP_SERVER;
 
-export default function Home({ posts }) {
+export default function Home(/*{ posts }*/) {
 
-  console.log(posts);
+  //console.log(posts);
 
   return <>
     <Layout title="Natick Commission on Disability" home>
