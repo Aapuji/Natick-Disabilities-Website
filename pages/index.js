@@ -2,29 +2,20 @@ import Layout from '../components/Layout';
 import Section from '../components/Section';
 import styles from '../styles/Home.module.css';
 import utils from '../styles/utils.module.css';
+import { orderPageContent } from '../utils/order';
 
 const WP_SERVER = process.env.WP_SERVER;
 
-export default function Home({ posts }) {
+export default function Home({ posts, orderDesc }) {
 
-  console.log(posts);
+  console.log('BOTH', posts, '\n', orderDesc);
+
+  orderPageContent(orderDesc, posts.nodes);
 
   return <>
     <Layout title="Natick Commission on Disability" home>
       <main id={styles.main}>
-        {/* <hr />
-        <Section id="emergencyInfo" imgName="Emergency Information" title="Emergency Information" subtitle="Get guidance and support.">
-          <br />
-          <br />
-        </Section>
-        <br />
-        <Section id="whatIsNCOD" imgName="What is Commission on Disability" title="What is the Commission on Disability?" subtitle="A brief overview of the commission and its values.">
-          <br />
-          <br />
-        </Section>
-        <Section id="recentEvents" imgName="Recent Events" title="Recent and Upcoming Events" subtitle="Stay up to date with the latest events.">
-
-        </Section> */}
+        <hr />
         {
           posts.nodes.map(post => {
             let title = post.title;
@@ -42,6 +33,7 @@ export default function Home({ posts }) {
               }
             }
 
+        
             return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
               {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}
               <br />
@@ -65,8 +57,13 @@ export async function getStaticProps() {
             nodes {
               title
               content
-              date
               id
+              date
+            }
+          }
+          categories(where: {name: "Home Page"}) {
+            nodes {
+              description
             }
           }
         }
@@ -76,9 +73,12 @@ export async function getStaticProps() {
 
   const json = await res.json();
 
+  console.log(json);
+
   return {
     props: {
-      posts: json.data.posts
+      posts: json.data.posts,
+      orderDesc: json.data.categories.nodes[0].description
     }
   }
 }
