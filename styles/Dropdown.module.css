@@ -16,12 +16,11 @@ body{
 
 .dropdown{
     width: 400px;
-    user-select: none;
     margin: 100px auto;
     position: relative;
 }
 
-.dropdown .dropdown-btn {
+.dropdown .dropdownbtn {
     padding: 15px 20px;
     background: #fff;
     box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
@@ -33,7 +32,7 @@ body{
     justify-content: space-between;
 }
 
-.dropdown .dropdown-content {
+.dropdown .dropdowncontent {
     position: absolute;
     top: 110%;
     left: 0;
@@ -42,15 +41,15 @@ body{
     box-shadow: 3px 3px 10px 6px rgba(0,0,0,0.06);
     font-weight: 500;
     color: #333;
-    width: 95%;
+    width: 100%;
 }
 
-.dropdown .dropdown-content .dropdown-item{
+.dropdown .dropdowncontent .dropdownitem{
     padding: 10px;
     cursor: pointer;
     transition: all 0.2s;
 }
 
-.dropdown .dropdown-content .dropdown-item:hover{
+.dropdown .dropdowncontent .dropdownitem:hover{
     background: #f4f4f4;
 }

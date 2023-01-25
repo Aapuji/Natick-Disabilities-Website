@@ -7,10 +7,10 @@ const Dropdown = ({selected, setSelected}) => {
 
   return (
         <div className='dropdown'>
-            <div className='dropdown-btn'>Choose One</div>
-                <div className='dropdown-content'>
-                    <div className='dropdown-item'>Government</div>
-                    <div className='dropdown-item'>SPED</div>
+            <div className={styles.dropdown-btn}>Choose One</div>
+                <div className={styles.dropdown-content}>
+                    <div className={styles.dropdown-item}>Government</div>
+                    <div className={styles.dropdown-item}>SPED</div>
                 </div>
         </div>
   );
