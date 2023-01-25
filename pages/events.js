@@ -1,5 +1,4 @@
 import Layout from '../components/Layout';
-import styles from '../styles/main.module.css'
 
 export default function Events() {
   return <>
