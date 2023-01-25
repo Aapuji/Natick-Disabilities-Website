@@ -4,11 +4,10 @@ import styles from '../styles/Resources.module.css'
 import Dropdown from '../components/Dropdown';
 import { useState } from 'react';
 
-export default function Info() {
-  const [selected, setSelected] = useState("")
+export default function Resources() {
   return <>
     <Layout title="Natick Commission on Disability">
-      <Dropdown selected = {selected} setSelected = {setSelected} className = {styles.dropdownResources} />
+      <Dropdown className = {styles.dropdownResources} />
 
       
     </Layout>

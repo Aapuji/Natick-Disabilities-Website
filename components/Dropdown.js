@@ -13,7 +13,7 @@ const Dropdown = () => {
               <span className = "fas fa-caret-down" onClick = {()=>{setOpen(!open)}}></span>
             </div>
 
-              <div className={`dropdowncontainer  ${open? 'active' : 'inactive'}`}>
+              <div className={`dropdowncontainer ${open? 'active' : 'inactive'}`}>
                 <div className={styles.dropdowncontent}>
                     <div className={styles.dropdownitem}>Government</div>
                     <div className={styles.dropdownitem}>SPED</div>
