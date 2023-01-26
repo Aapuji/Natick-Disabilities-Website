@@ -9,7 +9,6 @@ export default function Resources() {
     <Layout title="Natick Commission on Disability">
       <Dropdown className = {styles.dropdownResources} />
 
-      
     </Layout>
   </>;
 }

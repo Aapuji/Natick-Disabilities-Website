@@ -1,14 +1,31 @@
+.container{
+  position: relative;
+  min-height: 100vh;
+}
+
 .footerSection {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background:  rgb(55, 62, 111);
   color: #fff;
-  height: 60px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.footerSection p{
+  margin-top: -10px;
+  font-family: var(--font-sans,var(--font-sans-fallback));
+  color: black;
+  font-weight: bold;
+}
+
 
 .heading {
   color: #000;
   font-size: 10rem;
   font-weight: 900;
 }
+

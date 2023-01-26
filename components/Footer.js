@@ -3,9 +3,11 @@ import styles from '../styles/Footer.module.css';
 
 const Footer = () => {
   return (
+    <div className={styles.container}>
     <footer className={styles.footerSection}>
-      Created by Om Sharma & Devashish Das 2022
+      <p>Created by Om Sharma & Devashish Das 2022</p>
     </footer>
+    </div>
   );
 };
 
