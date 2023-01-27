@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import Section from '../components/Section';
 import styles from '../styles/Home.module.css';
 import utils from '../styles/utils.module.css';
-import { orderPageContent } from '../utils/order';
+import * as WPU from '../utils/wputils';
 
 const WP_SERVER = process.env.WP_SERVER;
 
@@ -10,7 +10,7 @@ export default function Home({ posts, orderDesc }) {
 
   console.log('BOTH', posts, '\n', orderDesc);
 
-  orderPageContent(orderDesc, posts.nodes);
+  WPU.orderPageContent(orderDesc, posts.nodes);
 
   return <>
     <Layout title="Natick Commission on Disability" home>
@@ -21,18 +21,24 @@ export default function Home({ posts, orderDesc }) {
             let title = post.title;
             let subtitle = '';
 
-            let contents = splitContent(post.content).map(removeP);
+            let contents = WPU.splitContent(post.content).map(WPU.removeP);
             
             console.log(contents);
 
-            for (let i in contents) {
-              if (contents[i].startsWith('Subtitle: ')) {
-                subtitle = contents[i];
+            for (let i = 0; i < contents.length; i++) {
+              let { annot, text } = WPU.removeAnnotation(contents[i]);
+
+              if (annot == 'Subtitle') {
+                subtitle = text;
                 contents.splice(i, 1);
                 break;
               }
+              // if (contents[i].startsWith('Subtitle: ')) {
+              //   subtitle = contents[i];
+              //   contents.splice(i, 1);
+              //   break;
+              // }
             }
-
         
             return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
               {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}
@@ -82,8 +88,3 @@ export async function getStaticProps() {
     }
   }
 }
-
-const removeTags = (content, tags) => content.replace( new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g' ), '');
-const removeP = content => removeTags(content, ['p']); 
-
-const splitContent = content => content.split('\n').filter(el => el !== '');
