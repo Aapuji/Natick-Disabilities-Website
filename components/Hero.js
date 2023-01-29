@@ -16,7 +16,7 @@ const Hero = () => {
         style={{border: 'yellow solid 0px'}}
       /> 
       <div id={styles.heroImgText}>
-        <h1 className={utils.center} role="title">Natick Commission on Disabilities</h1>
+        <h1 className={utils.center} role="title">Natick Commission on Disability</h1>
       </div>
     </header>
   </>;

@@ -19,6 +19,7 @@
     object-fit: cover;
     object-position: center;
     background-color: whitesmoke;
+    background-attachment: fixed;
 }
 
 #heroImgText {

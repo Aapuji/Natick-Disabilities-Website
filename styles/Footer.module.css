@@ -18,10 +18,9 @@
 .footerSection p{
   margin-top: -10px;
   font-family: var(--font-sans,var(--font-sans-fallback));
-  color: black;
-  font-weight: bold;
+  color: rgb(238, 197, 98);
+  
 }
-
 
 .heading {
   color: #000;
