@@ -1,0 +1,14 @@
+.upcomingHeading{
+    margin-left: 20px;
+}
+
+.pastHeading{
+    margin-left: 20px;
+}
+
+.cards{
+    margin-top: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
