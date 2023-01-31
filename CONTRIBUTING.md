@@ -12,14 +12,17 @@ Naming branches in a clear and concise manner help the contributers understand w
 
 * Make sure the title of the branch is descriptive but short. Between 2-3 words is a good range. Some examples are `about-page`, and `calendar-event-system`
 * Connect multiple words with hyphens (`-`)
-* Make sure to add the appropriate prefix to the branch. They are: `bug`, `wip`, `util`, `test`, and `junk`.
-  * Use `bug` for bug fixes or small changes
+* Spell things correctly
+* Make sure to add the appropriate prefix to the branch. They are: `bug`, `add`, `wip`, `util`, `test`, and `junk`.
+  * Use `bug` for bug fixes
+  * Use `add` for very small and straightforward additions
   * Use `wip` for big changes and additions or long pieces of work (literally work-in-progress) 
   * Use `util` for edits or additions that don't affect the final output, but help the developers (for example, this branch should have probably been `util-contributing` or `util-contributing-conventions`)
   * Use `test` for a branch that is used for testing
   * Use `junk` for a branch that is throwaway, useless, or when the branch isn't directly doing the testing (for example, if a branch was made to add an npm script to prune all dead branches, and a branch was created just to be dead to test it, but didn't actually add changes to the code, the latter branch could be called `junk-prune` or something like that)
 * Some examples of these:
   * A branch for fixing a bug with the links: `bug-links`
+  * A branch for adding a normalize css: `add-normalize-css`
   * A branch for adding an `npm prune` script: `util-prune`
   * A branch for working on the `about.html` page: `wip-about-page`, _or_ `about-page`
   * A branch for testing Wordpress connection and stuff: `test-wordpress-connect`
