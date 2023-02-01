@@ -1,0 +1,40 @@
+.wholeNav {
+  position: sticky;
+  height: 80px;
+  background: rgb(55, 62, 111);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(238, 197, 98);
+}
+
+.styledLink {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.commissionLogo {
+  /* font-family: 'Roboto Slab', serif; */
+  margin-top: -0.5rem;
+  font-size: 2rem;
+}
+
+.nav {
+  /* font-family: 'Roboto Slab', serif; */ /* I don't really like this font, so I'm commenting it out for now */
+  font-size: 1.6rem;
+  position: absolute;
+  top: -1rem;
+  right: 20rem;
+  width: 300px;
+  border: 3px;
+  padding: 10px;
+}
+
+.nav li:hover:after{
+  color: #fff;
+}
+
+
+.nav li {
+  display: inline;
+}

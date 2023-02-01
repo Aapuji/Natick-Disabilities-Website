@@ -1,0 +1,20 @@
+.header {
+  /* margin-block-start: 0; */
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  composes: contentFont from './utils.module.css';  /* Just uses Libre Baskerville as font */
+  font-weight: normal;
+}
+
+.subheader {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  composes: contentFont from 'utils.module.css';
+  font-style: italic;
+}
+
+.section {
+  text-align: center;
+}

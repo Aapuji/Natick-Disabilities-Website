@@ -1,27 +1,28 @@
-import Link from 'next/link'
-import styles from '../styles/main.module.css'
+import Link from 'next/link';
+import styles from '../styles/Navbar.module.css';
+import utils from '../styles/utils.module.css';
 
 const Navbar = () => {
   return (
-    <nav className = {styles.wholeNav}>
-      <div className = {styles.commissionLogo}>
-        <Link className = {styles.styledLink} href = '/'>NCOD</Link>
+    <nav className={styles.wholeNav}>
+      <div className={styles.commissionLogo}>
+        <Link className={`${styles.styledLink}`} href='/'>NCOD</Link>
       </div>
-      <ul className = {styles.nav}>
+      <ul className={styles.nav}>
           <li>
             <Link className={styles.styledLink} href='/'>Home</Link>
           </li>
           <li>
-            <Link className = {styles.styledLink} href = '/about'>About</Link>
+            <Link className={styles.styledLink} href='/about'>About</Link>
           </li>
           <li>
-            <Link className = {styles.styledLink} href = '/info'>Information</Link>
+            <Link className={styles.styledLink} href='/resources'>Resources</Link>
           </li>
           <li>
-            <Link className = {styles.styledLink} href = '/events'>Events</Link>
+            <Link className={styles.styledLink} href = '/events'>Events</Link>
           </li>
           <li>
-            <Link className = {styles.styledLink} href = '/people'>People</Link>
+            <Link className={styles.styledLink} href='/people'>People</Link>
           </li>
       </ul>
     </nav>

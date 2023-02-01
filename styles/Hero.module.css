@@ -1,4 +1,48 @@
 .heroHeader {
-    width: 100vw;
-    height: 80vh; /* Find the right height to work with the picture */
+    composes: imgWrapper from './utils.module.css';
+    width: 100%;
+    height: 87vh; /* Find the right height to work with the picture */
+    position: relative;
+}
+
+.heading {
+    /* position: relative; */
+    top: 90px;
+    color: rgb(55, 62, 111);
+    font-size: 2em;
+    font-weight: 900;
+}
+
+#heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background-color: whitesmoke;
+}
+
+#heroImgText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+#heroImgText h1 {
+    font-size: 56px;
+    padding: 15px;
+    /* color: var(--cyan); */
+    color: black;
+}
+
+#heroImgText p {
+    padding: 15px 15px 25px;
+}
+
+#heroImgText hr {
+    width: 50px;
+    background-color: #e45541;
+    height: 3px;
+    border: none;
 }
