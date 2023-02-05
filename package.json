@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prune": "git fetch -p",
-    "open-normalize-styles": "code node_modules/normalize.css/normalize.css"
+    "view-normalize-styles": "code node_modules/normalize.css/normalize.css"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",
