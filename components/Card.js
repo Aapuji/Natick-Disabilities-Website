@@ -2,14 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from '../styles/Card.module.css';
 
-const Card  = ({name, location, time, about}) => {
+const Card  = ({name, location, time, desc}) => {
     return <>
         <div className={styles.card}>
             <div className = {styles.cardcontent}>
                 <h1>{name}</h1>
                 <h4>Date and Time: {time}</h4>
                 <h4>Location: {location}</h4>
-                <p>About This Event: {about}</p>
+                <p>{desc}</p>
             </div>
         </div>
     </>;

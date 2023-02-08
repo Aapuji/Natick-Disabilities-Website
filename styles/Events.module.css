@@ -6,6 +6,10 @@
     margin-left: 20px;
 }
 
+.cardcontainer{
+    overflow: hidden;
+}
+
 .cards{
     margin-top: -20px;
     display: flex;
