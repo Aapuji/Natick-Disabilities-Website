@@ -3,7 +3,8 @@ import styles from '../styles/Section.module.css';
 import homeStyles from '../styles/Home.module.css';
 import utils from '../styles/utils.module.css';
 
-const Section = ({ children, 
+const Section = ({ 
+    children, 
     id = '', 
     className = '', 
     style = {}, 
