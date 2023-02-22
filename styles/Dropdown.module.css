@@ -55,6 +55,7 @@ body{
 }
 
 .dropdowncontainer.active{
+    color: blue;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -62,6 +63,7 @@ body{
 }
 
 .dropdowncontainer.inactive{
+    color: red;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-20px); /*change for liking*/
