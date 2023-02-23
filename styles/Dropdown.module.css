@@ -54,7 +54,7 @@ body{
     background: #f4f4f4;
 }
 
-.dropdowncontainer.active{
+.dropdowncontaineractive{
     color: blue;
     opacity: 1;
     visibility: visible;
@@ -62,11 +62,14 @@ body{
     transition: 0.2s ease;
 }
 
-.dropdowncontainer.inactive{
+.dropdowncontainerinactive{
+    /*
     color: red;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-20px); /*change for liking*/
+    transform: translateY(-20px); change for liking
     transition: 0.2s ease;
+    */
+    padding-top: 4rem;
 }
 

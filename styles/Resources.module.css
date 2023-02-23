@@ -1,0 +1,15 @@
+.dropdowncontaineractive{
+    color: blue;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: 0.2s ease;
+}
+
+.dropdowncontainerinactive{
+    color: red;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); /*change for liking*/
+    transition: 0.2s ease;
+}

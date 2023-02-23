@@ -9,13 +9,13 @@ const Dropdown = () => {
   return (
         <div className={styles.dropdown}>
             <div className={styles.dropdownbtn} onClick = {()=>{setOpen(!open)}}>
-              Choose Resource Category   ⬇ 
+              Choose Resource Category ⬇ 
               <span className = "fas fa-caret-down" onClick = {()=>{setOpen(!open)}}></span>
             </div>
 
-              <div className={`dropdowncontainer ${open? 'active' : 'inactive'}`}>
+              <div className={`dropdowncontainer${open? 'active' : 'inactive'}`}>
                 <div className={styles.dropdowncontent}>
-                    <div className={styles.dropdownitem}>Government</div>
+                    <Link href = "/resources/state"><div className={styles.dropdownitem}>Massachussetts Resources</div></Link>
                     <div className={styles.dropdownitem}>SPED</div>
                 </div>
               </div>

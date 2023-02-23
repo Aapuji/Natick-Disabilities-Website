@@ -7,8 +7,7 @@ import { useState } from 'react';
 export default function Resources() {
   return <>
     <Layout title="Natick Commission on Disability">
-      <Dropdown className = {styles.dropdownResources} />
-
+      <Dropdown/>
     </Layout>
   </>;
 }
