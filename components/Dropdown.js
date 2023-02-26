@@ -15,8 +15,10 @@ const Dropdown = () => {
 
               <div className={`dropdowncontainer${open? 'active' : 'inactive'}`}>
                 <div className={styles.dropdowncontent}>
+                    <Link href = "/resources/federal"><div className={styles.dropdownitem}>Federal Resources</div></Link>
                     <Link href = "/resources/state"><div className={styles.dropdownitem}>Massachussetts Resources</div></Link>
-                    <div className={styles.dropdownitem}>SPED</div>
+                    <Link href = "/resources/natick"><div className={styles.dropdownitem}>Natick Resources</div></Link>
+                  
                 </div>
               </div>
         </div>
