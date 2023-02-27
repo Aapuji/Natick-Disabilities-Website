@@ -18,7 +18,6 @@ const Dropdown = () => {
                     <Link href = "/resources/federal"><div className={styles.dropdownitem}>Federal Resources</div></Link>
                     <Link href = "/resources/state"><div className={styles.dropdownitem}>Massachussetts Resources</div></Link>
                     <Link href = "/resources/natick"><div className={styles.dropdownitem}>Natick Resources</div></Link>
-                  
                 </div>
               </div>
         </div>
