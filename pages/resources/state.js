@@ -4,6 +4,7 @@ import  Hyperlink from '/components/Hyperlink'
 import styles from '/styles/State.module.css'
 import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
+import Link  from  'next/link';
 
 //MassAccess (lines _-_) has links for "rental homes" and "home ownership" in the description
 
@@ -113,8 +114,9 @@ export default function State() {
         <Hyperlink
           url = "https://www.massaccesshousingregistry.org/"
           name = "MassAccess: The Accessible Housing Registry"
-          desc = "To find accessible and affordable rental homes and home ownership opportunities in Massachusetts."
-        />
+        >
+          To find accessible and affordable <Link> rental homes </Link> and home ownership opportunities in Massachusetts.
+        </Hyperlink>
         <Hyperlink
           url = "https://www.newenglandada.org/"
           name = "New England ADA Center"
