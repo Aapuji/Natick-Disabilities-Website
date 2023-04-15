@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Link  from  'next/link';
 
 //MassAccess (lines _-_) has links for "rental homes" and "home ownership" in the description
-
+//LINE 118: To find accessible and affordable <Link> rental homes </Link> and home ownership opportunities in Massachusetts.
 
 
 export default function State() {
@@ -114,9 +114,7 @@ export default function State() {
         <Hyperlink
           url = "https://www.massaccesshousingregistry.org/"
           name = "MassAccess: The Accessible Housing Registry"
-        >
-          To find accessible and affordable <Link> rental homes </Link> and home ownership opportunities in Massachusetts.
-        </Hyperlink>
+        />
         <Hyperlink
           url = "https://www.newenglandada.org/"
           name = "New England ADA Center"
