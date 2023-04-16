@@ -5,22 +5,55 @@ import Image from 'next/image'
 const Footer = () => {
   return (
     <footer id={styles.footer} className={styles.footerContainer}>
-      <div id = {styles.footerNav} className = {styles.large}>
-            NAVIGATION
-            <div id = {styles.footerLinks} className={styles.footerContainer}>
-                <a href = "#" className = {styles.inline}>EMAIL</a>
-                <a href = "#" className = {styles.inline}>PHONE</a>
-                <a href = "#" className = {styles.inline}>LOCATION</a>
-                <br />
-            </div>
+      <div className = {styles.linkContainer}>
+        <div id = {styles.contactNav} className = {styles.large}>
+              <div className = {styles.contactText}>Contact</div>
+              <div id = {styles.footerLinks} className={styles.footerContainer}>
+                  <a href = "mailto: natickcommissionondisability@gmail.com" className = {styles.contactInline}>natickcommissionondisability@gmail.com</a>
+                  <a className = {styles.contactInline}>Ph: (508)-647-6400</a>
+                  <a className = {styles.contactInline}>13 East Central Street Natick, MA 01760</a>
+                  <br />
+              </div>
+        </div>
+        <div id = {styles.navigationNav} className = {styles.large}>
+              <div className = {styles.navigationText}>Navigation</div>
+              <div id = {styles.footerLinks} className={styles.footerContainer}>
+                  <Link className = {styles.inline} href = '/'>Home</Link>
+                  <Link className = {styles.inline} href = '/about'>About</Link>
+                  <Link className = {styles.inline} href = '/resources'>Resources</Link>
+                  <Link className = {styles.inline} href = '/events'>Events</Link>
+                  <br />
+              </div>
+        </div>
+        <div id = {styles.accessibilityNav} className = {styles.large}>
+              <div className = {styles.accessibilityText}>Accessibility</div>
+              <div id = {styles.footerLinks} className={styles.footerContainer}>
+                  <Link className = {styles.inline} href = '/'>Home</Link>
+                  <Link className = {styles.inline} href = '/about'>About</Link>
+                  <Link className = {styles.inline} href = '/resources'>Resources</Link>
+                  <Link className = {styles.inline} href = '/events'>Events</Link>
+                  <br />
+              </div>
+        </div>
+        <div id = {styles.followNav} className = {styles.large}>
+              <div className = {styles.followText}>Follow Natick</div>
+              <div id = {styles.footerLinks} className={styles.footerContainer}>
+                  <Link className = {styles.inline} href = '/'>Home</Link>
+                  <Link className = {styles.inline} href = '/about'>About</Link>
+                  <Link className = {styles.inline} href = '/resources'>Resources</Link>
+                  <Link className = {styles.inline} href = '/events'>Events</Link>
+                  <br />
+              </div>
+        </div>
       </div>
-      <div id={styles.footerSocials} className={styles.footerContainer}>
-            <a href="#" id={styles.twitterIcon}><Image src="" alt="twitter-icon" /></a>
-            <a href="#" id={styles.facebookIcon}><Image src="" alt="facebook-icon" /></a>
-            <a href="#" id={styles.instagramIcon}><Image src="" alt="instagram-icon" /></a>
-      </div>      
     </footer>
   );
 };
 
 export default Footer;
+
+<div id={styles.footerSocials} className={styles.footerContainer}>
+  <a href="#" id={styles.twitterIcon}><Image src="" alt="twitter-icon" /></a>
+  <a href="#" id={styles.facebookIcon}><Image src="" alt="facebook-icon" /></a>
+  <a href="#" id={styles.instagramIcon}><Image src="" alt="instagram-icon" /></a>
+</div>  

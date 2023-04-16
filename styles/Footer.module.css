@@ -12,15 +12,51 @@ a.inline {
     color: var(--cyan);
 }
 
+.contactInline{
+    font-weight: 500;
+    font-size: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    text-decoration: inherit;
+    color: var(--cyan);
+}
+
 a.inline:hover {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bolder;
+}
+
+.contactText{
+    color: rgba(55, 62, 111);
+    font-weight: bold;
+}
+
+.navigationText{
+    color: rgba(55, 62, 111);
+    font-weight: bold;
+}
+
+.accessibilityText{
+    color: rgba(55, 62, 111);
+    font-weight: bold;
+}
+
+.followText{
+    color: rgba(55, 62, 111);
+    font-weight: bold;
 }
 
 .footerContainer{
     display: flex;
     position: relative;
     text-align: center;
+}
+
+.linkContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #footer{
@@ -36,18 +72,51 @@ a.inline:hover {
     text-align: left;
 }
 
+#contactNav{
+    /*max-width: fit-content;*/
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#navigationNav{
+    /*max-width: fit-content;*/
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#accessibilityNav{
+    /* max-width: fit-content; */  
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#followNav{
+    /* max-width: fit-content; */
+    padding-left: 10px;
+    padding-right: 4px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
 #footerLinks {
     margin-top: 15px;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
     line-height: 1.5em;
+    color: rgba(55, 62, 111);
 }
 
 #footerSocials {
     margin-left: auto;
     margin-right: calc(10vw - 50px);
-    padding-top: 50px; /* Used to be 25px */
+    padding-top: 100px; /* Used to be 25px */
 }
 
 #footerSocials a img {

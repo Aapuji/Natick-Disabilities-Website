@@ -9,7 +9,7 @@ import Link  from  'next/link';
 
 export default function Local() {
   return <>
-    <Layout title="Natick Commission on Disability">
+    <Layout title="Local Information & Resources" altText="... alt text goes here ..." hero>
       <h1 className={styles.localheading}>Links for Other Local Resources and Information</h1>
       <div className={styles.localsectioncontent}>
         <Hyperlink 

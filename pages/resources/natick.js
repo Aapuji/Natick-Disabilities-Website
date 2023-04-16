@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function Natick() {
   return <>
-    <Layout title="Natick Commission on Disability">
+    <Layout title="Natick Resources" altText="... alt text goes here ..." hero>
       <h1 className={styles.federalheading}>Links for Federal Resources</h1>
 
       <h2 className={styles.federalsectionheading}>Laws, Regulations, and Rules</h2>
