@@ -5,9 +5,14 @@ import { WiTime3 } from 'react-icons/wi';
 import { FcCalendar } from 'react-icons/fc';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
-const Card  = ({name, location, date, time, desc}) => {
+const Card  = ({ name, location, date, time, desc, brief }) => {
+
+    function handleClick() {
+        console.log('increment like count');
+    }
+
     return <>
-        <div className={styles.card}>
+        <div className={styles.card} onClick={handleClick}>
             <div className = {styles.cardcontent}>
                 <h1>{name}</h1>
                 <h4 className={styles.info}>
@@ -22,7 +27,7 @@ const Card  = ({name, location, date, time, desc}) => {
                     <span className={styles.markerIcon}><FaMapMarkerAlt alt="Location of event" /></span> 
                     <span className={styles.infoDescriptor}> {location}</span>
                 </h4>
-                <p className={styles.desc}>{desc}</p>
+                <p className={styles.desc}>{brief ?? desc}</p>
             </div>
         </div>
     </>;
