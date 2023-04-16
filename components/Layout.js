@@ -15,7 +15,7 @@ const Layout = ({ children, title, desc, home }) => {
         <meta name="og:title" content={title} />
         <meta name="og:description" content={desc ? desc : DEFAULT_DESC} />
       </Head>
-      <Navbar />
+      {/* <Navbar /> */}
       { home ? <Hero /> : <></> }
       {children}
       <Footer />
