@@ -6,7 +6,7 @@ import styles from '../styles/Footer.module.css';
 
 const DEFAULT_DESC = 'Default Description';
 
-const Layout = ({ children, title, desc, home }) => {
+const Layout = ({ children, title, desc, altText, heroImg, hero }) => {
   return <>
     <div>
       <Head>
@@ -15,8 +15,7 @@ const Layout = ({ children, title, desc, home }) => {
         <meta name="og:title" content={title} />
         <meta name="og:description" content={desc ? desc : DEFAULT_DESC} />
       </Head>
-      {/* <Navbar /> */}
-      { home ? <Hero /> : <></> }
+      { hero ? <Hero title={title ?? "Natick Commission on Disability"} img={heroImg} altText={altText} /> : <></> }
       {children}
       <Footer />
     </div>

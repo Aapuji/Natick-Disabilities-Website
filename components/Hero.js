@@ -4,7 +4,7 @@ import styles from '../styles/Hero.module.css';
 import utils from '../styles/utils.module.css';
 import bgImg from '../public/bg.jpg';
 
-const Hero = () => {
+const Hero = ({ title, altText, img }) => {
   return <>
     <header className={`container ${styles.heroHeader}`}>
       <Navbar />
@@ -12,13 +12,13 @@ const Hero = () => {
         className={utils.back}
         priority
         fill
-        src={bgImg}
+        src={img ?? bgImg}
         id={styles.heroImg}
-        alt='Background Hero Image for Header'
+        alt={altText}
         style={{border: 'yellow solid 0px'}}
       /> 
       <div id={styles.heroImgText}>
-        <h1 className={utils.center} role="title">Natick Commission on Disability</h1>
+        <h1 className={utils.center} role="title">{title}</h1>
       </div>
     </header>
   </>;
