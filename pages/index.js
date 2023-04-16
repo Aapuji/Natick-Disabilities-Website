@@ -10,7 +10,7 @@ export default function Home(/*{ posts }*/) {
   //console.log(posts);
 
   return <>
-    <Layout title="Natick Commission on Disability" home>
+    <Layout title="Natick Commission on Disability" altText="... alt text goes here ..." hero>
       <main id={styles.main}>
         <hr />
         <Section id="emergencyInfo" imgName="Emergency Information" title="Emergency Information" subtitle="Get guidance and support.">

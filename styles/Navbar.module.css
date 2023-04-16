@@ -5,13 +5,14 @@
 */
 
 .wholeNav {
-  position: sticky;
+  position: relative;
+  width: 100vw;
   height: 80px;
-  background: rgb(55, 62, 111);
+  background: rgba(55, 62, 111, 0.75);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(238, 197, 98);
+  color: white;
 }
 
 .styledLink {

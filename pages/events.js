@@ -4,7 +4,7 @@ import Card from '../components/Card';
 
 export default function Events() {
   return <>
-    <Layout title="Natick Commission on Disability">
+    <Layout title="Events" altText="... alt text goes here ..." hero>
     <h1 className={styles.upcomingHeading}>Ongoing and Upcoming Events</h1>
     <div className={styles.cardscontainer}>
       <div className={styles.cards}>
