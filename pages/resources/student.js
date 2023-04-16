@@ -8,7 +8,6 @@ import Link  from  'next/link';
 
 //massadvocates inline ("resources")
 
-
 export default function Student() {
   return <>
     <Layout title="Natick Commission on Disability">
