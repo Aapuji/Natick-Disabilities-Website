@@ -32,3 +32,11 @@
     border: none;
     padding: none;
 }
+
+.flex-base {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
