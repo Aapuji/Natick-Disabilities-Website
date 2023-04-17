@@ -19,6 +19,10 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.styledLink:hover {
+  font-weight: bold;
+  font-size: 0.95em;
+}
 
 .commissionLogo {
   /* font-family: 'Roboto Slab', serif; */
@@ -37,10 +41,6 @@
   padding: 10px;
 }
 
-.nav li:hover:after{
-  color: #fff;
-}
-
 
 .nav li {
   display: inline;
@@ -49,7 +49,7 @@
 
 /*NCOD glitches into home at 446px - looks unnatrual, though i dont believe phone resolutions go that low*/
 /*mobile devices*/
-@media (max-width: 578px){
+@media (max-width: 578px) {
 
   .wholeNav {
     position: sticky;
