@@ -33,3 +33,8 @@ hr {
   padding: none;
   background-color: white;
 }
+
+a[data-headlessui-state~="active"] {
+  background-color: rgb(59, 130, 246);
+  color: white;
+}

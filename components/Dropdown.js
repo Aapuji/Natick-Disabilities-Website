@@ -1,30 +1,30 @@
+import { Fragment } from 'react';
+import { Menu } from '@headlessui/react';
 import Link from 'next/link';
-import styles from '../styles/Dropdown.module.css';
-import utils from '../styles/utils.module.css';
-import React, {useState} from 'react';
-
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const Dropdown = () => {
-  const [open, setOpen] = useState(false)
-  return (
-        <div className={styles.dropdown}>
-            <div className={styles.dropdownbtn} onClick = {()=>{setOpen(!open)}}>
-              Click for Resource Section + 
-              <span className = "fas fa-caret-down" onClick = {()=>{setOpen(!open)}}></span>
-            </div>
+  const items = [
+    { href: '/resources/student', label: 'Student' },
+    { href: '/resources/veteran', label: 'Veteran' },
+    { href: '/resources/federal', label: 'Federal' }    
+  ];
 
-              <div className={`dropdowncontainer${open? 'active' : 'inactive'}`}>
-                <div className={styles.dropdowncontent}>
-                    <Link href = "/resources/federal"><div className={styles.dropdownitem}>Federal Resources</div></Link>
-                    <Link href = "/resources/state"><div className={styles.dropdownitem}>Massachussetts Resources</div></Link>
-                    <Link href = "/resources/natick"><div className={styles.dropdownitem}>Natick Resources</div></Link>
-                    <Link href = "/resources/local"><div className={styles.dropdownitem}>Other Local Resources</div></Link>
-                    <Link href = "/resources/veteran"><div className={styles.dropdownitem}>Veteran Resources</div></Link>
-                    <Link href = "/resources/student"><div className={styles.dropdownitem}>Student Resources</div></Link>
-                </div>
-              </div>
-        </div>
-  );
-};
+  return <Menu>
+    <Menu.Button>Choose a Resource Category <ChevronDownIcon
+              style={{marginLeft:2, marginRight:1, height:'1em', width:'1em', color: 'black'}}
+              aria-hidden="true"
+            /></Menu.Button>
+    <Menu.Items>
+      {
+        items.map(item => <>
+          <Menu.Item key={item.href} as={Fragment}>
+            <Link href={item.href}>{item.label}</Link>
+          </Menu.Item>
+        </>)
+      }
+    </Menu.Items>
+  </Menu>;
+}
 
 export default Dropdown;
