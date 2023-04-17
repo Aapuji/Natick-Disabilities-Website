@@ -10,8 +10,8 @@ import Link  from  'next/link';
 
 export default function Veteran() {
   return <>
-    <Layout title="Natick Commission on Disability">
-      <h1 className={styles.veteranheading}>Links for Other Local Resources and Information</h1>
+    <Layout title="Veteran Resources" altText="... alt text goes here ..." hero>
+      <h1 className={styles.veteranheading}>Links for Veteran Resources</h1>
       <div className={styles.veteransectioncontent}>
         <Hyperlink 
           url = "https://www.dav.org/"

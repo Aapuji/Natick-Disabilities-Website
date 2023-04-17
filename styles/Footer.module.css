@@ -12,15 +12,52 @@ a.inline {
     color: var(--cyan);
 }
 
+.contactInline{
+    font-weight: 500;
+    font-size: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    text-decoration: inherit;
+    color: var(--cyan);
+}
+
 a.inline:hover {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bolder;
+}
+
+.contactText{
+    color: rgb(55, 62, 111);
+    font-weight: bold;
+}
+
+.navigationText{
+    color: rgb(55, 62, 111);
+    font-weight: bold;
+}
+
+.accessibilityText{
+    color: rgb(55, 62, 111);
+    font-weight: bold;
+}
+
+.followText{
+    color: rgb(55, 62, 111);
+    font-weight: bold;
 }
 
 .footerContainer{
     display: flex;
     position: relative;
     text-align: center;
+}
+
+.linkContainer{
+    composes: flex-base from './utils.module.css';
+    flex-direction: row;
+    justify-content: space-around;
+    width: 88rem;
 }
 
 #footer{
@@ -36,18 +73,49 @@ a.inline:hover {
     text-align: left;
 }
 
+#contactNav{
+    /*max-width: fit-content;*/
+    /* padding-left: 10px;
+    padding-right: 4px; */
+    margin: 10px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#navigationNav{
+    /*max-width: fit-content;*/
+    margin: 10px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#accessibilityNav{
+    /* max-width: fit-content; */ 
+    margin: 10px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#followNav{
+    /* max-width: fit-content; */
+    margin: 10px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
 #footerLinks {
     margin-top: 15px;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
     line-height: 1.5em;
+    color: rgb(55, 62, 111);
 }
 
 #footerSocials {
     margin-left: auto;
     margin-right: calc(10vw - 50px);
-    padding-top: 50px; /* Used to be 25px */
+    padding-top: 100px; /* Used to be 25px */
 }
 
 #footerSocials a img {
@@ -58,4 +126,19 @@ a.inline:hover {
 
 #footerSocials a {
     height: fit-content;
+}
+
+.small{
+    font-size: small;
+}
+
+#creators{
+    align-self: flex-end;
+    height: fit-content;
+    position: absolute;
+    right: calc(10vw - 110px);
+    bottom: calc(
+        10px
+    );
+    color: rgb(55, 62, 111);
 }

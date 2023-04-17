@@ -12,7 +12,7 @@ import Link  from  'next/link';
 
 export default function State() {
   return <>
-    <Layout title="Natick Commission on Disability">
+    <Layout title="Massachussetts Resources" altText="... alt text goes here ..." hero>
       <h1 className={styles.stateheading}>Links for Massachussetts State Resources</h1>
 
       <h2 className={styles.statesectionheading}>Laws, Regulations, and Rules</h2>

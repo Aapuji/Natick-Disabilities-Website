@@ -6,12 +6,14 @@ import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link  from  'next/link';
 
+
+
 //massadvocates inline ("resources")
 
 export default function Student() {
   return <>
-    <Layout title="Natick Commission on Disability">
-      <h1 className={styles.studentheading}>Links for Other Local Resources and Information</h1>
+    <Layout title="Student Resources" altText="... alt text goes here ..." hero>
+      <h1 className={styles.studentheading}>Links for Student Resources</h1>
       <div className={styles.studentsectioncontent}>
         <Hyperlink 
           url = "https://www.northstarteens.org/"
