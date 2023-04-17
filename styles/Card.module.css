@@ -9,6 +9,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.card:hover {
+    cursor: pointer;
+}
+
 .cardcontent {
     margin-left: 20px;
 }
@@ -40,8 +44,6 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;  /* limit to 4 lines */
 }
-
-/* ICONS */
 
 .icon {
     position: relative;
