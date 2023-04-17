@@ -28,22 +28,22 @@ a.inline:hover {
 }
 
 .contactText{
-    color: rgba(55, 62, 111);
+    color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
 .navigationText{
-    color: rgba(55, 62, 111);
+    color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
 .accessibilityText{
-    color: rgba(55, 62, 111);
+    color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
 .followText{
-    color: rgba(55, 62, 111);
+    color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
@@ -54,9 +54,10 @@ a.inline:hover {
 }
 
 .linkContainer{
-    display: flex;
+    composes: flex-base from './utils.module.css';
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 88rem;
 }
 
 #footer{
@@ -74,32 +75,30 @@ a.inline:hover {
 
 #contactNav{
     /*max-width: fit-content;*/
-    padding-left: 10px;
-    padding-right: 4px;
+    /* padding-left: 10px;
+    padding-right: 4px; */
+    margin: 10px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
 
 #navigationNav{
     /*max-width: fit-content;*/
-    padding-left: 10px;
-    padding-right: 4px;
+    margin: 10px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
 
 #accessibilityNav{
-    /* max-width: fit-content; */  
-    padding-left: 10px;
-    padding-right: 4px;
+    /* max-width: fit-content; */ 
+    margin: 10px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
 
 #followNav{
     /* max-width: fit-content; */
-    padding-left: 10px;
-    padding-right: 4px;
+    margin: 10px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
@@ -110,7 +109,7 @@ a.inline:hover {
     justify-content: space-between;
     text-align: left;
     line-height: 1.5em;
-    color: rgba(55, 62, 111);
+    color: rgb(55, 62, 111);
 }
 
 #footerSocials {
@@ -127,4 +126,19 @@ a.inline:hover {
 
 #footerSocials a {
     height: fit-content;
+}
+
+.small{
+    font-size: small;
+}
+
+#creators{
+    align-self: flex-end;
+    height: fit-content;
+    position: absolute;
+    right: calc(10vw - 110px);
+    bottom: calc(
+        10px
+    );
+    color: rgb(55, 62, 111);
 }

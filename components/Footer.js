@@ -46,14 +46,9 @@ const Footer = () => {
               </div>
         </div>
       </div>
+      <div id = {styles.creators} className = {styles.small}>Created by Devashish Das & Om Sharma 2023</div>
     </footer>
   );
 };
 
 export default Footer;
-
-<div id={styles.footerSocials} className={styles.footerContainer}>
-  <a href="#" id={styles.twitterIcon}><Image src="" alt="twitter-icon" /></a>
-  <a href="#" id={styles.facebookIcon}><Image src="" alt="facebook-icon" /></a>
-  <a href="#" id={styles.instagramIcon}><Image src="" alt="instagram-icon" /></a>
-</div>  
