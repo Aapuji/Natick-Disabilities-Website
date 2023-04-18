@@ -10,6 +10,10 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
+body {
+  background-color: rgb(233, 255, 154);
+}
+
 p {
   font-family: 'Libre Baskerville', serif;
 }
@@ -34,7 +38,16 @@ hr {
   background-color: white;
 }
 
-a[data-headlessui-state~="active"] {
+button {
+  font-family: 'Oxygen', sans-serif;
+}
+
+/* ACTIVE STATE OF DROPDOWN HANDLED HERE */
+button[data-headlessui-state~="active"] {
   background-color: rgb(59, 130, 246);
   color: white;
+}
+
+button[data-headlessui-state~="open"] {
+  
 }

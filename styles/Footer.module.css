@@ -1,4 +1,6 @@
-.large{
+/* Credit to https://github.com/Aapuji */
+
+.large {
     font-size: large;
 }
 
@@ -12,7 +14,7 @@ a.inline {
     color: var(--cyan);
 }
 
-.contactInline{
+.contactInline {
     font-weight: 500;
     font-size: inherit;
     font-family: inherit;
@@ -27,53 +29,54 @@ a.inline:hover {
     font-weight: bolder;
 }
 
-.contactText{
+.contactText {
     color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
-.navigationText{
+.navigationText {
     color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
-.accessibilityText{
+.accessibilityText {
     color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
-.followText{
+.followText {
     color: rgb(55, 62, 111);
     font-weight: bold;
 }
 
-.footerContainer{
+.footerContainer {
     display: flex;
     position: relative;
     text-align: center;
 }
 
-.linkContainer{
+.linkContainer {
     composes: flex-base from './utils.module.css';
     flex-direction: row;
     justify-content: space-around;
     width: 88rem;
 }
 
-#footer{
+#footer {
     background-color: whitesmoke;
     width: 100%;
     height: 350px;
+    margin-top: 2rem;
 }
 
-#footerNav{
+#footerNav {
     max-width: fit-content;
     padding-left: 120px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
 
-#contactNav{
+#contactNav {
     /*max-width: fit-content;*/
     /* padding-left: 10px;
     padding-right: 4px; */
@@ -82,21 +85,21 @@ a.inline:hover {
     text-align: left;
 }
 
-#navigationNav{
+#navigationNav {
     /*max-width: fit-content;*/
     margin: 10px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
 
-#accessibilityNav{
+#accessibilityNav {
     /* max-width: fit-content; */ 
     margin: 10px;
     padding-top: 50px; /* Used to be 100px */
     text-align: left;
 }
 
-#followNav{
+#followNav {
     /* max-width: fit-content; */
     margin: 10px;
     padding-top: 50px; /* Used to be 100px */
@@ -128,11 +131,11 @@ a.inline:hover {
     height: fit-content;
 }
 
-.small{
+.small {
     font-size: small;
 }
 
-#creators{
+#creators {
     align-self: flex-end;
     height: fit-content;
     position: absolute;

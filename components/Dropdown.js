@@ -2,29 +2,61 @@ import { Fragment } from 'react';
 import { Menu } from '@headlessui/react';
 import Link from 'next/link';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import styles from '../styles/Dropdown.module.css';
 
 const Dropdown = () => {
-  const items = [
-    { href: '/resources/student', label: 'Student' },
-    { href: '/resources/veteran', label: 'Veteran' },
-    { href: '/resources/federal', label: 'Federal' }    
+
+  /**
+   * Array of arrays of objects with `href` and `label` attributes.
+   * 
+   * `href` is the url to the webpage (eg. '/resources/federal')
+   * 
+   * `label` is what is shown (as a string, not html)
+   * 
+   * Each inner array denotes a section, which are seperated by mini-`hr`s through the options menu.
+  */
+  const sections = [
+    [ // People
+      { href: '/resources/student', label: 'Student' },
+      { href: '/resources/veteran', label: 'Veteran' }
+    ],
+    [ // Government
+      { href: '/resources/federal', label: 'Federal' },
+      { href: '/resources/state', label: 'State' }
+    ]  
   ];
 
-  return <Menu>
-    <Menu.Button>Choose a Resource Category <ChevronDownIcon
-              style={{marginLeft:2, marginRight:1, height:'1em', width:'1em', color: 'black'}}
-              aria-hidden="true"
-            /></Menu.Button>
-    <Menu.Items>
-      {
-        items.map(item => <>
-          <Menu.Item key={item.href} as={Fragment}>
-            <Link href={item.href}>{item.label}</Link>
-          </Menu.Item>
-        </>)
-      }
-    </Menu.Items>
-  </Menu>;
+  return <div className={styles.menuDiv}>
+    <Menu as="div" className={styles.menu}>
+      <div>  
+        <Menu.Button className={styles.menuButton}>
+          Choose a Resource Category
+          <ChevronDownIcon className={styles.chevronDownIcon} aria-hidden="true" />
+        </Menu.Button>
+      </div>
+      <div className={styles.options}>
+        {
+          sections.map(items => 
+            <div className={styles.section}>
+              <Menu.Items className={styles.items}>
+                {
+                  items.map(item => <>
+                    <Menu.Item 
+                      key={item.href}
+                      as={Fragment}
+                      className={`${styles.item}`}
+                    >
+                      <button className={styles.button}>{item.label}</button>
+                    </Menu.Item>
+                  </>)
+                }
+              </Menu.Items>
+            </div>
+          )
+        }
+      </div>
+    </Menu>
+  </div>;
 }
 
 export default Dropdown;
