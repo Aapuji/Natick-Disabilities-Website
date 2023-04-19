@@ -1,4 +1,3 @@
-// TODO: Use and Import Reset.CSS 
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
