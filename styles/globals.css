@@ -43,11 +43,11 @@ button {
 }
 
 /* ACTIVE STATE OF DROPDOWN HANDLED HERE */
-button[data-headlessui-state~="active"] {
+a[data-headlessui-state~="active"] {
   background-color: rgb(59, 130, 246);
   color: white;
 }
 
-button[data-headlessui-state~="open"] {
+a[data-headlessui-state~="open"] {
   
 }

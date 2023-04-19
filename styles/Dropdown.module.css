@@ -62,14 +62,22 @@
   /* margin: 0.25rem; */
   background-color: white;
   border-top: 1px solid #f7fafc;
-  border-radius: 0.375rem;
-}
-
-.items {
-  /* position: absolute; */
-  /*right: 0;*/
+  /* border-radius: 0.375rem; */
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
   width: 15.25rem;
 }
+
+.firstSection {
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+}
+
+/* .items {
+  /* position: absolute; /
+  /*right: 0;/
+  width: 15.25rem;
+} */
 
 .items:focus-visible {
   outline: auto;
