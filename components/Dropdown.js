@@ -43,7 +43,7 @@ const Dropdown = () => {
                       <Menu.Item 
                         key={item.href}
                         as={Fragment}
-                        className={`${styles.item}`}
+                        className={styles.item}
                       >
                         <Link href={item.href} className={styles.button}>{item.label}</Link>
                       </Menu.Item>
