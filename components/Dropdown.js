@@ -6,31 +6,22 @@ import styles from '../styles/Dropdown.module.css';
 
 const Dropdown = () => {
   /**
-   * Array of arrays of objects with `href` and `label` attributes.
+   * Array of object with `type`, `href`, and `label` attributes.
+   * 
+   * `type` is the type of item it is: `option` or `divider`. `option` is an option that the user can choose, while `divider` is a horizontal bar.
    * 
    * `href` is the url to the webpage (eg. '/resources/federal')
    * 
    * `label` is what is shown (as a string, not html)
-   * 
-   * Each inner array denotes a section, which are seperated by mini-`hr`s through the options menu.
   */
-  const sections = [
-    [ // Emergency
-      { href: '/resources/veteran', label: 'Emergency' }
-    ],
-    [ // People
-      { href: '/resources/student', label: 'Student' },
-      { href: '/resources/veteran', label: 'Veteran' }
-    ],
-    [ // Government
-      { href: '/resources/federal', label: 'Federal' },
-      { href: '/resources/state', label: 'State' }
-    ]  
-  ];
-
   const items = [
-    { href: '/resources/student', label: 'Student' },
-    { href: '/resources/veteran', label: 'Veteran' },
+    { type: 'option', href: '/index', label: 'Emergency' }, // Emergency
+    { type: 'divider' },
+    { type: 'option', href: '/resources/student', label: 'Student' }, // People
+    { type: 'option', href: '/resources/veteran', label: 'Veteran' },
+    { type: 'divider' },
+    { type: 'option', href: '/resources/federal', label: 'Federal' }, // Government
+    { type: 'option', href: '/resources/state', label: 'State' }
   ];
 
   let [open, setOpen] = useState(false);
@@ -48,17 +39,23 @@ const Dropdown = () => {
       <div className={styles.options}>
         {
           // sections.map((items, i) => 
-            <Menu.Items className={`${styles.section} ${/*i == 0 ? styles.firstSection : */''}`}>
+            <Menu.Items className={`${styles.items} ${/*i == 0 ? styles.firstSection : */''}`}>
               {
-                items.map(item => <>
-                  <Menu.Item 
-                    key={item.href}
-                    as={Fragment}
-                    className={`${styles.item}`}
-                  >
-                    <Link href={item.href} className={styles.button}>{item.label}</Link>
-                  </Menu.Item>
-                </>)
+                items.map(item => {
+                  if (item.type === 'option') {
+                    return <>
+                      <Menu.Item 
+                        key={item.href}
+                        as={Fragment}
+                        className={`${styles.item}`}
+                      >
+                        <Link href={item.href} className={styles.button}>{item.label}</Link>
+                      </Menu.Item>
+                    </>;
+                  } else if (item.type === 'divider') {
+                    return <hr className={styles.divider} />
+                  }
+                })
               }
             </Menu.Items>
           // )
