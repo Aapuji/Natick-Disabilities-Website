@@ -38,6 +38,12 @@ hr {
   background-color: white;
 }
 
+main {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(233, 255, 154); /*section background*/
+}
+
 button {
   font-family: 'Oxygen', sans-serif;
 }

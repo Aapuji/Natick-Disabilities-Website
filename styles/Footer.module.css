@@ -27,6 +27,7 @@ a.inline {
 a.inline:hover {
     text-decoration: none;
     font-weight: bolder;
+    font-size: 0.95em;
 }
 
 .contactText {
@@ -45,6 +46,11 @@ a.inline:hover {
 }
 
 .followText {
+    color: rgb(55, 62, 111);
+    font-weight: bold;
+}
+
+.emergencyText {
     color: rgb(55, 62, 111);
     font-weight: bold;
 }
@@ -100,6 +106,13 @@ a.inline:hover {
 }
 
 #followNav {
+    /* max-width: fit-content; */
+    margin: 10px;
+    padding-top: 50px; /* Used to be 100px */
+    text-align: left;
+}
+
+#emergencyNav{
     /* max-width: fit-content; */
     margin: 10px;
     padding-top: 50px; /* Used to be 100px */
