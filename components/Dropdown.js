@@ -24,10 +24,6 @@ const Dropdown = () => {
     { type: 'option', href: '/resources/state', label: 'State' }
   ];
 
-  let [open, setOpen] = useState(false);
-
-
-
   return <div className={styles.menuDiv}>
     <Menu as="div" className={styles.menu}>
       <div>  
