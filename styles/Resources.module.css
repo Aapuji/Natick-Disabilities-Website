@@ -1,16 +1,9 @@
-.dropdowncontaineractive{
-    color: blue;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    transition: 0.2s ease;
+.contentWrapper {
+    width: 80%;
+    margin: auto;
+    background-color: whitesmoke;
 }
 
-.dropdowncontainerinactive{
-    color: red;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px); /*change for liking*/
-    transition: 0.2s ease;
+.contentLeft {
+    
 }
-

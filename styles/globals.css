@@ -27,10 +27,6 @@ a {
   box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-}
-
 hr {
   margin: none;
   border: none;
@@ -42,6 +38,7 @@ main {
   width: 100%;
   height: fit-content;
   background-color: rgb(233, 255, 154); /*section background*/
+  /* padding: 2rem; */
 }
 
 button {
@@ -52,8 +49,4 @@ button {
 a[data-headlessui-state~="active"] {
   background-color: rgb(59, 130, 246);
   color: white;
-}
-
-a[data-headlessui-state~="open"] {
-  
 }

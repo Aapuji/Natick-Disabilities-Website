@@ -6,7 +6,7 @@ import bgImg from '../public/bg.jpg';
 
 const Hero = ({ title, altText, img }) => {
   return <>
-    <header className={`container ${styles.heroHeader}`}>
+    <header className={`${utils.flexBase} ${styles.heroHeader}`}>
       <Navbar />
       <Image
         className={utils.back}
