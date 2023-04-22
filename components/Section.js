@@ -17,7 +17,7 @@ const Section = ({
     <section id={id} className={`${styles.section} ${className}`} style={style}>
       <div className={`${styles.img} ${utils.imgWrapper}`}>
         <Image
-          src='/../public/bg.jpg' // Will be like the header images in https://natickma.gov
+          src='/../public/sectionimg.jpg' // Will be like the header images in https://natickma.gov
           fill
           name={`${imgName} Introductory Banner`} 
           alt={`${imgName} Introductory Banner`}
