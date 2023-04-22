@@ -8,8 +8,8 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 const Profile = ({ name, desc, url }) => {
     return <>
         <div className={styles.verticalProfiles}>
-            <h2>{ name }</h2>
-            <Image src = { url } alt = { `Picture of ${ name }` } width  = "500" height = "500"></Image>
+            <h2 className={styles.aboveImage}>{ name }</h2>
+            <Image src = { url } alt = { `Picture of ${ name }` } width  = "200" height = "200" className={styles.img}></Image>
             <p className={styles.belowImage}>{ desc }</p>
         </div>
     </>;

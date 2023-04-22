@@ -32,10 +32,12 @@
 #multiProfile {
     width: 90%;
     margin: auto;
-    flex-direction: row;
+    display: flex;
     justify-content: space-around;
     border-radius: 10px;
     flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 5rem;
 }
 
 #multiProfile > article {

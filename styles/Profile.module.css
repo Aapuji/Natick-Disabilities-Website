@@ -2,19 +2,18 @@
     flex-direction: column;
 }
 
-/*
-.verticalProfiles div {
-    width: 31.25rem; 500 px
+.aboveImage{
+    text-align: center;
+    font-size: larger;
 }
 
-.verticalProfiles div p {
-    margin: 10px;
+.img{
+    width: 100%;
 }
-*/
-
-
 
 .belowImage {
+    font-size: small;
     margin-top: 10px;
+    text-align: justify;
 }
 
