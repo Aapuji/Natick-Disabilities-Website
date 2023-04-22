@@ -4,6 +4,17 @@ import styles from '../styles/About.module.css';
 import Image from 'next/image';
 import Section from '../components/Section';
 
+const members = [
+  { name: 'Amanda Hsiao', startDate: 'Jul 01, 2020', term: 2, position: 'Secretary' },
+  { name: 'Elaine B. Ostroff', startDate: 'Jul 01, 2020', term: 3, position: 'Vice-Chair/Commissioner' },
+  { name: 'Scott W. Landgren', startDate: 'Dec 15, 2021', term: 1, position: 'Commissioner' },
+  { name: 'Lori Zalt', startDate: 'Jul 01, 2021', term: 4, position: 'Chair/Commissioner' },
+  { name: 'Eric Gagnebin', startDate: 'Jul 01, 2021', term: 2, position: 'Commissioner' },
+  { name: 'Aaron M. Spelker', startDate: 'Jul 01, 2022', term: 2, position: 'Treasurer' },
+  { name: 'Susan B. Peters', startDate: 'Jul 01, 2022', term: 4, position: 'Commissioner' }
+]
+
+
 export default function About() {
   return <>
     <Layout title="About" altText="... alt text goes here ..." hero>
@@ -28,6 +39,26 @@ export default function About() {
         <Section id = "meetTheCommission" imgName = "Meet the Commission" title = "Meet the Commission">
           <br />
         </Section>
+        {
+          <table className={styles.table}>
+            <tr>
+              <th>Name</th>
+              <th>Term Start Date</th>
+              <th>Term No.</th>
+              <th>Position</th>
+            </tr>
+            {
+              members.map(member => <>
+                <tr>
+                  <td>{member.name}</td>
+                  <td>{member.startDate}</td>
+                  <td>{member.term}</td>
+                  <td>{member.position}</td>
+                </tr>
+              </>)
+            }
+          </table>
+        }
       </main>
     </Layout>
   </>;

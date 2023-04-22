@@ -57,3 +57,11 @@ a[data-headlessui-state~="active"] {
 a[data-headlessui-state~="open"] {
   
 }
+
+table, th, td {
+  border: 1px solid;
+}
+
+th,td {
+  text-align: center;
+}
