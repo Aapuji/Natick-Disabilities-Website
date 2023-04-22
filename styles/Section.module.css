@@ -1,4 +1,4 @@
-.img {
+.imageWrapper {
   width: 80%;
   height: 50px;
  
@@ -10,6 +10,14 @@
 
   margin: auto;
   margin-bottom: 0.5rem;
+}
+
+.image {
+  object-fit: contain;
+  width: 100%;
+  position: relative;
+  height: unset;
+  /*Aspect Ratio: 978 X 53*/
 }
 
 .section {

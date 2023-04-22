@@ -15,12 +15,16 @@ const Section = ({
 }) => {
   return <>
     <section id={id} className={`${styles.section} ${className}`} style={style}>
-      <div className={`${styles.img} ${utils.imgWrapper}`}>
+      <div className={`${styles.imageWrapper} ${utils.imgWrapper}`}>
         <Image
           src='/../public/sectionimg.jpg' // Will be like the header images in https://natickma.gov
-          fill
+          // fill
           name={`${imgName} Introductory Banner`} 
           alt={`${imgName} Introductory Banner`}
+          className={styles.image}
+          layout="responsive"
+          width={97800}
+          height={5300}
         />
       </div>
       { title ? <h1 className={styles.header}>{title}</h1> : <></> }
