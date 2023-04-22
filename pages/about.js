@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import styles from '../styles/About.module.css';
 import Image from 'next/image';
 import Section from '../components/Section';
+import Profile from '../components/Profile'
 
 const members = [
   { name: 'Amanda Hsiao', startDate: 'Jul 01, 2020', term: 2, position: 'Secretary' },
@@ -38,6 +39,25 @@ export default function About() {
         <Section id = "meetTheCommission" imgName = "Meet the Commission" title = "Meet the Commission">
           <br />
         </Section>
+
+        <div id = {styles.multiProfile}>
+          <Profile
+            name = "Dev"
+            desc = "Dev and Om created this website"
+            url = '/public/vertlogo.png'
+          />
+          <Profile
+            name = "Dev"
+            desc = "Dev and Om created this website"
+            url = '/public/vertlogo.png'
+          />
+          <Profile
+            name = "Dev"
+            desc = "Dev and Om created this website"
+            url = '/public/vertlogo.png'
+          />
+        </div>
+
         {
           <table className={styles.table}>
             <tr>
@@ -62,4 +82,3 @@ export default function About() {
     </Layout>
   </>;
 }
-//error: bg.jpg missing width property

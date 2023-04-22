@@ -1,0 +1,20 @@
+.verticalProfiles {
+    flex-direction: column;
+}
+
+/*
+.verticalProfiles div {
+    width: 31.25rem; 500 px
+}
+
+.verticalProfiles div p {
+    margin: 10px;
+}
+*/
+
+
+
+.belowImage {
+    margin-top: 10px;
+}
+

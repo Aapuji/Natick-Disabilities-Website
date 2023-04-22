@@ -27,6 +27,29 @@
     margin-top: -10px;
 }
 
+#multiProfile {
+    width: 90%;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+#multiProfile > article {
+    margin: none;
+    padding: none;
+    width: 30%;
+    min-width: 30%;
+}
+
+#multiProfile > article img {
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .table {
     margin-left: auto;
     margin-right: auto;
