@@ -12,7 +12,6 @@ export default function Home(/*{ posts }*/) {
   return <>
     <Layout title="Natick Commission on Disability" altText="... alt text goes here ..." hero>
       <main>
-        <hr />
         <Section id="emergencyInfo" imgName="Emergency Information" title="Emergency Information" subtitle="Get guidance and support.">
           <br />
           <br />

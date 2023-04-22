@@ -19,7 +19,6 @@ export default function About() {
   return <>
     <Layout title="About" altText="... alt text goes here ..." hero>
       <main>
-        <br />
         <Section id = "aboutTheCommission" imgName = "About the Commission" title = "About the Commission">
           <div className={styles.aboutcontent}>
             <div className={styles.purpose}>

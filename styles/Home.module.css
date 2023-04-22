@@ -5,16 +5,3 @@
   background-color: rgb(233, 255, 154);
 }
 */
-
-.sectionHeaderImg {
-  width: 80%;
-  height: 50px;
- 
-  background-color: green;
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; */
-
-  margin: auto;
-}

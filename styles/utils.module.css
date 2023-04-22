@@ -39,4 +39,8 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  }
+}
+
+.flexBase {
+    composes: flex-base;
+}
