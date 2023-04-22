@@ -13,7 +13,7 @@ const members = [
   { name: 'Eric Gagnebin', startDate: 'Jul 01, 2021', term: 2, position: 'Commissioner' },
   { name: 'Aaron M. Spelker', startDate: 'Jul 01, 2022', term: 2, position: 'Treasurer' },
   { name: 'Susan B. Peters', startDate: 'Jul 01, 2022', term: 4, position: 'Commissioner' }
-]
+];
 
 
 export default function About() {
@@ -44,38 +44,40 @@ export default function About() {
           <Profile
             name = "Dev"
             desc = "Dev and Om created this website"
-            url = '/public/vertlogo.png'
+            url = '/../public/vertlogo.png'
           />
           <Profile
             name = "Dev"
             desc = "Dev and Om created this website"
-            url = '/public/vertlogo.png'
+            url = '/../public/vertlogo.png'
           />
           <Profile
             name = "Dev"
             desc = "Dev and Om created this website"
-            url = '/public/vertlogo.png'
+            url = '/../public/vertlogo.png'
           />
         </div>
 
         {
           <table className={styles.table}>
-            <tr>
-              <th>Name</th>
-              <th>Term Start Date</th>
-              <th>Term No.</th>
-              <th>Position</th>
-            </tr>
-            {
-              members.map(member => <>
-                <tr>
-                  <td>{member.name}</td>
-                  <td>{member.startDate}</td>
-                  <td>{member.term}</td>
-                  <td>{member.position}</td>
-                </tr>
-              </>)
-            }
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <th>Term Start Date</th>
+                <th>Term No.</th>
+                <th>Position</th>
+              </tr>
+              {
+                members.map(member => <>
+                  <tr>
+                    <td>{member.name}</td>
+                    <td>{member.startDate}</td>
+                    <td>{member.term}</td>
+                    <td>{member.position}</td>
+                  </tr>
+                </>)
+              }
+            </tbody>
           </table>
         }
       </main>

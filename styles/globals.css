@@ -51,14 +51,18 @@ a[data-headlessui-state~="active"] {
   color: white;
 }
 
-a[data-headlessui-state~="open"] {
-  
+table {
+  border: 1px solid black;
 }
 
-table, th, td {
-  border: 1px solid;
-}
-
-th,td {
+th {
+  border: 1px solid black;
   text-align: center;
+  padding: 0.75rem;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.5rem;
 }
