@@ -1,6 +1,5 @@
 .imageWrapper {
   width: 80%;
-  height: 50px;
  
   background-color: rgb(233, 255, 154);
   /* background-repeat: no-repeat;
@@ -9,7 +8,7 @@
   background-attachment: fixed; */
 
   margin: auto;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
 }
 
 .image {
@@ -17,7 +16,8 @@
   width: 100%;
   position: relative;
   height: unset;
-  /*Aspect Ratio: 978 X 53*/
+  /* Aspect Ratio: 978 X 53 */
+  /* Ratio between image width and my viewport width: 978/1280 */
 }
 
 .section {

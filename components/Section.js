@@ -22,7 +22,6 @@ const Section = ({
           name={`${imgName} Introductory Banner`} 
           alt={`${imgName} Introductory Banner`}
           className={styles.image}
-          layout="responsive"
           width={97800}
           height={5300}
         />
