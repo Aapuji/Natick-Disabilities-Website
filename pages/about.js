@@ -44,17 +44,17 @@ export default function About() {
           <Profile
             name = "Dev"
             desc = "Dev and Om created this website"
-            url = '/../public/vertlogo.png'
+            url = '/../public/default-profile.png'
           />
           <Profile
             name = "Dev"
             desc = "Dev and Om created this website"
-            url = '/../public/vertlogo.png'
+            url = '/../public/default-profile.png'
           />
           <Profile
             name = "Dev"
             desc = "Dev and Om created this website"
-            url = '/../public/vertlogo.png'
+            url = '/../public/default-profile.png'
           />
         </div>
 
