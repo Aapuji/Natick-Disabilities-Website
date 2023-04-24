@@ -42,8 +42,8 @@ export default function About() {
 
         <div id = {styles.multiProfile}>
           <Profile
-            name = "Dev"
-            desc = "Dev and Om created this website"
+            name = "Lori Zalt (Chairwoman)"
+            desc = "I have a Bachelors in Science Biology / Minor Psychology from Northeastern University 1985 - 1991. I also have an Associate degree in History of Fine arts / Massachusetts School of Arts 1987. I Worked in cardiovascular pulmonary research at Boston University School of Medicine under HIH grants clinical trials for cardiovascular studies 1994-2011. I am an educator of Service awareness to hospitals and corporate business for retail. I am board certified by national association of service dogs and animals in Michigan. I studied ADA compliance law and am a certified MOD of Massachusetts and ADA monitor of Massachusetts. My positions are as follows: member of of National association of deaf and hard hearing 2019 - present, Commissioner from June 2013 - June 2018, Chairwoman - June 2018 -present. I am an active supporter of disability rights and advocacy."
             url = '/../public/default-profile.png'
           />
           <Profile

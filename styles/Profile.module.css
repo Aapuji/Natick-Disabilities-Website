@@ -1,5 +1,7 @@
 .verticalProfiles {
     flex-direction: column;
+    width: 200px;
+    height: 200px;
 }
 
 .aboveImage{
@@ -12,7 +14,7 @@
 }
 
 .belowImage {
-    font-size: small;
+    font-size: xx-small;
     margin-top: 10px;
     text-align: justify;
 }
