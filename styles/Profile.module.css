@@ -1,7 +1,7 @@
 .verticalProfiles {
     flex-direction: column;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
 }
 
 .aboveImage{
@@ -10,7 +10,10 @@
 }
 
 .img{
-    width: 100%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    margin-left: 25%;
 }
 
 .belowImage {
