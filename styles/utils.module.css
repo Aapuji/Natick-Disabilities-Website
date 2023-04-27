@@ -44,3 +44,12 @@
 .flexBase {
     composes: flex-base;
 }
+
+.inlineLink {
+    color: rgba(59, 130, 246);
+    text-decoration: inherit;
+}
+
+.inlineLink:hover {
+    text-decoration: underline;
+}

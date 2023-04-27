@@ -85,34 +85,36 @@ export default function About() {
             />
           </div>
         </Section>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <td>Name</td>
-              <td>Term Start Date</td>
-              <td>Term No.</td>
-              <td>Position</td>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              members.map(member => <tr key={member.key}>
-                <td 
-                  key={`${member.key}NAME${member.name}`}
-                >{member.name}</td>
-                <td 
-                  key={`${member.key}SD${member.startDate}`}
-                >{member.startDate}</td>
-                <td 
-                  key={`${member.key}TERM${member.term}`}
-                >{member.term}</td>
-                <td 
-                  key={`${member.key}POS${member.position}`}
-                >{member.position}</td>
-              </tr>)
-            }
-          </tbody>
-        </table>
+        <Section title="Member Roster" subtitle="Information about the Members" imgName="Member Roster">
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Term Start Date</th>
+                <th>Term No.</th>
+                <th>Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                members.map(member => <tr key={member.key}>
+                  <td 
+                    key={`${member.key}NAME${member.name}`}
+                  >{member.name}</td>
+                  <td 
+                    key={`${member.key}SD${member.startDate}`}
+                  >{member.startDate}</td>
+                  <td 
+                    key={`${member.key}TERM${member.term}`}
+                  >{member.term}</td>
+                  <td 
+                    key={`${member.key}POS${member.position}`}
+                  >{member.position}</td>
+                </tr>)
+              }
+            </tbody>
+          </table>
+        </Section>
       </main>
     </Layout>
   </>;
