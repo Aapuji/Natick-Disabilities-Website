@@ -22,7 +22,6 @@ const Dropdown = () => {
     { type: 'divider' },
     { type: 'option', href: '/resources/federal', label: 'Federal' }, // Government
     { type: 'option', href: '/resources/state', label: 'State' },
-    { type: 'option', href: '/', label: 'Hello How are you doing today? I hope you are well.' }
   ];
 
   return <div className={styles.menuDiv}>
