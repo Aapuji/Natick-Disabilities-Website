@@ -10,9 +10,9 @@ const Dropdown = () => {
    * 
    * `type` is the type of item it is: `option` or `divider`. `option` is an option that the user can choose, while `divider` is a horizontal bar.
    * 
-   * `href` is the url to the webpage (eg. '/resources/federal')
+   * `href` is the url to the webpage (eg. '/resources/federal'), relative to base url.
    * 
-   * `label` is what is shown (as a string, not html)
+   * `label` is what is shown (as a string, not html).
   */
   const items = [
     { type: 'option', href: '/', label: 'Emergency' }, // Emergency
@@ -21,7 +21,8 @@ const Dropdown = () => {
     { type: 'option', href: '/resources/veteran', label: 'Veteran' },
     { type: 'divider' },
     { type: 'option', href: '/resources/federal', label: 'Federal' }, // Government
-    { type: 'option', href: '/resources/state', label: 'State' }
+    { type: 'option', href: '/resources/state', label: 'State' },
+    { type: 'option', href: '/', label: 'Hello How are you doing today? I hope you are well.' }
   ];
 
   return <div className={styles.menuDiv}>
@@ -34,7 +35,6 @@ const Dropdown = () => {
       </div>
       <div className={styles.options}>
         {
-          // sections.map((items, i) => 
             <Menu.Items className={`${styles.items} ${/*i == 0 ? styles.firstSection : */''}`}>
               {
                 items.map(item => {

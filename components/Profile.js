@@ -9,7 +9,13 @@ const Profile = ({ name, desc, url }) => {
     return <>
         <div className={styles.verticalProfiles}>
             <h2 className={styles.aboveImage}>{ name }</h2>
-            <Image src = { url } alt = { `Picture of ${ name }` } width  = "200" height = "200" className={styles.img}></Image>
+            <Image
+                src={url}
+                alt={`Picture of ${ name }`}
+                width={200} 
+                height={200}
+                className={styles.img}
+            />
             <p className={styles.belowImage}>{ desc }</p>
         </div>
     </>;
