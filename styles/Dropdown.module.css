@@ -1,7 +1,7 @@
 .menuDiv {
   /* position: fixed;
   top: 16px; */
-  width: 500px;
+  width: fit-content;
   text-align: right;
 }
 
@@ -11,6 +11,7 @@
   text-align: left;
   --menu-text-color: white;
   --option-text-color: black;
+  padding: 0.5rem;
 }
 
 .menuButton {
@@ -19,18 +20,24 @@
   justify-content: center;
   border-radius: 0.375rem;
   border: none;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-image: -moz-linear-gradient(to top right, rgba(55, 62, 111, 0.75), rgba(59, 130, 246, 0.75));
+  background-image: -o-linear-gradient(to top right, rgba(55, 62, 111, 0.75), rgba(59, 130, 246, 0.75));
+  background-image: -webkit-linear-gradient(to top right, rgba(55, 62, 111, 0.75), rgba(59, 130, 246, 0.75));
+  background-image: linear-gradient(to top right, rgba(55, 62, 111, 0.75), rgba(59, 130, 246, 0.75));
   padding-right: 1rem;
   padding-left: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: bold;
   color: var(--menu-text-color);
 }
 
 .menuButton:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-image: -moz-linear-gradient(to top right, rgba(55, 62, 111, 1), rgba(59, 130, 246, 1));
+  background-image: -o-linear-gradient(to top right, rgba(55, 62, 111, 1), rgba(59, 130, 246, 1));
+  background-image: -webkit-linear-gradient(to top right, rgba(55, 62, 111, 1), rgba(59, 130, 246, 1));
+  background-image: linear-gradient(to top right, rgba(55, 62, 111, 1), rgba(59, 130, 246, 1));
 }
 
 .menuButton:focus {
@@ -73,6 +80,7 @@
   color: var(--option-text-color);
   font-family: 'Oxygen', sans-serif;
   padding-left: 0.5em;
+  overflow-wrap: break-word;
 }
 
 .divider {
