@@ -1,5 +1,4 @@
 .content {
-    /* margin-left: 20px; */
     text-align: left;
     width: 80%;
     margin: auto;
@@ -60,6 +59,6 @@
     width: 75%;
     border: 1px solid;
     background-color: whitesmoke;
-    margin-top: 40rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 }

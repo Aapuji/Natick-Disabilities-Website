@@ -21,7 +21,7 @@ export default function About() {
     <Layout title="About" altText="... alt text goes here ..." hero>
       <main>
         <Section id = "aboutTheCommission" imgName = "About the Commission" title = "About the Commission">
-          <div className={styles.aboutcontent}>
+          <div className={styles.content}>
             <div className={styles.purpose}>
               <div className={styles.headingBGM}>
                 <h3>Background and Mission Statement</h3>

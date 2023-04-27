@@ -18,7 +18,7 @@ const Hero = ({ title, altText, img }) => {
         style={{border: 'yellow solid 0px'}}
       /> 
       <div id={styles.heroImgText}>
-        <h1 className={utils.center} role="title">{title}</h1>
+        <h1 className={utils.center} id = {styles.headerText} role="title">{title}</h1>
       </div>
     </header>
   </>;

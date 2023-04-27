@@ -11,7 +11,7 @@ const Footer = () => {
               <div id = {styles.footerLinks} className={styles.footerContainer}>
                 <Link href = "mailto: natickcommissionondisability@gmail.com" className = {styles.inline}>natickcommissionondisability@gmail.com</Link>
                 <a className = {styles.contactInline}>13 East Central Street Natick, MA 01760</a>
-                <a className = {styles.contactInline}>Ph: (508)-647-6400</a>
+                <a className = {styles.contactInline}>Ph: 508-647-6400</a>
                 <Link href = "https://natickma.granicus.com/boards/forms/265/apply/" className = {styles.inline}>Apply</Link>
                 <br />
               </div>
@@ -45,12 +45,9 @@ const Footer = () => {
         <div id = {styles.emergencyNav} className = {styles.large}>
               <div className = {styles.emergencyText}>Emergency</div>
               <div id = {styles.footerLinks} className={styles.footerContainer}>
-                <Link className = {styles.inline} href = '/resources'>Insert Emergency Info Link</Link>
-                <a className = {styles.contactInline}>911</a>
-                <a className = {styles.contactInline}>Suicide Hotline: 508(983)(bababa)</a>
-                <a className = {styles.contactInline}>Other Things</a>
-                <a className = {styles.contactInline}>Other Things</a>
-                <a className = {styles.contactInline}>Other Things</a>
+                <Link className = {styles.inline} href = '/resources'>Emergency Information Page</Link>
+                <a className = {styles.contactInline}>Disability Abuse Hotline: 1-800-426-9009</a>
+                <a className = {styles.contactInline}>Veterans Crisis Line: 1-800-273-8255</a>
                 <br />
               </div>
         </div>

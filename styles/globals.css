@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background-color: rgb(233, 255, 154);
+  background-color: white;
 }
 
 p {
@@ -37,7 +37,7 @@ hr {
 main {
   width: 100%;
   height: fit-content;
-  background-color: rgb(233, 255, 154); /*section background*/
+  background-color: white; /*section background*/
   /* padding: 2rem; */
 }
 
