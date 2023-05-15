@@ -47,3 +47,36 @@
     height: 3px;
     border: none;
 }
+
+.wrapperOne {
+
+}
+
+.wrapperTwo {
+    animation: slideTwoAnim 20s infinite;
+}
+
+.wrapperThree {
+    animation: slideThreeAnim 20s infinite;
+}
+
+@keyframes
+slideTwoAnim {
+    0%{opacity:0;}
+    17%{opacity:0;}
+    33%{opacity:1;}
+    50%{opacity:1;}
+    67%{opacity:0;}
+    100%{opacity:0;}
+}
+
+@keyframes
+slideThreeAnim {
+    0%{opacity:0;}
+    17%{opacity:0;}
+    33%{opacity:1;}
+    50%{opacity:1;}
+    67%{opacity:0;}
+    100%{opacity:0;}
+}
+

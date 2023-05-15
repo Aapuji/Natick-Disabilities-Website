@@ -21,6 +21,7 @@ export default function About() {
     <Layout title="About" altText="... alt text goes here ..." hero>
       <main>
         <Section id="aboutTheCommission" imgName="About the Commission" title="About the Commission">
+          <br />
           <div className={styles.content}>
             <div className={styles.purpose}>
               <div className={styles.headingBGM}>
@@ -37,6 +38,7 @@ export default function About() {
           </div>
         </Section>
         <Section id="meetTheCommission" imgName="Meet the Commission" title="Meet the Commission">
+          <br />
           <div id = {styles.multiProfile}>
             <Profile
               name = "Lori Zalt (Chairwoman)"
@@ -86,6 +88,7 @@ export default function About() {
           </div>
         </Section>
         <Section title="Member Roster" subtitle="Information about the Members" imgName="Member Roster">
+          <br />
           <table className={styles.table}>
             <thead>
               <tr>
