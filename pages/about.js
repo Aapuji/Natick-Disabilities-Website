@@ -55,8 +55,19 @@ export default function About() {
           <div id = {styles.profiles}>
             {
               profiles.map((profile, i) => i % 2 == 0 ?
-                <Profile heading={profile.name} desc={profile.desc} url={profile.img} /> :
-                <Profile heading={profile.name} desc={profile.desc} url={profile.img} flipped />
+                <Profile 
+                  name={profile.name} 
+                  position={profile.position} 
+                  desc={profile.desc} 
+                  url={profile.img}
+                /> :
+                <Profile 
+                  name={profile.name}
+                  position={profile.position}
+                  desc={profile.desc}
+                  url={profile.img}
+                  flipped
+                />
               )
             }
           </div>

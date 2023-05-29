@@ -5,32 +5,34 @@ import { WiTime3 } from 'react-icons/wi';
 import { FcCalendar } from 'react-icons/fc';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
-const Profile = ({ heading, desc, url, flipped = false }) => {
+const Profile = ({ name, position, desc, url, flipped = false }) => {
     return <div className={styles.container}>
         {
             flipped ? 
                 <>
                     <Image
                         src={url}
-                        alt={`Picture of ${ heading }`}
+                        alt={`Picture of ${ name }`}
                         width={200} 
                         height={200}
                         className={`${styles.img} ${styles.imgFlipped}`}
                     />
                     <div className={styles.content}>
-                        <h2 className={styles.name}>{heading}</h2>
+                        <h2 className={styles.name}>{name}</h2>
+                        <h4 className={styles.position}>{position.toUpperCase()}</h4>
                         <p className={styles.desc}>{desc}</p>
                     </div>
                 </> 
             :
                 <>
                     <div className={styles.content}>
-                        <h2 className={styles.name}>{heading}</h2>
+                        <h2 className={styles.name}>{name}</h2>
+                        <h4 className={styles.position}>{position.toUpperCase()}</h4>
                         <p className={styles.desc}>{desc}</p>
                     </div>
                     <Image
                         src={url}
-                        alt={`Picture of ${ heading }`}
+                        alt={`Picture of ${ name }`}
                         width={200} 
                         height={200}
                         className={`${styles.img} ${styles.imgNormal}`}

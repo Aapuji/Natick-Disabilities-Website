@@ -4,19 +4,34 @@
     margin-bottom: 0.5rem;
 }
 
-.verticalProfiles {
-    flex-direction: column;
-    width: 400px;
-    height: 400px;
+.heading {
+    text-align: left;
 }
 
-.heading {
-    text-align: center;
-    font-size: larger;
+.name {
+    composes: heading;
+    font-size: x-large;
+    margin-bottom: 0;
 }
+
+.position {
+    composes: heading;
+    color: gray;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.desc {
+    width: auto;
+    margin-top: 10px;
+    margin-right: 2rem;
+    text-align: justify;
+    font-size: small;
+}
+
 
 .img {
-    /* width: 50%; */
     height: 200px;
     text-align: center;
 }
@@ -27,12 +42,4 @@
 
 .imgFlipped {
     margin-right: 2.5rem;
-}
-
-.desc {
-    width: auto;
-    margin-top: 10px;
-    margin-right: 2rem;
-    text-align: justify;
-    font-size: small;
 }
