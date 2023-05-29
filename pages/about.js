@@ -85,7 +85,8 @@ export default function About() {
             </thead>
             <tbody>
               {
-                members.map(member => <tr key={`TABLE${member.key}`}>
+                members.map((member, i) => 
+                <tr key={`TABLE${member.key}`} className={i % 2 == 0 ? styles.evenRow : styles.oddRow}>
                   <td 
                     key={`${member.key}NAME${member.name}`}
                   >{member.name}</td>

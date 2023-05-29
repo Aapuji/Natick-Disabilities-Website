@@ -50,3 +50,11 @@
     /* margin-top: 10rem;
     margin-bottom: 10rem; */
 }
+
+.evenRow {
+    background-color:white;
+}
+
+.oddRow {
+    background-color: whitesmoke;
+}
