@@ -56,6 +56,7 @@
     animation: slideThreeAnim 20s infinite;
 }
 
+/*
 @keyframes
 slideTwoAnim {
     0%{opacity:0;}
@@ -75,4 +76,4 @@ slideThreeAnim {
     67%{opacity:0;}
     100%{opacity:0;}
 }
-
+*/
