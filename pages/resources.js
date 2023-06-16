@@ -1,19 +1,9 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import Head from 'next/head';
-import Layout from '../components/Layout';
 import styles from '../styles/Resources.module.css';
 import Dropdown from '../components/Dropdown';
 import Section from '../components/Section';
 
-export default function Resources() {
-  return <>
-    <Layout title="Natick Commission on Disability">
-      <h1>Info</h1>
-      <h1>HELLO</h1>
-    </Layout>
-  </>;
-}
 export default function Resources() {
   return <>
     <Layout title="Resources" altText="... alt text goes here ..." hero>

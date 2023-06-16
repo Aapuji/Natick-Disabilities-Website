@@ -48,7 +48,9 @@ const Dropdown = () => {
                       </Menu.Item>
                     </>;
                   } else if (item.type === 'divider') {
-                    return <hr className={styles.divider} />
+                    return <>
+                      <hr className={styles.divider} />
+                    </>
                   }
                 })
               }
