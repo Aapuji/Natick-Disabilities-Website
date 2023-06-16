@@ -5,6 +5,28 @@ import utils from '../styles/utils.module.css';
 import Link from 'next/link';
 import * as WPU from '../utils/wputils';
 
+/* TODO: Add...
+
+import * as WPU from '../utils/wputils';
+
+const WP_SERVER = process.env.WP_SERVER;
+
+export default function Home({ posts, orderDesc }) {
+
+  console.log('BOTH', posts, '\n', orderDesc);
+
+  WPU.orderPageContent(orderDesc, posts.nodes);
+
+  return <>
+    <Layout title="Natick Commission on Disability" home>
+      <main id={styles.main}>
+        <hr />
+        {
+
+*/
+
+
+
 const WP_SERVER = process.env.WP_SERVER;
 
 export default function Home(/*{ posts, orderDesc }*/) {
