@@ -1,3 +1,5 @@
+This project requires a `.env.local` file with a key `WP_SERVER` and a value of the base url for the Wordpress Server.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
