@@ -1,0 +1,20 @@
+.hyperlinkwhole{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.hyperlinkname{
+    border: 0 none;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    color: #363d77;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+
+.hyperlinkdesc{
+    margin-top: -5px;
+    color: #524c41;
+    font-family: Arial;
+}

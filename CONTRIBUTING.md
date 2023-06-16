@@ -43,4 +43,4 @@ Commit messages are places to put information and descriptions about what was ad
   * What you got stuck on; errors and warnings (eg. hydration error, syntax error on line 54)
   * Give your thoughts and ideas and what you tried to fix the error (eg. used `for` loop instead of `forEach`)
   * List future areas of work (eg. add hero image component)
-* However, if the changes are miniscule, or don't need much explaining, then descriptive commit messages are not required
+* However, if the changes are miniscule, or don't need much explaining, then a descriptive commit message is not required

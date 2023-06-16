@@ -1,20 +1,43 @@
+.imageWrapper {
+  width: 80%;
+ 
+  background-color: white;
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+
+  margin: auto;
+  margin-bottom: 0.5em;
+}
+
+.image {
+  object-fit: contain;
+  width: 100%;
+  position: relative;
+  height: unset;
+  /* Aspect Ratio: 978 X 53 */
+  /* Ratio between image width and my viewport width: 978/1280 */
+}
+
+.section {
+  margin-top: 1rem;
+}
+
 .header {
   /* margin-block-start: 0; */
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
   text-align: center;
-  composes: contentFont from './utils.module.css';  /* Just uses Libre Baskerville as font */
+  font-family: 'Libre Baskerville', sans-serif;  /* Just uses Libre Baskerville as font */
   font-weight: normal;
+  text-align: center;
 }
 
 .subheader {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
   text-align: center;
   composes: contentFont from 'utils.module.css';
   font-style: italic;
-}
-
-.section {
-  text-align: center;
 }

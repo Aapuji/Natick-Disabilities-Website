@@ -32,3 +32,24 @@
     border: none;
     padding: none;
 }
+
+.flex-base {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.flexBase {
+    composes: flex-base;
+}
+
+.inlineLink {
+    color: rgba(59, 130, 246);
+    text-decoration: inherit;
+}
+
+.inlineLink:hover {
+    text-decoration: underline;
+}

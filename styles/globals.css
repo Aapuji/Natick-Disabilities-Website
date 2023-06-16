@@ -10,6 +10,10 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
+body {
+  background-color: white;
+}
+
 p {
   font-family: 'Libre Baskerville', serif;
 }
@@ -23,13 +27,43 @@ a {
   box-sizing: border-box;
 }
 
-.container {
-  display: flex;
-}
-
 hr {
   margin: none;
   border: none;
   padding: none;
   background-color: white;
+}
+
+main {
+  width: 100%;
+  height: fit-content;
+  background-color: white; /*section background*/
+  /* padding: 2rem; */
+}
+
+button {
+  font-family: 'Oxygen', sans-serif;
+}
+
+/* ACTIVE STATE OF DROPDOWN HANDLED HERE */
+a[data-headlessui-state~="active"] {
+  visibility: visible;
+  background-color: rgb(59, 130, 246);
+  color: white;
+}
+
+table {
+  border: 1px solid black;
+}
+
+th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.5rem;
 }

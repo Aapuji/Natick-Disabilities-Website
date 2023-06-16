@@ -19,6 +19,7 @@
     object-fit: cover;
     object-position: center;
     background-color: whitesmoke;
+    background-attachment: fixed;
 }
 
 #heroImgText {
@@ -33,7 +34,7 @@
     font-size: 56px;
     padding: 15px;
     /* color: var(--cyan); */
-    color: black;
+    color: white;
 }
 
 #heroImgText p {
@@ -46,3 +47,33 @@
     height: 3px;
     border: none;
 }
+
+.wrapperTwo {
+    animation: slideTwoAnim 20s infinite;
+}
+
+.wrapperThree {
+    animation: slideThreeAnim 20s infinite;
+}
+
+/*
+@keyframes
+slideTwoAnim {
+    0%{opacity:0;}
+    17%{opacity:0;}
+    33%{opacity:1;}
+    50%{opacity:1;}
+    67%{opacity:0;}
+    100%{opacity:0;}
+}
+
+@keyframes
+slideThreeAnim {
+    0%{opacity:0;}
+    17%{opacity:0;}
+    33%{opacity:1;}
+    50%{opacity:1;}
+    67%{opacity:0;}
+    100%{opacity:0;}
+}
+*/

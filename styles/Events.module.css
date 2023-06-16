@@ -1,0 +1,18 @@
+.upcomingHeading {
+    margin-left: 20px;
+}
+
+.pastHeading {
+    margin-left: 20px;
+}
+
+.cardcontainer {
+    overflow: hidden;
+}
+
+.cards {
+    margin-top: 0;
+    composes: flex-base from './utils.module.css';
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

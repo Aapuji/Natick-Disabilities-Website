@@ -1,16 +1,28 @@
+/*
+:root{
+  use for background, foreground, accents, etc
+}
+*/
+
 .wholeNav {
-  position: sticky;
+  position: relative;
+  width: 100vw;
   height: 80px;
-  background: rgb(55, 62, 111);
+  background: rgba(55, 62, 111, 0.75);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(238, 197, 98);
+  color: white;
 }
 
 .styledLink {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.styledLink:hover {
+  font-weight: bold;
+  font-size: 0.95em;
 }
 
 .commissionLogo {
@@ -24,17 +36,59 @@
   font-size: 1.6rem;
   position: absolute;
   top: -1rem;
-  right: 20rem;
+  right: 11rem;
   width: 300px;
   border: 3px;
   padding: 10px;
-}
-
-.nav li:hover:after{
-  color: #fff;
 }
 
 
 .nav li {
   display: inline;
 }
+
+
+/*NCOD glitches into home at 446px - looks unnatrual, though i dont believe phone resolutions go that low*/
+/*mobile devices*/
+@media (max-width: 578px) {
+
+  .wholeNav {
+    position: sticky;
+    height: 80px;
+    background: rgb(55, 62, 111);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(238, 197, 98);
+  }
+
+  .commissionLogo{
+    left: 0rem;
+    margin-top: -0.3rem;
+    font-size: 1.5rem;
+  }
+
+  .nav{
+    font-size: 1.1rem;
+    position: absolute;
+    top: 0rem;
+    right: 4rem;
+    width: 300px;
+    border: 3px;
+    padding: 10px;
+  }
+
+  .styledLink {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/*
+@media(prefers-color-scheme: dark){
+  :root{
+    background = foreground
+    foreground = background
+    maybe they  wont use dark mode so just idea
+}
+*/
