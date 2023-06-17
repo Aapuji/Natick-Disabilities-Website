@@ -24,6 +24,7 @@ export function orderPageContent(categoryDesc, postsRef) {
  * @param {string[]} tags List of html tags to remove.
  * @returns {string} Initial string with all tags removed (as of now, it doesn't work with tags with attributes).
  */
+
 export function removeTags(html, tags) {
   const regex = new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g');
   return html.replace(regex, '');
