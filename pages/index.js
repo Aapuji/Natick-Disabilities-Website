@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import utils from '../styles/utils.module.css';
 import Link from 'next/link';
 import * as WPU from '../utils/wputils';
+import parse from 'html-react-parser';
 
 /* TODO: Add...
 
@@ -26,13 +27,13 @@ export default function Home({ posts, orderDesc }) {
         {
 */
 
-
-
 const WP_SERVER = process.env.WP_SERVER;
 
 export default function Home({ posts, orderDesc }) {
+  const testHTML = '<div><div><div><h1></h1></div></div></div>';
+  console.dir(parse(testHTML));
 
-  console.log(posts);
+  console.log('POSTS: ', posts);
 
   return <>
     <Layout title="Natick Commission on Disability" altText="... alt text goes here ..." hero>

@@ -1,3 +1,31 @@
+import parse from 'html-react-parser';
+
+/** Parses html from string into objects.
+ * 
+ * 
+ * 
+*/
+export function parseHTML(html) {
+  let tree = parse(html); // Array if adjacent elements, else object for outermost element
+
+  // if (!tree) {
+  //   return null;
+  // }
+
+  // // If one single outmost element (no array)
+  // while (true) {
+  //   let { children } = parsed.props;
+
+  //   // If null: break
+  //   if (!children) {
+  //     break;
+  //   // Text node (ie. 'Hello World')
+  //   } else if (typeof children == 'string') {
+
+  //   }
+  // }  
+}
+
 /** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.
  * 
  * @param {string} categoryDesc Relevant part of description of category for the page listing the order of the content on the page.
@@ -82,3 +110,4 @@ export function removeAnnotation(line) {
     text: line.substring(index + 1).trim()
   }
 }
+
