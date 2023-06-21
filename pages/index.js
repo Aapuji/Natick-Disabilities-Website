@@ -30,8 +30,10 @@ export default function Home({ posts, orderDesc }) {
 const WP_SERVER = process.env.WP_SERVER;
 
 export default function Home({ posts, orderDesc }) {
-  const testHTML = '<div><div><div><h1></h1></div></div></div>';
-  console.dir(parse(testHTML));
+  const testHTML = '<div><img class="a b" id="c" src="hello.jpg" /><h1>Bonjour</h1></div>';
+  const HTML2 = '<h1>HELLO WORLD</h1>';
+  // console.dir(parse(testHTML));
+  // console.log(JSON.stringify(parse(testHTML)));
 
   console.log('POSTS: ', posts);
 

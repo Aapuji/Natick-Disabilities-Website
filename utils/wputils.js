@@ -1,29 +1,71 @@
 import parse from 'html-react-parser';
 
-/** Parses html from string into objects.
- * 
- * 
- * 
+// type element = {
+//   type: string,
+//   props: [prop] | prop
+// }; 
+
+// type prop = {
+//   ...attrNames,
+//   children: [element] | element | string | null
+// };
+
+/**
+ This takes in an array
+ parse returns either an array of elements or an element.
+ So check if its an object, and if so, make it an array with one element
 */
-export function parseHTML(html) {
-  let tree = parse(html); // Array if adjacent elements, else object for outermost element
+export function evaluateElements(elements) {
+  for (let i = 0; i < elements.length; i++) {
+    let element = elements[i];
 
-  // if (!tree) {
-  //   return null;
-  // }
+    evaluateElement(element);
+  }
+}
 
-  // // If one single outmost element (no array)
-  // while (true) {
-  //   let { children } = parsed.props;
+function evaluateElement(element) {
+  switch (element.type) {
+    case 'div': /* Todo */ break;
+    // ...
+    default:
+      break; // throw away
+  }
 
-  //   // If null: break
-  //   if (!children) {
-  //     break;
-  //   // Text node (ie. 'Hello World')
-  //   } else if (typeof children == 'string') {
+  // Return string of jsx
+  // Returns html tags
+  let html = `<${element.type} ${element.props.map(prop => {
+    switch (prop) {
+      case 'children': return '';
+      // ...
+    }
+  })}>${evaluateChildren(element.children)}</${element.type}>`;
 
-  //   }
-  // }  
+  return html;
+}
+
+/** Evaluates the children of an element
+ * 
+ * @param {...} children 
+ * @returns string of jsx as a string
+ */
+export function evaluateChildren(children) {
+  // children is array of elements (objects)
+  if (Array.isArray(children)) {
+    return evaluateElements(children);
+  }
+
+  // children is null
+  if (children === null) {
+    return '';
+  }
+
+  // children is string
+  if (typeof children === 'string') {
+    return children;
+  }
+
+  // children is an element (object)
+  return evaluateElement(children);
 }
 
 /** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.
