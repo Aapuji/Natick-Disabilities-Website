@@ -117,6 +117,8 @@ export async function getStaticProps() {
     })
   });
 
+
+  console.log("RES: ", await res);
   const json = await res.json();
 
   console.log(json);
