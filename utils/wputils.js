@@ -10,6 +10,28 @@ import parse from 'html-react-parser';
 //   children: [element] | element | string | null
 // };
 
+/*
+
+We want to give the the ability to add:
+  * Text
+    - <p>, nothing
+  * Headers
+    - <h[1-6]>
+  * Links
+    - <a> (become )
+  * Inline Links
+    - <a>
+  * Images
+    - <img src alt >
+  * Tables?
+    - <table>
+    - <th>
+    - <tb>
+    - <td>
+    - <tr>
+*/
+
+
 /**
  This takes in an array
  parse returns either an array of elements or an element.
@@ -26,10 +48,31 @@ export function evaluateElements(elements) {
 function evaluateElement(element) {
   switch (element.type) {
     case 'div': /* Todo */ break;
-    // ...
+    /*
+      div:
+
+      h[1-6]:
+
+      p:
+
+      a:
+        * Replace with Link
+      img:
+
+      span?:
+
+
+
+
+    */
     default:
       break; // throw away
   }
+
+  // TODO: remove wordpress classes and stuff
+  // TODO: add our own classes
+  //      * suggestion:
+  //          - have a css (module or not-module) file just for these classes and things
 
   // Return string of jsx
   // Returns html tags

@@ -35,7 +35,7 @@ export default function Home({ posts, orderDesc }) {
   // console.dir(parse(testHTML));
   // console.log(JSON.stringify(parse(testHTML)));
 
-  console.log('POSTS: ', posts);
+  console.log('NODES: ', posts.nodes);
 
   return <>
     <Layout title="Natick Commission on Disability" altText="... alt text goes here ..." hero>
@@ -92,7 +92,6 @@ export default function Home({ posts, orderDesc }) {
   </>;
 }
 
-/*
 export async function getStaticProps() {
   const res = await fetch(WP_SERVER + '/graphql', {
     method: 'POST',
@@ -129,7 +128,6 @@ export async function getStaticProps() {
     }
   }
 }
-*/
 
 // const removeTags = (content, tags) => content.replace( new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g' ), '');
 // const removeP = content => removeTags(content, ['p']); 
