@@ -37,6 +37,7 @@ We want to give the the ability to add:
  parse returns either an array of elements or an element.
  So check if its an object, and if so, make it an array with one element
 */
+
 export function evaluateElements(elements) {
   for (let i = 0; i < elements.length; i++) {
     let element = elements[i];
@@ -46,25 +47,30 @@ export function evaluateElements(elements) {
 }
 
 function evaluateElement(element) {
+  let elementTypeArr = []
+  if ((element.type).includes("src")){
+    elementTypeArr = (element.type).split(" ");
+    elementTypeArr = [`${elementTypeArr[0]} ${elementTypeArr[1]} `, ` ${elementTypeArr[0]}>`]
+    return elementTypeArr;
+  }
   switch (element.type) {
-    case 'div': /* Todo */ break;
+    case 'div':
+      elementTypeArr = ["<div> ", " </div>"]
+      return elementTypeArr;
+    case "h1", "h2", "h3", "h4", "h5", "h6":
+      elementTypeArr = [`<${element.type}> `, ` </${element.type}>`]
+      return elementTypeArr;
+    case "p":
+      elementTypeArr = ["<p> ", " </p>"]
+      return elementTypeArr;
     /*
-      div:
-
-      h[1-6]:
-
-      p:
-
-      a:
-        * Replace with Link
-      img:
-
-      span?:
-
-
-
-
+    case "a":
+      elementTypeArr = ["<Link> ", " </Link>"]
+      return elementTypeArr;
     */
+    case "span":
+      elementTypeArr = ["<span> ", " </span>"]
+      return elementTypeArr;
     default:
       break; // throw away
   }
