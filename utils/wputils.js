@@ -84,31 +84,22 @@ export function evaluateElements(elements) {
  * ```
 */
 function evaluateElement(element) {
-  // let { props } = element // Holds opening and closing tags <img src="..." className="..."/> 
-  if (element.props.includes("src")) {
-    // elementTypeArr =/ element.props;
-    elementTypeArr = [`${elementTypeArr[0]} ${elementTypeArr[1]} `, ` ${elementTypeArr[0]}>`]
-    return elementTypeArr;
-  }
-
   switch (element.type) {
     case 'div':
-      elementTypeArr = ["<div> ", " </div>"]
-      return elementTypeArr;
-    case "h1", "h2", "h3", "h4", "h5", "h6":
-      elementTypeArr = [`<${element.type}> `, ` </${element.type}>`]
-      return elementTypeArr;
+
+    case "h1":
+    case "h2":
+    case "h3":
+    case "h4":
+    case "h5":
+    case "h6":
+
     case "p":
-      elementTypeArr = ["<p> ", " </p>"]
-      return elementTypeArr;
-    /*
+
     case "a":
-      elementTypeArr = ["<Link> ", " </Link>"]
-      return elementTypeArr;
-    */
+      element.type = 'Link';
+      element.props.className = " bob ";
     case "span":
-      elementTypeArr = ["<span> ", " </span>"]
-      return elementTypeArr;
     default:
       break; // throw away
   }
