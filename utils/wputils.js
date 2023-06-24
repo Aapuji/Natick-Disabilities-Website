@@ -6,7 +6,7 @@ import parse from 'html-react-parser';
 // }; 
 
 // type prop = {
-//   ...attrNames,
+//   ...attrNames, // (src, className, id, ...)
 //   children: [element] | element | string | null
 // };
 
@@ -46,13 +46,51 @@ export function evaluateElements(elements) {
   }
 }
 
+/** 
+ * Takes an object representing an element and modifies some of the attributes and props to the ones that fit our site, and then regenerates the jsx.
+ * 
+ * --- 
+ * # Examples
+ * 
+ * ---
+ * ### Replacing `a` with `Link`.
+ * input: 
+ * ```jsx
+ * <a className="WP-classes" href="ref">Text</a>
+ * ```
+ * 
+ * output: 
+ * ```jsx
+ * <Link className="our-classes" href="ref">Text</Link>
+ * ```
+ * 
+ * ---
+ * ### Replacing classes in images
+ * input : 
+ * ```jsx
+ * <img className="WP-classes" src="src" />
+ * ```
+ * 
+ * output: 
+ * ```jsx
+ * <Image className="our-classes" src="src" ... />
+ * ```
+ * 
+ * or even:
+ * ```jsx
+ * <div className="image-container">
+ *   <Image className="our-classes" src="src" ... fill />
+ * </div>
+ * ```
+*/
 function evaluateElement(element) {
-  let elementTypeArr = []
-  if ((element.type).includes("src")){
-    elementTypeArr = (element.type).split(" ");
+  // let { props } = element // Holds opening and closing tags <img src="..." className="..."/> 
+  if (element.props.includes("src")) {
+    // elementTypeArr =/ element.props;
     elementTypeArr = [`${elementTypeArr[0]} ${elementTypeArr[1]} `, ` ${elementTypeArr[0]}>`]
     return elementTypeArr;
   }
+
   switch (element.type) {
     case 'div':
       elementTypeArr = ["<div> ", " </div>"]
