@@ -137,7 +137,7 @@ export function evaluateChildren(children) {
     return evaluateElements(children);
   }
 
-  // children is null
+  // children is null (check if works)
   if (children === null) {
     return '';
   }
