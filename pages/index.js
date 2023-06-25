@@ -30,12 +30,20 @@ export default function Home({ posts, orderDesc }) {
 const WP_SERVER = process.env.WP_SERVER;
 
 export default function Home({ posts, orderDesc }) {
-  const testHTML = '<div><img class="a b" id="c" src="hello.jpg" /><h1>Bonjour</h1></div>';
+  // Testing parse
+  const testHTML = '<img src="my-src" />';
   const HTML2 = '<h1>HELLO WORLD</h1>';
   // console.dir(parse(testHTML));
   // console.log(JSON.stringify(parse(testHTML)));
 
+  // Not test anymore
+
+  WPU.orderPageContent(orderDesc, posts.nodes);
+
   console.log('NODES: ', posts.nodes);
+
+  let contents = posts.nodes.map(node => node.content);
+  console.log(contents);
 
   return <>
     <Layout title="Natick Commission on Disability" altText="... alt text goes here ..." hero>
@@ -118,10 +126,10 @@ export async function getStaticProps() {
   });
 
 
-  console.log("RES: ", await res);
+  // console.log("RES: ", await res);
   const json = await res.json();
 
-  console.log(json);
+  // console.log(json);
 
   return {
     props: {

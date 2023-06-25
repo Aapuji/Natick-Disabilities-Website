@@ -84,38 +84,43 @@ export function evaluateElements(elements) {
  * ```
 */
 function evaluateElement(element) {
+  element.props.className = 'backend ' + element.props.className;
+
   switch (element.type) {
     case 'div':
-
-    case "h1":
-    case "h2":
-    case "h3":
-    case "h4":
-    case "h5":
-    case "h6":
-
-    case "p":
-
-    case "a":
+      break;
+    case 'span':
+      break;
+    case 'h1':
+    case 'h2':
+    case 'h3':
+    case 'h4':
+    case 'h5':
+    case 'h6':
+      break;
+    case 'p':
+      break;
+    case 'a':
       element.type = 'Link';
-      element.props.className = " bob ";
-    case "span":
+      element.props.className = 'backend b-link';
+      break;
+    case 'img':
+      element.type = 'Image';
+      element.props.className = 'backend b-img';
     default:
       break; // throw away
   }
 
   // TODO: remove wordpress classes and stuff
   // TODO: add our own classes
-  //      * suggestion:
-  //          - have a css (module or not-module) file just for these classes and things
 
   // Return string of jsx
   // Returns html tags
-  let html = `<${element.type} ${element.props.map(prop => {
-    switch (prop) {
-      case 'children': return '';
-      // ...
-    }
+  let html = `<${element.type} ${element.props.entries().map(
+    (key, value) => {
+      // ... 
+    } 
+  )
   })}>${evaluateChildren(element.children)}</${element.type}>`;
 
   return html;
@@ -153,13 +158,10 @@ export function evaluateChildren(children) {
 */
 export function orderPageContent(categoryDesc, postsRef) {
   let orderArr = categoryDesc.split(/\r\n|\n/);  // Splits category description into lines
-  console.log('SPLIT ORDER', orderArr);
   
   for (let i = 0; i < orderArr.length; i++) {
     orderArr[i] = orderArr[i].replace(/[0-9]*\.? */, '');  // Removes number and dot (eg. "4. ")
   }
-
-  console.log('Before sort:\n', postsRef);
 
   // Sorts the posts according to the order
   // In Wordpress, admin can add the number delimiters (eg. "1. "), but those are only to help them, the code will display it in the order from top to bottom.
