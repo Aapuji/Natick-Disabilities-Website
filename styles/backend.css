@@ -1,6 +1,6 @@
 /* GLOBAL STYLES FOR NEW WORDPRESS ADDITIONS */
 /* All of these will have a "backend" */
-/* Also, many of them will have classes, which can be prefixed with a "b-" */
+/* Also, many of them will have classes, which can be prefixed with a "r-" */
 
 /* H[1-6] */
 
@@ -8,10 +8,10 @@
 /* P */
 
 /* A */
-/* Add a 'b-link' class */
-a.backend.b-link {
+/* Add a 'r-link' class */
+a.backend.r-link {
   background-color: aqua;
 }
 
 /* Img */
-/* Add a 'b-img' class */
+/* Add a 'r-image' class */
