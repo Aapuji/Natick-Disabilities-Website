@@ -70,9 +70,12 @@ Highlighting:
 
 /* A */
 /* Add a 'r-link' class */
-a.backend.r-link {
-  background-color: aqua;
+p.backend.home-content {
+  width: 80%;
+  margin: auto;
 }
+
+
 
 /* Img */
 /* Add a 'r-image' class */
