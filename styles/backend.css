@@ -2,6 +2,67 @@
 /* All of these will have a "backend" */
 /* Also, many of them will have classes, which can be prefixed with a "r-" */
 
+/* STYLES GOTTEN FROM WORDPRESS GRAPHQL REQUEST (Content of post)
+
+Text: 
+  <p> text </p>
+Bold: 
+  <strong> text </strong>
+Italic: 
+  <em> text </em>
+Inline Link (url, eg. wikipedia.org): 
+  <a href=$src data-type="URL" data-id=url> text </a>
+
+  *Note: data-* doesn't change appearance (https://www.dofactory.com/html/a/data#null).
+Img:
+  <figure class="wp-block-image size-_">
+    <img 
+      decoding="async" 
+      loading="lazy" 
+      width=$width 
+      height=$height
+      src=$src
+      alt=""
+      class="wp-image-86"
+      srcset=...stuff       // <-- You figure out this stuff
+      sizes="(max-width: 1024px) 100vw, 1024px"
+    />
+  </figure>
+Unordered Lists:
+  <ul>
+    <li>text</li>
+    ...
+  </ul>
+Ordered Lists:
+  <ol>
+    <li> text </li>
+    ...
+  <ol>
+Tables:
+  <figure class="wp-block-table">
+    <table>
+      <tbody>
+        <tr>
+          <td>Row 1 Col 1</td>
+          <td>Row 1 Col 2</td>
+          <td>Row 1 Col 3</td>
+          ...
+        </tr>
+        <tr>
+          <td>Row 2 Col 1</td>
+          ...
+        </tr>
+        ...
+      </tbody>
+    </table>
+    <figcaption class="wp-element-caption"> Table Caption </figcaption>
+  </figure>
+Highlighting:
+  <mark ...> text </mark>
+*/
+
+
+
 /* H[1-6] */
 
 
