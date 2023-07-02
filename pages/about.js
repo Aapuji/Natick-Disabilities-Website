@@ -60,12 +60,14 @@ export default function About() {
                   position={profile.position} 
                   desc={profile.desc} 
                   url={profile.img}
+                  key={`Profile: ${profile.name}`}
                 /> :
                 <Profile 
                   name={profile.name}
                   position={profile.position}
                   desc={profile.desc}
                   url={profile.img}
+                  key={`Profile: ${profile.name}`}
                   flipped
                 />
               )
