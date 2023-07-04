@@ -3,7 +3,8 @@ import Section from '../components/Section';
 import styles from '../styles/Home.module.css';
 import utils from '../styles/utils.module.css';
 import Link from 'next/link';
-import * as WPU from '../utils/wputils';
+import * as Utils from '../utils/wputils';
+import * as Backend from '../utils/backend';
 import parse from 'html-react-parser';
 
 /* TODO: Add...
@@ -38,7 +39,7 @@ export default function Home({ posts, orderDesc }) {
 
   // Not test anymore
 
-  WPU.orderPageContent(orderDesc, posts.nodes);
+  Utils.orderPageContent(orderDesc, posts.nodes);
 
   console.log('NODES: ', posts.nodes);
 
@@ -69,12 +70,12 @@ export default function Home({ posts, orderDesc }) {
             let title = post.title;
             let subtitle = '';
 
-            let contents = WPU.splitContent(post.content).map(WPU.removeP);
+            let contents = Utils.splitContent(post.content).map(Utils.removeP);
             
             console.log(contents);
 
             for (let i = 0; i < contents.length; i++) {
-              let { annot, text } = WPU.removeAnnotation(contents[i]);
+              let { annot, text } = Utils.removeAnnotation(contents[i]);
 
               if (annot == 'Subtitle') {
                 subtitle = text;
@@ -138,8 +139,3 @@ export async function getStaticProps() {
     }
   }
 }
-
-// const removeTags = (content, tags) => content.replace( new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g' ), '');
-// const removeP = content => removeTags(content, ['p']); 
-
-// const splitContent = content => content.split('\n').filter(el => el !== '');
