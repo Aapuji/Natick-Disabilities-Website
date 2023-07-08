@@ -70,10 +70,71 @@ Highlighting:
 
 /* A */
 /* Add a 'r-link' class */
+
+/*HOME*/
 p.backend.home-content {
   width: 80%;
   margin: auto;
 }
+
+/*ABOUT*/
+div.backend.about-content {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
+div.backend.about-content.about-purpose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.backend.about-content.about-purpose.about-headingbgm {
+  margin-top: -20px;
+}
+
+p.backend.about-content.about-purpose.about-headingbgm.about-textbgm {
+  margin-top: -10px;
+}
+
+div.backend.about-content.about-purpose.about-headinghis {
+  margin-top: -15px;
+}
+
+p.backend.about-content.about-purpose.about-headinghis.about-textbgm {
+  margin-top: -10px;
+}
+
+div.backend.about-profiles {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+  flex-direction: row;
+  justify-content: center;
+}
+
+table.backend.about-table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  width: 75%;
+  border: 1px solid;
+  background-color:whitesmoke;
+}
+
+table.backend.about-table.about-evenRow {
+  background-color:white;
+}
+
+table.backend.about-table.about-oddRow {
+  background-color:whitesmoke;
+}
+
 
 
 
