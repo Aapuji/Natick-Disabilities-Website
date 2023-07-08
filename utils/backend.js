@@ -2,6 +2,13 @@
 
 import { WP_SERVER } from "../pages";
 
+/** Creates a basic request to Wordpress and returns the props for it.
+ * 
+ * Requests `title`, `content`, `id`, and `date` for each post in the given page's category, as well as the description of that category. 
+ * 
+ * @param {string} page Name of the page that this request is for.
+ * @returns {Promise<{ props: { posts: { nodes: { title: string, content: string, id: string, date: string }[] }, orderDesc: string }}>}
+ */
 export async function getBasicRequest(page) {
   const res = await fetch(WP_SERVER + '/graphql', {
     method: 'POST',

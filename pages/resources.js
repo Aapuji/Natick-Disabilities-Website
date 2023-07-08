@@ -24,3 +24,7 @@ export default function Resources() {
     </Layout>
   </>;
 }
+
+export async function getStaticProps() {
+  
+}
