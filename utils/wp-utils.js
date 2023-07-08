@@ -160,7 +160,7 @@ export function orderPageContent(categoryDesc, postsRef) {
   let orderArr = categoryDesc.split(/\r\n|\n/);  // Splits category description into lines
   
   for (let i = 0; i < orderArr.length; i++) {
-    orderArr[i] = orderArr[i].replace(/[0-9]*\.? */, '');  // Removes number and dot (eg. "4. ")
+    orderArr[i] = orderArr[i].replace(/ *[0-9]*\.? */, '');  // Removes number and dot (eg. "4. ")
   }
 
   // Sorts the posts according to the order

@@ -4,6 +4,7 @@ import styles from '../styles/About.module.css';
 import Image from 'next/image';
 import Section from '../components/Section';
 import Profile from '../components/Profile'
+import { getBasicRequest } from '../utils/backend';
 
 const members = [
   { key: 0, name: 'Amanda Hsiao', startDate: 'Jul 01, 2020', term: 2, position: 'Secretary' },
@@ -109,4 +110,8 @@ export default function About() {
       </main>
     </Layout>
   </>;
+}
+
+export async function getStaticProps() {
+  return await Backend.getBasicRequest('About');
 }
