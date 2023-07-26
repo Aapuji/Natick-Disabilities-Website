@@ -81,32 +81,10 @@ export default function Home({ posts, orderDesc }) {
         {
           posts.nodes.map(
             post => {
-              let title = post.title;
-              let subtitle = '';
-  
-              let contents = Utils.splitContent(post.content).map(Utils.removeP);
-              
-              console.log(contents);
-  
-              for (let i = 0; i < contents.length; i++) {
-                let { annot, text } = Utils.removeAnnotation(contents[i]);
-  
-                if (annot == 'Subtitle') {
-                  subtitle = text;
-                  contents.splice(i, 1);
-                  break;
-                }
-                // if (contents[i].startsWith('Subtitle: ')) {
-                //   subtitle = contents[i];
-                //   contents.splice(i, 1);
-                //   break;
-                // }
-              }
+              let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
           
               return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
                 {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}
-                <br />
-                <br />
               </Section>
             }
           )

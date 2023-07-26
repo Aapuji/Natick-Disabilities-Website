@@ -1,6 +1,7 @@
 //@ts-check
 
 import { WP_SERVER } from "../pages";
+import * as Utils from "./wp-utils";
 
 /** Creates a basic request to Wordpress and returns the props for it.
  * 
@@ -26,6 +27,28 @@ export async function getBasicRequest(page) {
       orderDesc: json.data.categories.nodes[0].description
     }
   }
+}
+
+/**
+ * 
+ * @param {{ type: string, props: object[] | object }} element The element to evaluate.
+ * ```ts
+ * type element = {
+ *   type: string,
+ *   props: prop[] | prop
+ * };
+ * 
+ * type prop = {
+ *  children: element[] | element | string | null,
+ *   id?: string,
+ *   className?: string,
+ *   src?: string,
+ *   // ... otherAttributes
+ * }
+ * ```
+ */
+export function evaluateElement(element) {
+  // TODO.
 }
 
 /** Returns the base query for a page, given the name of the page.

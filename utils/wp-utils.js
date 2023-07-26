@@ -1,14 +1,34 @@
-import parse from 'html-react-parser';
 
-// type element = {
-//   type: string,
-//   props: [prop] | prop
-// }; 
+/** Returns an object with useful values gotten from the given post reference.
+ * 
+ * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`)
+ */
+export function getBasicSectionInfo(postRef) {
+  let title = postRef.title ?? '';
+  let subtitle = '';
 
-// type prop = {
-//   ...attrNames, // (src, className, id, ...)
-//   children: [element] | element | string | null
-// };
+  let contents = splitContent(postRef.content).map(removeP);
+  
+  console.log(contents);
+
+  for (let i = 0; i < contents.length; i++) {
+    let { annot, text } = removeAnnotation(contents[i]);
+
+    if (annot == 'Subtitle') {
+      subtitle = text;
+      contents.splice(i, 1);
+      break;
+    }
+  }
+
+  // Returns an object with the values that are going to be used by jsx after the function call.
+  return {
+    title,
+    subtitle,
+    contents
+  }
+}
+
 
 /*
 
@@ -37,7 +57,6 @@ We want to give the the ability to add:
  parse returns either an array of elements or an element.
  So check if its an object, and if so, make it an array with one element
 */
-
 export function evaluateElements(elements) {
   for (let i = 0; i < elements.length; i++) {
     let element = elements[i];

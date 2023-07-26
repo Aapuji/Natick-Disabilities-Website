@@ -30,6 +30,7 @@ const Section = ({
       { subtitle ? <p className={styles.subheader}>{subtitle}</p> : <></> }
       {children}
     </section>
+    <br />
   </>;
 };
 
