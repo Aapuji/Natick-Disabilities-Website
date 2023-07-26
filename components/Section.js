@@ -26,9 +26,12 @@ const Section = ({
           height={5300}
         />
       </div>
+      
       { title ? <h1 className={styles.header}>{title}</h1> : <></> }
       { subtitle ? <p className={styles.subheader}>{subtitle}</p> : <></> }
-      {children}
+      <div className={styles.content}>
+        { children }
+      </div>
     </section>
     <br />
   </>;
