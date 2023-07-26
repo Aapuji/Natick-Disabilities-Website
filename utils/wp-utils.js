@@ -30,6 +30,25 @@ export function getBasicSectionInfo(postRef) {
 }
 
 
+
+/**
+ * 
+ * @param {{ type: string, props: object[] | object }} element The element to evaluate.
+ * ```ts
+ * type element = {
+ *   type: string,
+ *   props: prop[] | prop
+ * };
+ * 
+ * type prop = {
+ *  children: element[] | element | string | null,
+ *   id?: string,
+ *   className?: string,
+ *   src?: string,
+ *   // ... otherAttributes
+ * }
+ * ```
+ */
 /*
 
 We want to give the the ability to add:
@@ -52,11 +71,11 @@ We want to give the the ability to add:
 */
 
 
-/**
- This takes in an array
- parse returns either an array of elements or an element.
- So check if its an object, and if so, make it an array with one element
-*/
+// /**
+//  This takes in an array
+//  parse returns either an array of elements or an element.
+//  So check if its an object, and if so, make it an array with one element
+// */
 export function evaluateElements(elements) {
   for (let i = 0; i < elements.length; i++) {
     let element = elements[i];

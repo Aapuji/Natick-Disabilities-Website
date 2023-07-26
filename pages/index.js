@@ -70,11 +70,6 @@ export const WP_SERVER = process.env.WP_SERVER;
 export default function Home({ posts, orderDesc }) {
   Utils.orderPageContent(orderDesc, posts.nodes);
 
-  // console.log('NODES: ', posts.nodes);
-
-  let contents = posts.nodes.map(node => node.content);
-  // console.log(contents);
-
   return <>
     <Layout title="Natick Commission on Disability" altText="... alt text goes here ..." hero>
       <main>

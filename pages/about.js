@@ -3,8 +3,9 @@ import Layout from '../components/Layout';
 import styles from '../styles/About.module.css';
 import Image from 'next/image';
 import Section from '../components/Section';
-import Profile from '../components/Profile'
-import { getBasicRequest } from '../utils/backend';
+import Profile from '../components/Profile';
+import * as Utils from '../utils/wp-utils';
+import * as Backend from '../utils/backend';
 
 const members = [
   { key: 0, name: 'Amanda Hsiao', startDate: 'Jul 01, 2020', term: 2, position: 'Secretary' },
@@ -30,11 +31,13 @@ const profiles = [
 ];
 
 
-export default function About() {
+export default function About({ posts, orderDesc }) {
+  Utils.orderPageContent(orderDesc, posts.nodes);
+
   return <>
     <Layout title="About" altText="... alt text goes here ..." hero>
       <main>
-        <Section id="aboutTheCommission" imgName="About the Commission" title="About the Commission">
+        { <Section id="aboutTheCommission" imgName="About the Commission" title="About the Commission">
           <br />
           <div className={styles.content}>
             <div className={styles.purpose}>
@@ -50,7 +53,18 @@ export default function About() {
               </div>
             </div>
           </div>
-        </Section>
+        </Section> }
+        { 
+          posts.nodes.map(
+            post => {
+              let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
+
+              return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
+              {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}
+            </Section>
+            }
+          )
+        }
         <Section id="meetTheCommission" imgName="Meet the Commission" title="Meet the Commission">
           <br />
           <div id = {styles.profiles}>
@@ -113,5 +127,9 @@ export default function About() {
 }
 
 export async function getStaticProps() {
-  return await Backend.getBasicRequest('About');
+  let value = await Backend.getBasicRequest('About');
+
+  console.log('value');
+  console.log(value);
+  return value;
 }
