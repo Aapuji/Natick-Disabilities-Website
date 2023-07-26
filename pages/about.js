@@ -37,9 +37,8 @@ export default function About({ posts, orderDesc }) {
   return <>
     <Layout title="About" altText="... alt text goes here ..." hero>
       <main>
+        <br />
         { <Section id="aboutTheCommission" imgName="About the Commission" title="About the Commission">
-          <br />
-          <div className={styles.content}>
             <div className={styles.purpose}>
               <div className={styles.headingBGM}>
                 <h3>Background and Mission Statement</h3>
@@ -52,22 +51,26 @@ export default function About({ posts, orderDesc }) {
                 <p className={styles.textBGM}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque. Ac tortor dignissim convallis aenean et. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Dolor morbi non arcu risus quis. Malesuada fames ac turpis egestas maecenas pharetra convallis. Parturient montes nascetur ridiculus mus. Felis imperdiet proin fermentum leo vel orci porta. Eu volutpat odio facilisis mauris sit amet massa vitae.</p>
               </div>
             </div>
-          </div>
         </Section> }
         { 
           posts.nodes.map(
             post => {
               let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
 
-              return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
-              {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}
-            </Section>
+              return <Section 
+                title={title} 
+                subtitle={subtitle} 
+                imgName={title} 
+                key={post.id}
+              >
+                { contents.map((content, i) => <p key={`${post.id}#${i}`}>{content}</p>) }
+              </Section>;
             }
           )
         }
-        <Section id="meetTheCommission" imgName="Meet the Commission" title="Meet the Commission">
+        <Section id="meetOurMembers" imgName="Meet our Members" title="Meet our Members">
           <br />
-          <div id = {styles.profiles}>
+          <div id={styles.profiles}>
             {
               profiles.map((profile, i) => i % 2 == 0 ?
                 <Profile 
@@ -127,9 +130,5 @@ export default function About({ posts, orderDesc }) {
 }
 
 export async function getStaticProps() {
-  let value = await Backend.getBasicRequest('About');
-
-  console.log('value');
-  console.log(value);
-  return value;
+  return await Backend.getBasicRequest('About');
 }

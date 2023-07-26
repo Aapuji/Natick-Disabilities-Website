@@ -26,7 +26,8 @@
 
 /* TODO: Add this style to children, perhaps in div. This will keep all children within the Section bounds. */
 .content {
-  width: 80%;
+  text-align: left;
+  width: 80%; /* 80% - Margin till ends of section, children can have additional margin to squeeze content further. */
   margin: auto;
 }
 

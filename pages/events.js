@@ -49,7 +49,7 @@ export default function Events() {
         </Section>
         <Section
           title="Notable Past Events"
-          subtitle="Events of Importance."
+          subtitle="Events of importance."
           imgName="Notable Past Events"
         >
           <div className={styles.cards}>
