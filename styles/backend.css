@@ -61,52 +61,45 @@ Highlighting:
   <mark ...> text </mark>
 */
 
+/* HOME */
 
-
-/* H[1-6] */
-
-
-/* P */
-
-/* A */
-/* Add a 'r-link' class */
-
-/*HOME*/
-p.backend.home-content {
-  width: 80%;
-  margin: auto;
-}
-
-/*ABOUT*/
-div.backend.about-content {
+p.backend.r-home-content {
   text-align: left;
   width: 80%;
   margin: auto;
 }
 
-div.backend.about-content.about-purpose {
+/* ABOUT */
+
+div.backend.r-about-content {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
+div.backend.r-about-content.r-about-purpose {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-div.backend.about-content.about-purpose.about-headingbgm {
+div.backend.r-about-content.r-about-purpose.r-about-headingbgm {
   margin-top: -20px;
 }
 
-p.backend.about-content.about-purpose.about-headingbgm.about-textbgm {
+p.backend.r-about-content.r-about-purpose.r-about-headingbgm.r-about-textbgm {
   margin-top: -10px;
 }
 
-div.backend.about-content.about-purpose.about-headinghis {
+div.backend.r-about-content.r-about-purpose.r-about-headinghis {
   margin-top: -15px;
 }
 
-p.backend.about-content.about-purpose.about-headinghis.about-textbgm {
+p.backend.r-about-content.r-about-purpose.r-about-headinghis.r-about-textbgm {
   margin-top: -10px;
 }
 
-div.backend.about-profiles {
+div.backend.r-about-profiles {
   width: 80%;
   margin: auto;
   display: flex;
@@ -118,7 +111,7 @@ div.backend.about-profiles {
   justify-content: center;
 }
 
-table.backend.about-table {
+table.backend.r-about-table {
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
@@ -127,11 +120,11 @@ table.backend.about-table {
   background-color:whitesmoke;
 }
 
-table.backend.about-table.about-evenRow {
+table.backend.r-about-table.r-about-evenRow {
   background-color:white;
 }
 
-table.backend.about-table.about-oddRow {
+table.backend.r-about-table.r-about-oddRow {
   background-color:whitesmoke;
 }
 

@@ -71,21 +71,30 @@ We want to give the the ability to add:
 */
 
 
+// Probably bad.
 // /**
 //  This takes in an array
 //  parse returns either an array of elements or an element.
 //  So check if its an object, and if so, make it an array with one element
 // */
-export function evaluateElements(elements) {
+
+/**
+ * @param {*} elements List of elements to evaluate
+ * @param {string} page String representation of the page (eg. Home, About, etc.) 
+*/
+export function evaluateElements(elements, page) {
   for (let i = 0; i < elements.length; i++) {
     let element = elements[i];
 
-    evaluateElement(element);
+    evaluateElement(element, page);
   }
 }
 
 /** 
  * Takes an object representing an element and modifies some of the attributes and props to the ones that fit our site, and then regenerates the jsx.
+ * 
+ * @param {*} element
+ * @param {*} page String representation of the page.
  * 
  * --- 
  * # Examples
@@ -121,7 +130,7 @@ export function evaluateElements(elements) {
  * </div>
  * ```
 */
-function evaluateElement(element) {
+function evaluateElement(element, page) {
   element.props.className = 'backend ' + element.props.className;
 
   switch (element.type) {
@@ -166,13 +175,14 @@ function evaluateElement(element) {
 
 /** Evaluates the children of an element
  * 
- * @param {...} children 
+ * @param {} children 
+ * @param {string} page String representation of the page.
  * @returns string of jsx as a string
  */
-export function evaluateChildren(children) {
+export function evaluateChildren(children, page) {
   // children is array of elements (objects)
   if (Array.isArray(children)) {
-    return evaluateElements(children);
+    return evaluateElements(children, page);
   }
 
   // children is null (check if works)
@@ -186,7 +196,7 @@ export function evaluateChildren(children) {
   }
 
   // children is an element (object)
-  return evaluateElement(children);
+  return evaluateElement(children, page);
 }
 
 /** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.
