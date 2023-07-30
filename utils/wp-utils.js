@@ -7,7 +7,7 @@ export function getBasicSectionInfo(postRef) {
   let title = postRef.title ?? '';
   let subtitle = '';
 
-  let contents = splitContent(postRef.content).map(removeP);
+  let contents = splitContent(postRef.content)/*.map(removeP)*/;
   
   console.log(contents);
 
@@ -131,8 +131,11 @@ export function evaluateElements(elements, page) {
  * ```
 */
 function evaluateElement(element, page) {
-  element.props.className = 'backend ' + element.props.className;
+  // element.props.className = 'backend ' + element.props.className;
+  let classes = element.props.className.split(' ');
 
+  // Mandatory styles; default styles for each tag (part 1: Default Styles)
+  // Part 2 (not here): replacing styles from Wordpress with our equivalents
   switch (element.type) {
     case 'div':
       break;
@@ -146,6 +149,7 @@ function evaluateElement(element, page) {
     case 'h6':
       break;
     case 'p':
+      // Should be automatically styled (font, size, etc.)
       break;
     case 'a':
       element.type = 'Link';
@@ -233,9 +237,9 @@ export function removeTags(html, tags) {
  * @param {string} html The initial text with `p` tags.
  * @returns {string} Text with `p` tags removed.
  */
-export function removeP(html) {
-  return removeTags(html, ['p']); 
-}
+// export function removeP(html) {
+//   return removeTags(html, ['p']); 
+// }
 
 /** Splits content into lines, with empty lines removed.
  * 

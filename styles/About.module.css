@@ -4,28 +4,14 @@
     margin: auto;
 }
 
-.purpose {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.innerHeader {
+    margin-bottom: -10px;
 }
 
 .img {
     width: 100%;
     height: 100%;
     flex-basis: 40%;
-}
-
-.headingBGM {
-    margin-top: -20px;
-}
-
-.headingHIS {
-    margin-top: -15px;
-}
-
-.textBGM {
-    margin-top: -10px;
 }
 
 #profiles {

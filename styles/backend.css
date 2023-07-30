@@ -77,28 +77,6 @@ div.backend.r-about-content {
   margin: auto;
 }
 
-div.backend.r-about-content.r-about-purpose {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-div.backend.r-about-content.r-about-purpose.r-about-headingbgm {
-  margin-top: -20px;
-}
-
-p.backend.r-about-content.r-about-purpose.r-about-headingbgm.r-about-textbgm {
-  margin-top: -10px;
-}
-
-div.backend.r-about-content.r-about-purpose.r-about-headinghis {
-  margin-top: -15px;
-}
-
-p.backend.r-about-content.r-about-purpose.r-about-headinghis.r-about-textbgm {
-  margin-top: -10px;
-}
-
 div.backend.r-about-profiles {
   width: 80%;
   margin: auto;
