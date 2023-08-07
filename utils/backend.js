@@ -29,28 +29,6 @@ export async function getBasicRequest(page) {
   }
 }
 
-/**
- * 
- * @param {{ type: string, props: object[] | object }} element The element to evaluate.
- * ```ts
- * type element = {
- *   type: string,
- *   props: prop[] | prop
- * };
- * 
- * type prop = {
- *  children: element[] | element | string | null,
- *   id?: string,
- *   className?: string,
- *   src?: string,
- *   // ... otherAttributes
- * }
- * ```
- */
-export function evaluateElement(element) {
-  // TODO.
-}
-
 /** Returns the base query for a page, given the name of the page.
  * 
  * In Wordpress, the category slugs (with dashes turned into spaces) will be `PAGE_NAME Page Category`, and the names of the categories will be `PAGE_NAME Page`.  

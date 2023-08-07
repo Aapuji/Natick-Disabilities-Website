@@ -77,6 +77,8 @@ export default function Home({ posts, orderDesc }) {
           posts.nodes.map(
             post => {
               let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
+
+              console.log(contents);
           
               return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
                 {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}

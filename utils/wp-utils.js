@@ -136,8 +136,10 @@ function evaluateElement(element, page) {
 
   // Mandatory styles; default styles for each tag (part 1: Default Styles)
   // Part 2 (not here): replacing styles from Wordpress with our equivalents
+  // If you want to add to existing classes (for debugging), use +=, but to replace use =.
   switch (element.type) {
     case 'div':
+      element.props.className = 'backend r-class-a class-b';
       break;
     case 'span':
       break;
