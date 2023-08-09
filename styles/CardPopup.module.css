@@ -52,13 +52,13 @@
   min-height: 100%;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 5rem;
   text-align: center;
 }
 
 .panel {
   width: 100%;
-  max-width: 28rem;
+  max-width: 80%;
   overflow: hidden;
   border-radius: 1rem;
   background-color: white;
@@ -70,19 +70,25 @@
 }
 
 .title {
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.5rem;
-  color: #1a202c;
+  text-align: center;
+  margin-top: 0.25rem;
 }
 
 .content {
   margin-top: 0.5rem;
 }
 
+.info {
+  line-height: 0.5em;
+}
+
+.est {
+  opacity: 50%;
+}
+
 .description {
   font-size: 0.875rem;
-  color: #a0aec0;
+  line-height: 1.5em;
 }
 
 .closeButtonContainer {
@@ -95,18 +101,18 @@
   border-radius: 0.375rem;
   border-width: 1px;
   border-color: transparent;
-  background-color: #ebf8ff;
+  background-color: #fff5f5;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #4299e1;
+  color: #742a2a;
 }
 
 .closeButton:hover {
-  background-color: #bee3f8;
+  background-color: #fed7d7;
 }
 
 .closeButton:focus {

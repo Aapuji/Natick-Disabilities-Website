@@ -25,12 +25,11 @@
 .cardcontent .info {
     margin-top: 0px;
     margin-bottom: 5px;
-    /* text-overflow:clip; */
 }
 
 .infoDescriptor {
     position: relative;
-    bottom: 5px; /* Was 10px before */
+    bottom: 0.45em; /* Was 10px before */
 }
 
 .desc {
@@ -45,12 +44,26 @@
     -webkit-line-clamp: 4;  /* limit to 4 lines */
 }
 
+.est {
+    opacity: 0.5;
+}
+
 .icon {
     position: relative;
-    font-size: large; /* Was xx-large */
+    /* font-size: large; Was xx-large */
+    font-size: 1.5em;
+}
+
+.calendarIcon {
+    composes: icon;
+}
+
+.clockIcon {
+    composes: icon;
 }
 
 .markerIcon {
     composes: icon;
     color: red;
+    /* margin-top: 0.05em; */
 }

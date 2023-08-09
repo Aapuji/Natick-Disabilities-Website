@@ -1,11 +1,13 @@
 import { Dialog } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
+import Card from './Card';
+import Image from 'next/image';
 
-import styles from '../styles/EventPopup.module.css';
+import styles from '../styles/CardPopup.module.css';
 import utils from '../styles/utils.module.css';
 
-const EventPopup = ({ }) => {
-  let [isOpen, setIsOpen] = useState(true);
+const CardPopup = ({ title, location, date, time, desc, brief, detailedLocation }) => {
+  let [isOpen, setIsOpen] = useState(false);
 
   function closePopup() {
     setIsOpen(false);
@@ -16,15 +18,14 @@ const EventPopup = ({ }) => {
   }
 
   return <>
-    <div className={styles.openButtonContainer}>
-      <button
-        type="button"
-        onClick={openPopup}
-        className={styles.openButton}
-      >
-        Open dialog
-      </button>
-    </div>
+    <Card 
+      title={title}
+      location={location}
+      date={date}
+      time={time}
+      desc={brief ?? desc}
+      whenClick={openPopup}
+    />
 
     <Dialog as="div" open={isOpen} onClose={closePopup} className={styles.popup}>
       <div className={styles.backdrop} aria-hidden="true" />
@@ -33,14 +34,19 @@ const EventPopup = ({ }) => {
         <div className={styles.panelContainer}>
           <Dialog.Panel className={styles.panel}>
             <Dialog.Title 
-              as="h3"
+              as="h1"
               className={styles.title}
             >
-              This is the title
+              {title}
             </Dialog.Title>
             <div className={styles.content}>
+              <div className={styles.info}>
+                <h4>Date: {date}</h4>
+                <h4>Time: {time} <span class={styles.est}>EST</span></h4>
+                <h4>Location: {detailedLocation ?? location}</h4>
+              </div>
               <p className={styles.description}>
-                Lorem ipsum dolor sit amet.
+                {desc}
               </p>
             </div>
 
@@ -50,7 +56,7 @@ const EventPopup = ({ }) => {
                 className={styles.closeButton}
                 onClick={closePopup}
               >
-                Close
+                Got it, thanks!
               </button>
             </div>
           </Dialog.Panel>
@@ -60,4 +66,4 @@ const EventPopup = ({ }) => {
   </>;
 }
 
-export default EventPopup;
+export default CardPopup;
