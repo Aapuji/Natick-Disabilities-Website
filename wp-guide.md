@@ -43,5 +43,5 @@ Make sure the names of the posts don't have spaces before or after the words: `E
 * [Conventions](#categories)
 
 ### Posts
-
+ 
  * [Conventions](#posts)
