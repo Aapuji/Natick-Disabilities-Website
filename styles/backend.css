@@ -98,13 +98,21 @@ table.backend.r-about-table {
   background-color:whitesmoke;
 }
 
-table.backend.r-about-table.r-about-evenRow {
+table.backend.r-about-table r-about-evenRow {
   background-color:white;
 }
 
-table.backend.r-about-table.r-about-oddRow {
+table.backend.r-about-table r-about-oddRow {
   background-color:whitesmoke;
 }
+
+/*MAYBE  ADD SOMETHING HERE FOR PROFILES*/
+
+/*RESOURCES (main)*/
+
+
+
+
 
 /* Img */
 /* Add a 'r-image' class */
