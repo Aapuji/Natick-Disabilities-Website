@@ -71,32 +71,51 @@ We want to give the the ability to add:
 */
 
 
-// Probably bad.
+//// WRONG, DONT USE. WRITE A NEW ONE, IF NEEDED.
+// // Probably bad.
+// // /**
+// //  This takes in an array
+// //  parse returns either an array of elements or an element.
+// //  So check if its an object, and if so, make it an array with one element
+// // */
+
 // /**
-//  This takes in an array
-//  parse returns either an array of elements or an element.
-//  So check if its an object, and if so, make it an array with one element
+//  * @param {*} elements List of elements to evaluate
+//  * @param {string} page String representation of the page (eg. Home, About, etc.) 
 // */
+// export function evaluateMultipleElements(elements, page) {
+//   for (let i = 0; i < elements.length; i++) {
+//     let element = elements[i];
 
-/**
- * @param {*} elements List of elements to evaluate
- * @param {string} page String representation of the page (eg. Home, About, etc.) 
-*/
-export function evaluateElements(elements, page) {
-  for (let i = 0; i < elements.length; i++) {
-    let element = elements[i];
+//     evaluateElement(element, page);
+//   }
+// }
 
-    evaluateElement(element, page);
+export class FromCategory {
+  // For a generic page
+  static Page = new FromCategory("Page");
+  // Member profiles in about page
+  static MemberProfile = new FromCategory("MemberProfile");
+  // Resources in resources pages
+  static ResourcePage = new FromCategory("ResourcePage");
+  // Event Card that holds information and brief.
+  static EventCard = new FromCategory("EventCard");
+  // Event information held inside the popup.
+  static EventPopup = new FromCategory("EventPopup");
+
+  constructor(name) {
+    this.name = name;
   }
 }
 
 /** 
  * Takes an object representing an element and modifies some of the attributes and props to the ones that fit our site, and then regenerates the jsx.
  * 
- * @param {*} element
- * @param {*} page String representation of the page.
+ * @param {*} element An HTML element gotten from WordPress.
+ * @param {FromCategory} fromCategory Represents the category this element is from.
  * 
- * --- 
+ * After getting the result from this function, call `parse` on it (from 'html-react-parser').
+ * 
  * # Examples
  * 
  * ---
@@ -130,16 +149,35 @@ export function evaluateElements(elements, page) {
  * </div>
  * ```
 */
-function evaluateElement(element, page) {
+function evaluateElement(element, fromCategory) {
   // element.props.className = 'backend ' + element.props.className;
   let classes = element.props.className.split(' ');
 
   // Mandatory styles; default styles for each tag (part 1: Default Styles)
-  // Part 2 (not here): replacing styles from Wordpress with our equivalents
   // If you want to add to existing classes (for debugging), use +=, but to replace use =.
-  switch (element.type) {
+  applyDefaultStyles(element, fromCategory);
+
+  // TODO: remove wordpress classes and stuff
+  // TODO: add our own classes
+  replaceWPStyles(element, fromCategory);
+
+  // Evaluates the children
+  evaluateChildrenOf(element);
+
+  return element;
+}
+
+/** Adds default styles to the given element reference corresponding to the category it is from.
+ * 
+ * @param {*} elementRef A reference to the element (mutates the object).
+ * @param {FromCategory} fromCategory Represents the category this element is from.
+ */
+function applyDefaultStyles(elementRef, fromCategory) {
+  // Use += here to not delete the WordPress styles.
+
+  switch (elementRef.type) {
     case 'div':
-      element.props.className = 'backend r-class-a class-b';
+      elementRef.props.className += 'backend r-class-a';
       break;
     case 'span':
       break;
@@ -151,41 +189,36 @@ function evaluateElement(element, page) {
     case 'h6':
       break;
     case 'p':
-      // Should be automatically styled (font, size, etc.)
+      // Should be automatically styled (font, size, etc.) ?
       break;
     case 'a':
-      element.type = 'Link';
-      element.props.className = 'backend b-link';
+      elementRef.type = 'Link';
+      elementRef.props.className += 'backend r-link';
       break;
     case 'img':
-      element.type = 'Image';
-      element.props.className = 'backend b-img';
+      elementRef.type = 'Image';
+      elementRef.props.className += 'backend r-img';
     default:
-      break; // throw away
+      break; // do nothing
   }
+}
 
-  // TODO: remove wordpress classes and stuff
-  // TODO: add our own classes
+/**
+ * 
+ * @param {*} elementRef A reference to an HTML element (mutates the object).
+ * @param {FromCategory} fromCategory Represents the category this element is from.
+ */
+function replaceWPStyles(elementRef, fromCategory) {
 
-  // Return string of jsx
-  // Returns html tags
-  let html = `<${element.type} ${element.props.entries().map(
-    (key, value) => {
-      // ... 
-    } 
-  )
-  })}>${evaluateChildren(element.children)}</${element.type}>`;
-
-  return html;
 }
 
 /** Evaluates the children of an element
  * 
- * @param {} children 
- * @param {string} page String representation of the page.
+ * @param {*} elementRef Reference to the element 
+ * @param {FromCategory} fromCategory Represents the category this element is from.
  * @returns string of jsx as a string
  */
-export function evaluateChildren(children, page) {
+export function evaluateChildrenOf(elementRef, fromCategory) {
   // children is array of elements (objects)
   if (Array.isArray(children)) {
     return evaluateElements(children, page);

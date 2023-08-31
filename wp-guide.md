@@ -45,3 +45,6 @@ Make sure the names of the posts don't have spaces before or after the words: `E
 ### Posts
  
  * [Conventions](#posts)
+
+### Other Notes
+For the table in the About Page, they can just create a table and we don't have to do anything special. Also, for the resource pages, make them similar to the other pages with sections and stuff. 

@@ -3,11 +3,11 @@ import Image from "next/image";
 import styles from '../styles/Hyperlink.module.css';
 import { Children } from "react";
 
-const Hyperlink = ({children, url, name, desc}) => {
+const Hyperlink = ({children, url, name, desc, descAsChild}) => {
     return <>
         <div className={styles.hyperlinkwhole}>
             <h1 className={styles.hyperlinkname}><Link href = {url}>{name}</Link></h1>
-            <p className={styles.hyperlinkdesc}>{desc}</p>
+            { descAsChild ? <></> : <p className={styles.hyperlinkdesc}>{desc}</p> }
             { children }
         </div>
     </>;

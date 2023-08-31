@@ -25,7 +25,7 @@ const Card  = ({ title, location, date, time, desc, whenClick }) => {
                 </h4>
                 <h4 className={styles.info}>
                     <span className={styles.markerIcon}><FaMapMarkerAlt alt="Location of event" /></span> 
-                    <span className={styles.infoDescriptor}> {location}</span>
+                    <span className={styles.infoDescriptor}>{location}</span>
                 </h4>
                 <p className={styles.desc}>{desc}</p>
             </div>
