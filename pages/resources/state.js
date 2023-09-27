@@ -12,8 +12,8 @@ import Link  from  'next/link';
 
 export default function State() {
   return <>
-    <Layout title="Massachussetts Resources" altText="... alt text goes here ..." hero>
-      <h1 className={styles.stateheading}>Links for Massachussetts State Resources</h1>
+    <Layout title="Massachusetts Resources" altText="... alt text goes here ..." hero>
+      <h1 className={styles.stateheading}>Links for Massachusetts State Resources</h1>
 
       <h2 className={styles.statesectionheading}>Laws, Regulations, and Rules</h2>
       <div className={styles.statesectioncontent}>

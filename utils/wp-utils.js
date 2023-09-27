@@ -3,6 +3,7 @@
  * 
  * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`)
  */
+
 export function getBasicSectionInfo(postRef) {
   let title = postRef.title ?? '';
   let subtitle = '';
@@ -34,6 +35,7 @@ export function getBasicSectionInfo(postRef) {
 /**
  * 
  * @param {{ type: string, props: object[] | object }} element The element to evaluate.
+ * 
  * ```ts
  * type element = {
  *   type: string,
@@ -90,6 +92,7 @@ We want to give the the ability to add:
 //     evaluateElement(element, page);
 //   }
 // }
+
 
 export class FromCategory {
   // For a generic page

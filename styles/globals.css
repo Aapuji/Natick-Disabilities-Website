@@ -46,6 +46,7 @@ button {
 }
 
 /* ACTIVE STATE OF DROPDOWN HANDLED HERE */
+
 a[data-headlessui-state~="active"] {
   visibility: visible;
   background-color: rgb(59, 130, 246);
