@@ -11,7 +11,7 @@ export default function Emergency() {
   return <>
     <Layout title="Emergency Resources" altText="... alt text goes here ..." hero>
       <Section imgName="Emergency Resources" title="Emergency Resources">
-        <p>my name is a dev</p>
+        <p>dev</p>
       </Section>
     </Layout>
   </>;

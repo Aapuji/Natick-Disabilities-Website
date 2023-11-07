@@ -4,8 +4,9 @@ import Image from 'next/image'
 
 const Footer = () => {
   function colorblind(){
-    console.log("hello world");
+    console.log("this is a test for the colorblind function");
   }
+
   return <footer id={styles.footer} className={styles.footerContainer}>
     <div className={styles.linkContainer}>
       <div id={styles.contactNav} className={styles.large}>
