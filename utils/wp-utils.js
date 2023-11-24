@@ -53,15 +53,15 @@ export function getBasicSectionInfo(postRef) {
  */
 /*
 
-We want to give the the ability to add:
+We want to give the ability to add:
   * Text
     - <p>, nothing
   * Headers
     - <h[1-6]>
   * Links
-    - <a> (become )
+    - <a> (become <Link>)
   * Inline Links
-    - <a>
+    - <a> (become <Link>)
   * Images
     - <img src alt >
   * Tables?

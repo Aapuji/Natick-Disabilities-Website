@@ -6,8 +6,6 @@ import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link from 'next/link';
 
-
-
 export default function Natick() {
   return <>
     <Layout title="Natick Resources" altText="... alt text goes here ..." hero>

@@ -14,6 +14,7 @@ export default function Federal() {
           Title II of the ADA relates to nondiscrimination on the basis of disability and in state and local government services. If you have questions about the ADA, call the U.S. Department of Justice ADA Information Line: 800-514-0301 (voice); 1-833-610-1264 (TTY).
         </p>
       </Section>
+      <Section imgName="Agencies and Other Resources"></Section>
     </Layout>
   </>;
 }

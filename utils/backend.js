@@ -1,4 +1,3 @@
-
 //@ts-check
 
 import { WP_SERVER } from "../pages";
@@ -55,3 +54,14 @@ export function generatePageQuery(pageName) {
     }
   `;
 }
+
+
+/** Evaluate styles based on the tag
+ * 
+ * @param {object} element Element to evaluate
+ * @returns {object} New element
+*/
+function $(element) {
+  
+}
+
