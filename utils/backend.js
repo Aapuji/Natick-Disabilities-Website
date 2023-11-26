@@ -1,3 +1,5 @@
+import parse from 'html-react-parser';
+
 //@ts-check
 
 import { WP_SERVER } from "../pages";
@@ -56,6 +58,43 @@ export function generatePageQuery(pageName) {
 }
 
 
+class Category {
+  static Home = new Category('Home Page', 'Page');
+  static About = new Category('About Page', 'Page');
+  static Resources = new Category('Resources Page', 'Page');
+  static Events = new Category('Events Page', 'Page');
+
+  static MemberProfiles = new Category('About Profiles', 'Section')
+  static EventCard = new Category('EventCard', 'Section');
+  static EventPopup = new Category('EventPopup', 'Section');
+
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+
+  static from(name) {
+    switch (name) {
+      case 'Home Page':
+        return Category.Home;
+      case 'About Page':
+        return Category.About;
+      case 'Resources Page':
+        return Category.Resources;
+      case 'Events Page':
+        return Category.Events;
+      case 'About Profiles':
+        return Category.MemberProfiles;
+      case 'Event Card':
+        return Category.EventCard;
+      case 'Event Popup':
+        return Category.EventPopup;
+      default:
+        return null;
+    }
+  }
+}
+
 /** Evaluate styles based on the tag
  * 
  * @param {{ title: string, content: string, id: string, date: string }} postRef Reference to post
@@ -64,11 +103,59 @@ export function generatePageQuery(pageName) {
 */
 function evaluatePost(postRef, category) {
   let elements = Utils.splitContent(postRef.content);
+  let cat = Category.from(category);
 
   console.log("Contents: " + elements);
 
-  for (let element of elements) {
-    evaluateElement(element);
+  for (let i = 0; i < elements.length; i++) {
+    elements[i] = evaluateElement(elements[i], cat);
+  }
+
+  return elements;
+}
+
+/** Evaluates element by turning string into object, then
+ * 
+ * @param {string} element
+ * @param {Category} category  
+ * 
+*/
+function evaluateElement(element, category) {
+  // String -> Object (gets tag, className, etc.)
+  let e = parse(element);
+
+  // Evaluates the Tag Name
+  evaluateTag(e);
+
+  // Evaluates styles (by adding styles, or replacing styles, or removing styles)
+  evaluateStyles(e, category);
+}
+
+/** Changes tag names ('a' and 'img') and adds attributes required for those new tag names.
+ * 
+*/
+function evaluateTag(elementRef) {
+  switch (elementRef.name) {
+    case 'a': 
+      elementRef.name = 'Link';
+      break;
+    case 'img':
+      elementRef.name = 'Image';
+      break;
+    default:
+      break;
   }
 }
 
+/** Adds, removes, and replaces styles from the elements
+ * 
+ * 
+*/
+function evaluateStyles(elementRef, category) {
+  switch (category.name) {
+    case 'Home Page':
+      break;
+    default:
+      break;
+  }
+}

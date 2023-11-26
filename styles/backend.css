@@ -12,8 +12,8 @@ Italic:
   <em> text </em>
 Inline Link (url, eg. wikipedia.org): 
   <a href=$src data-type="URL" data-id=url> text </a>
-
   *Note: data-* doesn't change appearance (https://www.dofactory.com/html/a/data#null).
+
 Img:
   <figure class="wp-block-image size-_">
     <img 
@@ -106,9 +106,53 @@ table.backend.r-about-table r-about-oddRow {
   background-color:whitesmoke;
 }
 
-/*MAYBE  ADD SOMETHING HERE FOR PROFILES*/
+/*MAYBE ADD SOMETHING HERE FOR PROFILES*/
+
+/*EVENTS*/
+
+p.backend.r-events-desc {
+  font-size: small;
+  margin-left: 5px;
+  margin-right: 15px;
+  line-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; 
+}
 
 /*RESOURCES (main)*/
+
+h1.backend.r-resources-header {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  font-family: 'Libre Baskerville', sans-serif;
+  font-weight: normal;
+  text-align: center;
+  text-align: left;
+}
+
+/*SUBS*/
+
+/*EMERGENCY(NA)*/
+
+/*FEDERAL*/
+
+
+
+/*LOCAL*/
+
+/*NATICK*/
+
+/*STATE*/
+
+/*STUDENT*/
+
+/*VETERAN*/
+
+
 
 
 
