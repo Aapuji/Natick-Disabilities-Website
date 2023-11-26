@@ -58,10 +58,17 @@ export function generatePageQuery(pageName) {
 
 /** Evaluate styles based on the tag
  * 
- * @param {object} element Element to evaluate
+ * @param {{ title: string, content: string, id: string, date: string }} postRef Reference to post
+ * @param {string} category Category that it is in (they will always only have 1)
  * @returns {object} New element
 */
-function $(element) {
-  
+function evaluatePost(postRef, category) {
+  let elements = Utils.splitContent(postRef.content);
+
+  console.log("Contents: " + elements);
+
+  for (let element of elements) {
+    evaluateElement(element);
+  }
 }
 
