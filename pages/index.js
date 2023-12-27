@@ -78,14 +78,17 @@ export default function Home({ posts, orderDesc }) {
             post => {
               let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
 
-              console.log(contents);
+              // console.log(contents);
           
               return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
-                {contents.map((c, i) => <p key={`${post.id}#${i}`}>{c}</p>)}
+                { contents.map((content, i) => Backend.evaluateElement(content, Backend.Category.Home)) }
               </Section>
             }
           )
         }
+        <Section title="Hi" subtitle="Bye">
+          <p>Hello World</p>
+        </Section>
       </main>
     </Layout>
   </>;

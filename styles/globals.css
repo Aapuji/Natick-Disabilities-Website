@@ -53,7 +53,7 @@ a[data-headlessui-state~="active"] {
   color: white;
 }
 
-table {
+/* table {
   border: 1px solid black;
 }
 
@@ -67,4 +67,4 @@ td {
   border: 1px solid black;
   text-align: center;
   padding: 0.5rem;
-}
+} */

@@ -6,6 +6,7 @@ import Section from '../components/Section';
 import Profile from '../components/Profile';
 import * as Utils from '../utils/wp-utils';
 import * as Backend from '../utils/backend';
+import parse from 'html-react-parser';
 
 const members = [
   { key: 0, name: 'Amanda Hsiao', startDate: 'Jul 01, 2020', term: 2, position: 'Secretary' },
@@ -59,7 +60,8 @@ export default function About({ posts, orderDesc }) {
                 imgName={title} 
                 key={post.id}
               >
-                { contents.map((content, i) => <p key={`${post.id}#${i}`}>{content}</p>) }
+                {/* { contents.map((content, i) => <p key={`${post.id}#${i}`}>{content}</p>) } */}
+                { contents.map((content, i) => parse(content)) }
               </Section>;
             }
           )

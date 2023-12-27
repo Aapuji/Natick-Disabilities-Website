@@ -63,10 +63,11 @@ Highlighting:
 
 /* HOME */
 
-p.backend.r-home-content {
+p {
   text-align: left;
   width: 80%;
   margin: auto;
+  /* color: blue; */
 }
 
 /* ABOUT */
@@ -132,11 +133,13 @@ h1.backend.r-resources-header {
   font-weight: normal;
   text-align: center;
   text-align: left;
-}
+} 
 
 /*SUBS*/
 
 /*EMERGENCY(NA)*/
+
+
 
 /*FEDERAL*/
 

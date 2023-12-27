@@ -1,41 +1,41 @@
 import Head from 'next/head';
 import Layout from '/components/Layout';
-import  Hyperlink from '/components/Hyperlink'
+import Hyperlink from '/components/Hyperlink'
 import styles from '/styles/Student.module.css'
 import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link  from  'next/link';
-
+import Section from '/components/Section';
 
 
 //massadvocates inline ("resources")
 
+// TODO: Make Links styled so that they look like links.
+
+export default function Student() {
+  return <>
+    <Layout title="Student Resources" altText="... alt text goes here ..." hero>
+      <Section title="General Links" imgName="General Links">
+        <h3><Link href="https://www.northstarteens.org/">North Star: Self-Directed Learning for Teens</Link></h3>
+        <p>North Star is not a school, but a hybrid with aspects of homeschooling and school, and does not offer diplomas, credits, or grades. Since 1996, we have provided an alternative to school where teens learn in the way that suits them best. </p>
+        
+        <h3><Link href="https://www.waypointadventure.org/">Waypoint Adventure</Link></h3>
+        <p>Waypoint Adventure uses quality experiential and adventure-based education programs to transform the lives of individuals with disabilities. We work with school groups, social service organizations, families, and individuals to offer custom designed adventures that meet the goals and objectives of that group or person. These programs are not just about having fun outdoors; they are about positive individual and group development. They&apos;re about building social and character skills, forming teams, and transforming people&apos;s views of themselves and their abilities.</p>
+
+        <h3><Link href="Parters for Youth with Disabilities"></Link></h3>
+        <p>PYD&apos;s goal is to create a world where young people with disabilities will be able to live with dignity and pride in who they are, and to lead self-determined lives filled with purpose. To make this happen, we build the skills and abilities of young people with disabilities, and increase the inclusivity of workplaces, organizations, and communities.</p>
+      </Section>
+    </Layout>
+  </>;
+}
+
+
+
+/*
 export default function Student() {
   return <>
     <Layout title="Student Resources" altText="... alt text goes here ..." hero>
       <h1 className={styles.studentheading}>Links for Student Resources</h1>
-      <div className={styles.studentsectioncontent}>
-        <Hyperlink 
-          url = "https://www.northstarteens.org/"
-          name = "North Star: Self-Directed Learning for Teens"
-        >
-        <p>North Star is not a school, but a hybrid with aspects of homeschooling and school, and does not offer diplomas, credits, or grades. Since 1996, we have provided an alternative to school where teens learn in the way that suits them best.</p>
-        </Hyperlink>
-
-        <Hyperlink 
-          url = "https://www.waypointadventure.org/"
-          name = "Waypoint Adventure"
-        >
-        <p>Waypoint Adventure uses quality experiential and adventure-based education programs to transform the lives of individuals with disabilities. We work with school groups, social service organizations, families, and individuals to offer custom designed adventures that meet the goals and objectives of that group or person. These programs are not just about having fun outdoors; they are about positive individual and group development. They’re about building social and character skills, forming teams, and transforming people’s views of themselves and their abilities.</p>
-        </Hyperlink>
-
-        <Hyperlink 
-          url = "https://www.pyd.org/"
-          name = "Partners for Youth with Disabilities"
-        >
-        <p>PYD&apos;s goal is to create a world where young people with disabilities will be able to live with dignity and pride in who they are, and to lead self-determined lives filled with purpose. To make this happen, we build the skills and abilities of young people with disabilities, and increase the inclusivity of workplaces, organizations, and communities.</p>
-        </Hyperlink>
-
         <Hyperlink 
           url = "https://www.safekids.org/"
           name = "Safe Kids Worldwide"
@@ -103,3 +103,4 @@ export default function Student() {
     </Layout>
   </>;
 }
+*/

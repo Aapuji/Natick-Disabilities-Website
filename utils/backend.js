@@ -1,4 +1,4 @@
-import parse from 'html-react-parser';
+import parse, { attributesToProps } from 'html-react-parser';
 
 //@ts-check
 
@@ -58,7 +58,7 @@ export function generatePageQuery(pageName) {
 }
 
 
-class Category {
+export class Category {
   static Home = new Category('Home Page', 'Page');
   static About = new Category('About Page', 'Page');
   static Resources = new Category('Resources Page', 'Page');
@@ -101,11 +101,12 @@ class Category {
  * @param {string} category Category that it is in (they will always only have 1)
  * @returns {object} New element
 */
-function evaluatePost(postRef, category) {
+
+export function evaluatePost(postRef, category) {
   let elements = Utils.splitContent(postRef.content);
   let cat = Category.from(category);
 
-  console.log("Contents: " + elements);
+  // console.log("Contents: " + elements);
 
   for (let i = 0; i < elements.length; i++) {
     elements[i] = evaluateElement(elements[i], cat);
@@ -120,21 +121,27 @@ function evaluatePost(postRef, category) {
  * @param {Category} category  
  * 
 */
-function evaluateElement(element, category) {
+export function evaluateElement(element, category) {
   // String -> Object (gets tag, className, etc.)
-  let e = parse(element);
+  // let e = parse(element);
+  // console.log('E')
+  // console.log(e);
 
   // Evaluates the Tag Name
-  evaluateTag(e);
+  // evaluateTag(e);
 
   // Evaluates styles (by adding styles, or replacing styles, or removing styles)
-  evaluateStyles(e, category);
+  let el = evaluateStyles(element, category);
+
+  console.dir(el);
+
+  return el;
 }
 
-/** Changes tag names ('a' and 'img') and adds attributes required for those new tag names.
+/** Changes tag names ('a' to Link and 'img' to Image) and adds attributes required for those new tag names.
  * 
 */
-function evaluateTag(elementRef) {
+export function evaluateTag(elementRef) {
   switch (elementRef.name) {
     case 'a': 
       elementRef.name = 'Link';
@@ -151,9 +158,32 @@ function evaluateTag(elementRef) {
  * 
  * 
 */
-function evaluateStyles(elementRef, category) {
+export function evaluateStyles(elementRef, category) {
+  console.dir(elementRef)
   switch (category.name) {
     case 'Home Page':
+      if (parse(elementRef).type === 'p') {
+        console.log("hello:");
+        console.dir(parse('<h1 className="Hello World">Hi</h1>'));
+        // elementRef.props = { className: 'backend r-home-content', ...elementRef.props };
+        return parse(elementRef, {
+          replace(domNode) {
+            console.log('HERE!!!!');
+            if (domNode.attribs){
+              console.log('IN HERE!!! 1');
+              console.dir(domNode);
+              if (domNode.name === 'p') {
+                console.log('IN IN HERE!!! 2');
+                let props = attributesToProps(domNode.attribs);
+                props.className = 'backend r-home-content';
+                let output = <p {...props}>{domNode.children}</p>;
+                console.log('OUTPUT')
+                console.log(output);
+              }
+            }
+          }
+        })
+      }
       break;
     default:
       break;

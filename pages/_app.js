@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import '../styles/backend.css'
+// import '../styles/backend.css';
 
 function MyApp({ Component, pageProps }) {
   return (
