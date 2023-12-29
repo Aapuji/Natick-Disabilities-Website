@@ -5,8 +5,18 @@ import styles from '/styles/Local.module.css'
 import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link  from  'next/link';
+import Section from "/components/Section";
 
+export default function Local() {
+  return <Layout title="Local Information & Resources" altText="... alt text goes here ..." hero>
+    <Section title="General Natick Resources">
+      <h3><Link href="https://www.mwrta.com/senior-and-disabled">MetroWest Regional Transit Authority</Link></h3>
+      <p>Provides information for seniors and disabled individuals about para-transit transportation routes and services within the Framingham/Natick service area.</p>
+    </Section>
+  </Layout>;
+}
 
+/*
 export default function Local() {
   return <>
     <Layout title="Local Information & Resources" altText="... alt text goes here ..." hero>
@@ -66,3 +76,4 @@ export default function Local() {
     </Layout>
   </>;
 }
+*/

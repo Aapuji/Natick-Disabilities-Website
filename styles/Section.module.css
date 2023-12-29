@@ -48,3 +48,11 @@
   composes: contentFont from 'utils.module.css';
   font-style: italic;
 }
+
+/* STYLING INSIDE CONTENT */
+
+/* For resource page link headers */
+.content h3 > a {
+  color: rgb(55, 62, 111);
+  text-decoration: underline; /* TODO: Style for normal link styles (eg. hover) */ 
+}

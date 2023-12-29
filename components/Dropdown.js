@@ -15,7 +15,7 @@ const Dropdown = () => {
    * `label` is what is shown (as a string, not html).
   */
   const items = [
-    { type: 'option', href: '/', label: 'Emergency' }, // Emergency
+    { type: 'option', href: '/resources/emergency', label: 'Emergency' }, // Emergency
     { type: 'divider' },
     { type: 'option', href: '/resources/student', label: 'Student' }, // People
     { type: 'option', href: '/resources/veteran', label: 'Veteran' },

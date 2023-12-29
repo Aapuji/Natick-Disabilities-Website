@@ -3,7 +3,7 @@ import Layout from '/components/Layout';
 import Hyperlink from '/components/Hyperlink';
 import Section from '/components/Section';
 
-import * as Backend from '../../backend';
+import * as Backend from '../../utils/backend';
 
 // import styles from '/styles/Emergency.module.css';
 
@@ -18,5 +18,5 @@ export default function Emergency() {
 }
 
 export async function getStaticProps() {
-  return await Backend.getBasicRequest('Emergency');
+  return await Backend.getBasicRequest('Emergency Resources');
 }

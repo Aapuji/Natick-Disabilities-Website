@@ -36,7 +36,7 @@ export async function getBasicRequest(page) {
  * In Wordpress, the category slugs (with dashes turned into spaces) will be `PAGE_NAME Page Category`, and the names of the categories will be `PAGE_NAME Page`.  
  * 
  * @param {string} pageName Page to create query for (eg. `"Home"`, `'About'`) 
- */
+*/
 export function generatePageQuery(pageName) {
   return `
     query ${pageName}PageQuery {
