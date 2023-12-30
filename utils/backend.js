@@ -9,7 +9,7 @@ import * as Utils from "./wp-utils";
  * 
  * Requests `title`, `content`, `id`, and `date` for each post in the given page's category, as well as the description of that category. 
  * 
- * @param {string} page Name of the page that this request is for.
+ * @param {string} page Name of the page that this request is for. Capitalize the first letter of each word.
  * @returns {Promise<{ props: { posts: { nodes: { title: string, content: string, id: string, date: string }[] }, orderDesc: string }}>}
  */
 export async function getBasicRequest(page) {
@@ -35,11 +35,11 @@ export async function getBasicRequest(page) {
  * 
  * In Wordpress, the category slugs (with dashes turned into spaces) will be `PAGE_NAME Page Category`, and the names of the categories will be `PAGE_NAME Page`.  
  * 
- * @param {string} pageName Page to create query for (eg. `"Home"`, `'About'`) 
+ * @param {string} pageName Page to create query for (eg. `"Home"`, `'About'`).
 */
 export function generatePageQuery(pageName) {
   return `
-    query ${pageName}PageQuery {
+    query ${combineWords(pageName)}PageQuery {
       posts(where: {categoryName: "${pageName} Page Category"}) {
         nodes {
           title
@@ -55,6 +55,15 @@ export function generatePageQuery(pageName) {
       }
     }
   `;
+}
+
+/** Makes a string workable in a GraphQL query (just removes spaces).
+ * 
+ * @param {string} string The string to remove spaces from
+ * @returns {string} string without spaces
+ */
+function combineWords(string) {
+  return string.replace(' ', '');
 }
 
 

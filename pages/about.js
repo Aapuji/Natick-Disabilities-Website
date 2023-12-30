@@ -1,7 +1,5 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import styles from '../styles/About.module.css';
-import Image from 'next/image';
 import Section from '../components/Section';
 import Profile from '../components/Profile';
 import * as Utils from '../utils/wp-utils';
