@@ -15,7 +15,7 @@ import Section from '/components/Section';
 export default function Student() {
   return <>
     <Layout title="Student Resources" altText="... alt text goes here ..." hero>
-      <Section title="General Links" imgName="General Links">
+      <Section title="General Resources" imgName="General Resources">
         <h3><Link href="https://www.northstarteens.org/">North Star: Self-Directed Learning for Teens</Link></h3>
         <p>North Star is not a school, but a hybrid with aspects of homeschooling and school, and does not offer diplomas, credits, or grades. Since 1996, we have provided an alternative to school where teens learn in the way that suits them best. </p>
         

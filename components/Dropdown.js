@@ -20,8 +20,9 @@ const Dropdown = () => {
     { type: 'option', href: '/resources/student', label: 'Student' }, // People
     { type: 'option', href: '/resources/veteran', label: 'Veteran' },
     { type: 'divider' },
-    { type: 'option', href: '/resources/federal', label: 'Federal' }, // Government
+    { type: 'option', href: '/resources/federal', label: 'Federal' }, // Government & Region
     { type: 'option', href: '/resources/state', label: 'State' },
+    { type: 'option', href: '/resources/local', label: 'Local' },
   ];
 
   return <div className={styles.menuDiv}>

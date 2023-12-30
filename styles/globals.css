@@ -53,6 +53,8 @@ a[data-headlessui-state~="active"] {
   color: white;
 }
 
+/* Make sure the data-headlessui-state class is added when dropdown Menu Items are active. Check to make sure this will remain true in minor and patch releases. If it only works for patches, change package.json dep to ~# not ^# */
+
 /* table {
   border: 1px solid black;
 }

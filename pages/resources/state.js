@@ -1,15 +1,30 @@
-import Head from 'next/head';
 import Layout from '/components/Layout';
-import  Hyperlink from '/components/Hyperlink'
-import styles from '/styles/State.module.css'
-import Dropdown from '/components/Dropdown';
-import { useState } from 'react';
+import Section from '/components/Section';
 import Link  from  'next/link';
 
 //MassAccess (lines _-_) has links for "rental homes" and "home ownership" in the description
 //LINE 118: To find accessible and affordable <Link> rental homes </Link> and home ownership opportunities in Massachusetts.
 
+export default function State() {
+  return <Layout title="Massachusetts Resources" altText="... alt text goes here ..." hero>
+    <Section title="State Agencies" imgName="State Agencies">
+      <h3><Link href="https://www.mass.gov/orgs/massachusetts-office-on-disability">Massachusetts Office on Disability (MOD)</Link></h3>
+      <p>The Massachusetts Office on Disability (MOD) works to ensure that people with disabilities can equally participate in all aspects of life in Massachusetts. MOD serves as a resource to state agencies, municipalities, and members of the general public by providing information, guidance and training on matters concerning disability-related civil rights, equal access, and opportunity.</p>
 
+      <h3><Link href="https://www.mass.gov/orgs/architectural-access-board">Massachusetts Architectural Access Board (521 CMR)</Link></h3>
+      <p>The Architectural Access Board (AAB) develops and enforces regulations designed to make public buildings accessible to, functional for, and safe for use by persons with disabilities.</p>
+    </Section>
+    <Section title="State Laws and Regulations" imgName="State Laws and Regulations">
+      <h3><Link href="https://www.mass.gov/fair-housing-law">Massachusetts Fair Housing Law</Link></h3>
+      <p>State and federal law prohibit discrimination in the sale and rental of housing by property owners, landlords, property managers, mortgage lenders, and real estate agents. These fair housing laws make it unlawful to discriminate based on race, color, national origin, gender, gender identity, sexual orientation, disability, ancestry, genetic information, marital status, veteran or active military status, age, famillial status (i.e., children), and source of income (i.e., Section 8 voucher).</p>
+
+      <h3><Link href="https://www.mass.gov/info-details/overview-of-housing-discrimination">Massachusetts Commission Against Discrimination (Housing, Service Animals)</Link></h3>
+      <p>MCAD enforces the anti-discrimination laws of Massachusetts which protects you if are treated differently or unfairly based on your membership in a protected class by your landlord or condo association, and when you are seeking new housing.</p>
+    </Section>
+  </Layout>;
+}
+
+/*
 export default function State() {
   return <>
     <Layout title="Massachusetts Resources" altText="... alt text goes here ..." hero>
@@ -129,3 +144,4 @@ export default function State() {
     </Layout>
   </>;
 }
+*/

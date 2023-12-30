@@ -1,20 +1,21 @@
 import Link from 'next/link';
 import Layout from '/components/Layout';
-import Hyperlink from '/components/Hyperlink';
 import Section from '/components/Section';
-
-import styles from '/styles/Federal.module.css'
 
 export default function Federal() {
   return <>
     <Layout title="Federal Resources" altText="... alt text goes here ..." hero>
       <Section imgName="Laws and Regulations" title="Laws and Regulations">
         <h3><Link href="https://www.ada.gov/law-and-regs/title-ii-2010-regulations/">Title II of the Americans with Disabilities Act (“ADA”)</Link></h3>
-        <p>
-          Title II of the ADA relates to nondiscrimination on the basis of disability and in state and local government services. If you have questions about the ADA, call the U.S. Department of Justice ADA Information Line: 800-514-0301 (voice); 1-833-610-1264 (TTY).
-        </p>
+        <p>Title II of the ADA relates to nondiscrimination on the basis of disability and in state and local government services. If you have questions about the ADA, call the U.S. Department of Justice ADA Information Line: 800-514-0301 (voice); 1-833-610-1264 (TTY).</p>
       </Section>
-      <Section imgName="Agencies and Other Resources"></Section>
+      <Section imgName="Agencies, Guides, and Other Resources">
+        <h3><Link href="https://archive.ada.gov/taman2.htm">ADA Title II Technical Assistance Manual</Link></h3>
+        <p>This technical assistance manual addresses the requirements of title II of the Americans with Disabilities Act, which applies to the operations of State and local governments.</p>
+        
+        <h3><Link href="https://www.hud.gov/program_offices/fair_housing_equal_opp/disability_main">HUD Fair Housing Guidance and FAQs</Link></h3>
+        <p>Learn more about the many federal laws that help promote equal housing opportunity for individuals with disabilities.</p>
+      </Section>
     </Layout>
   </>;
 }

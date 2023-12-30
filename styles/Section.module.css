@@ -54,5 +54,13 @@
 /* For resource page link headers */
 .content h3 > a {
   color: rgb(55, 62, 111);
-  text-decoration: underline; /* TODO: Style for normal link styles (eg. hover) */ 
+  text-decoration: none;
+}
+
+.content h3 > a:hover {
+  text-decoration: underline;
+}
+
+.content h3 > a:visited {
+  /* color: ; ??? */
 }
