@@ -14,7 +14,7 @@ export default function Local() {
       <p>Natick&apos;s Commission on Disability (NCOD) promotes the inclusion of people with disabilities in all aspects of community life. For more information, contact the NCOD at (email address to come).</p>
 
       <h3><Link href="https://www.natickma.gov/1609/ADA-Coordinator">ADA Coordinator</Link></h3>
-      <p>Natick's ADA Coordinator is a local point of contact and resource if you have questions or concerns about the application of the Americans with Disabilities Act in Natick.</p>
+      <p>Natick&apos;s ADA Coordinator is a local point of contact and resource if you have questions or concerns about the application of the Americans with Disabilities Act in Natick.</p>
 
       <h3><Link href="https://www.natickma.gov/626/Council-on-Aging-Human-Services">Council on Aging</Link></h3>
       <p>The Council on Aging seeks to provide an array of activities, programs and services to meet the educational, social, health and wellness of elders, families and individuals with disabilities living in the community. Alone and in partnership with community organizations and other town departments, the Council on Aging focuses on empowering Natick residents of all incomes and abilities to make informed decisions, to remain actively engaged, and to maintain their health, vitality and independence.</p>
