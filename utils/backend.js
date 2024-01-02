@@ -1,7 +1,5 @@
 import parse, { attributesToProps } from 'html-react-parser';
 
-//@ts-check
-
 import { WP_SERVER } from "../pages";
 import * as Utils from "./wp-utils";
 
@@ -66,6 +64,27 @@ function combineWords(string) {
   return string.replace(' ', '');
 }
 
+/** Allows for any query text to be passed in a request while keeping the other boilerplate the same.
+ * 
+ * @param {string} query
+ * @return {??} 
+*/
+export async function getRequestBoilerplate(query) {
+  const res = await fetch(WP_SERVER + '/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: query
+    })
+  });
+
+  const json = await res.json();
+
+  return json;
+}
+
+
+// Weird stuff ahead, may be useless.
 
 export class Category {
   static Home = new Category('Home Page', 'Page');
@@ -155,44 +174,23 @@ export function evaluateTag(elementRef) {
     case 'a': 
       elementRef.name = 'Link';
       break;
-    case 'img':
-      elementRef.name = 'Image';
-      break;
-    default:
-      break;
-  }
-}
+    case 'img':      
+      let copy = { ...elementRef };
+      copy.name = 'Image';
+      copy.fill = true;
 
-/** Adds, removes, and replaces styles from the elements
- * 
- * 
-*/
-export function evaluateStyles(elementRef, category) {
-  console.dir(elementRef)
-  switch (category.name) {
-    case 'Home Page':
-      if (parse(elementRef).type === 'p') {
-        console.log("hello:");
-        console.dir(parse('<h1 className="Hello World">Hi</h1>'));
-        // elementRef.props = { className: 'backend r-home-content', ...elementRef.props };
-        return parse(elementRef, {
-          replace(domNode) {
-            console.log('HERE!!!!');
-            if (domNode.attribs){
-              console.log('IN HERE!!! 1');
-              console.dir(domNode);
-              if (domNode.name === 'p') {
-                console.log('IN IN HERE!!! 2');
-                let props = attributesToProps(domNode.attribs);
-                props.className = 'backend r-home-content';
-                let output = <p {...props}>{domNode.children}</p>;
-                console.log('OUTPUT')
-                console.log(output);
-              }
-            }
-          }
-        })
-      }
+      // <div class="image-container">
+      //   <Image
+      //     src="src"
+      //     alt="alt"
+      //     fill
+      //   />
+      // </div>
+
+      return <div>
+        { parse(copy) }
+      </div>
+
       break;
     default:
       break;

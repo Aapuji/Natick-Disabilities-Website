@@ -1,3 +1,4 @@
+import * as Backend from './backend';
 
 /** Returns an object with useful values gotten from the given post reference.
  * 
@@ -29,6 +30,174 @@ export function getBasicSectionInfo(postRef) {
     contents
   }
 }
+
+/** Takes a profile post and adds the required data to  the `members` and `profiles` arrays. Assumes that this function is only being applied to the correct sections (doesn't check if it's being used in the right places).
+ * 
+ * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
+ * @param {{ key: int, name: string, startDate: string, term: int, position: string }[]} membersRef A reference to the array of member objects
+ * @param {{ key: int, name: string, position: string, img: Image, desc: string }[]} profilesRef A reference to the array of profile objects
+ * 
+ * Additionally, `postRef` must adhere to the following order:
+ * 1. TITLE (name of member)
+ * 2. P TAG (start date)
+ * 3. P TAG (term)
+ * 4. P TAG (position)
+ * 5. IMAGE (image, preferrably headshot, of the member)
+ * 6. P TAG (description of the member)
+ * 
+*/
+export function handleProfilePost(postRef, membersRef, profilesRef) {
+  const data = analyzeProfile(postRef);
+
+  appendToMemberTable(membersRef, data);
+  appendToProfileArray(profilesRef, data);
+}
+
+/** Gets the important data from an about-page-profile post and returns it as an object. Requires that the first 5 tags of content not have children, other than text (eg. <p>Hello</p>)
+ * 
+ * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
+ * @returns {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }}
+*/
+function analyzeProfile(postRef) {
+  const contents = splitContent(postRef.content);
+
+  // parse(...).props.children is a string if the tag holds text
+  // parseInt(...) parses a string into an int.
+  let startDate = parse(contents[0]).props.children;
+  let term = parseInt(parse(contents[1]).props.children);
+  let position = parse(contents[2]).props.children;
+  let image = parse(Backend.evaluateTag(contents[3])); // TODO: FIND THAT FUNCTION (Backend.evaluateTag?)
+  let blurb = parse(contents[4]).props.children;
+
+  return { 
+    name: postRef.title,
+    term,
+    position,
+    image,
+    blurb
+  };
+}
+
+/** Appends relevant data to `membersRef`.
+ * 
+ * @param {{ name: string, startDate: string, term: number, position: string }[]} membersRef A reference to the array of member objects.
+ * @param {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
+*/
+
+function appendToMemberTable(membersRef, data) {
+  membersRef.push({ 
+    key: membersRef.length,
+    name: data.title,
+    startDate: data.startDate,
+    term: data.term,
+    position: data.position,
+  });
+}
+
+/** Appends relevant data to `profilesRef`.
+ * 
+ * @param {{ key: int, name: string, position: string, img: Image, desc: string }[]} profilesRef A reference to the array of profile objects
+ * @param {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
+*/
+function appendToProfileArray(profilesRef, data) {
+  profilesRef.push({
+    key: profilesRef.length,
+    name: data.name,
+    position: data.position,
+    image: data.image,
+    desc: data.blurb
+  });
+}
+
+/** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.
+ * 
+ * @param {string} categoryDesc Relevant part of description of category for the page listing the order of the content on the page.
+ * @param {{ title: string, content: string, id: string, date: string }[]} postsRef A reference to the posts array to sort (ie. `posts.nodes`).
+*/
+export function orderPageContent(categoryDesc, postsRef) {
+  let orderArr = categoryDesc.split(/\r\n|\n/);  // Splits category description into lines
+  
+  for (let i = 0; i < orderArr.length; i++) {
+    orderArr[i] = orderArr[i].replace(/ *[0-9]*\.? */, '');  // Removes number and dot (eg. "4. ")
+  }
+
+  // Sorts the posts according to the order
+  // In Wordpress, admin can add the number delimiters (eg. "1. "), but those are only to help them, the code will display it in the order from top to bottom.
+  postsRef.sort((a, b) => orderArr.indexOf(a.title) - orderArr.indexOf(b.title));
+}
+
+/** Removes HTML tags from text.
+ * 
+ * @param {string} html The initial text with html tags.
+ * @param {string[]} tags List of html tags to remove.
+ * @returns {string} Initial string with all tags removed (as of now, it doesn't work with tags with attributes).
+ */
+
+export function removeTags(html, tags) {
+  const regex = new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g');
+  return html.replace(regex, '');
+}
+
+/** Removes `p` tags from text.
+ * 
+ * @param {string} html The initial text with `p` tags.
+ * @returns {string} Text with `p` tags removed.
+ */
+// export function removeP(html) {
+//   return removeTags(html, ['p']); 
+// }
+
+/** Splits content into lines, with empty lines removed.
+ * 
+ * @param {string} content Content from WPGraphQL query.
+ * @returns {string[]} Array of given content, split by line breaks, with any empty line being removed. 
+ */
+export function splitContent(content) {
+  return content.split(/\r\n|\n/).filter(el => el !== '');
+}
+
+// THIS STUFF MAY BE USELESS
+
+const VALID_ANNOTATIONS = [
+  'Subtitle',
+];
+
+/** Finds, removes, and returns an annotation and its corresponding text in a line.
+ * 
+ * Assumed format of line with annotation: `ANNOT: TEXT`.
+ * 
+ * @param {string} line Line of content
+ * @returns {{ annot: string | null, text: string }} An object with `annot` and `text` properties. The `annot` property is the annotation, and is a string if there is one or `null` if there wasn't an annotation found, while `text` is the rest of the line after the colon.
+ */
+export function removeAnnotation(line) {
+  if (line === '') {
+    return {
+      annot: null,
+      text: ''
+    }
+  }
+
+  let index = line.indexOf(':');
+  let annotIdx = VALID_ANNOTATIONS.indexOf(line.substring(0, index));
+  
+  if (annotIdx == -1) {
+    return {
+      annot: null,
+      text: line
+    };
+  }
+
+  return {
+    annot: VALID_ANNOTATIONS[annotIdx],
+    text: line.substring(index + 1).trim()
+  }
+}
+
+
+// THIS STUFF MAY BE USELESS
+
+
+
 
 
 
@@ -239,87 +408,5 @@ export function evaluateChildrenOf(elementRef, fromCategory) {
 
   // children is an element (object)
   return evaluateElement(children, page);
-}
-
-/** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.
- * 
- * @param {string} categoryDesc Relevant part of description of category for the page listing the order of the content on the page.
- * @param {{ title: string, content: string, id: string, date: string }[]} postsRef A reference to the posts array to sort (ie. `posts.nodes`).
-*/
-export function orderPageContent(categoryDesc, postsRef) {
-  let orderArr = categoryDesc.split(/\r\n|\n/);  // Splits category description into lines
-  
-  for (let i = 0; i < orderArr.length; i++) {
-    orderArr[i] = orderArr[i].replace(/ *[0-9]*\.? */, '');  // Removes number and dot (eg. "4. ")
-  }
-
-  // Sorts the posts according to the order
-  // In Wordpress, admin can add the number delimiters (eg. "1. "), but those are only to help them, the code will display it in the order from top to bottom.
-  postsRef.sort((a, b) => orderArr.indexOf(a.title) - orderArr.indexOf(b.title));
-}
-
-/** Removes HTML tags from text.
- * 
- * @param {string} html The initial text with html tags.
- * @param {string[]} tags List of html tags to remove.
- * @returns {string} Initial string with all tags removed (as of now, it doesn't work with tags with attributes).
- */
-
-export function removeTags(html, tags) {
-  const regex = new RegExp(`</?${tags.map(tag => tag)} */?>`, 'g');
-  return html.replace(regex, '');
-}
-
-/** Removes `p` tags from text.
- * 
- * @param {string} html The initial text with `p` tags.
- * @returns {string} Text with `p` tags removed.
- */
-// export function removeP(html) {
-//   return removeTags(html, ['p']); 
-// }
-
-/** Splits content into lines, with empty lines removed.
- * 
- * @param {string} content Content from WPGraphQL query.
- * @returns {string[]} Array of given content, split by line breaks, with any empty line being removed. 
- */
-export function splitContent(content) {
-  return content.split(/\r\n|\n/).filter(el => el !== '');
-}
-
-const VALID_ANNOTATIONS = [
-  'Subtitle',
-];
-
-/** Finds, removes, and returns an annotation and its corresponding text in a line.
- * 
- * Assumed format of line with annotation: `ANNOT: TEXT`.
- * 
- * @param {string} line Line of content
- * @returns {{ annot: string | null, text: string }} An object with `annot` and `text` properties. The `annot` property is the annotation, and is a string if there is one or `null` if there wasn't an annotation found, while `text` is the rest of the line after the colon.
- */
-export function removeAnnotation(line) {
-  if (line === '') {
-    return {
-      annot: null,
-      text: ''
-    }
-  }
-
-  let index = line.indexOf(':');
-  let annotIdx = VALID_ANNOTATIONS.indexOf(line.substring(0, index));
-  
-  if (annotIdx == -1) {
-    return {
-      annot: null,
-      text: line
-    };
-  }
-
-  return {
-    annot: VALID_ANNOTATIONS[annotIdx],
-    text: line.substring(index + 1).trim()
-  }
 }
 
