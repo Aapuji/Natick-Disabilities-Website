@@ -23,15 +23,11 @@ export default function Home({ posts, orderDesc }) {
               // console.log(contents);
           
               return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
-                {/* { contents.map((content, i) => Backend.evaluateElement(content, Backend.Category.Home)) } */}
                 { contents.map((content, i) => parse(content)) }
               </Section>
             }
           )
         }
-        <Section title="Hi" subtitle="Bye">
-          <p>Hello World</p>
-        </Section>
       </main>
     </Layout>
   </>;

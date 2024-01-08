@@ -170,13 +170,16 @@ export function evaluateElement(element, category) {
  * 
 */
 export function evaluateTag(elementRef) {
-  switch (elementRef.name) {
-    case 'a': 
-      elementRef.name = 'Link';
-      break;
-    case 'img':      
+  switch (elementRef.type) {
+    case 'a': {
       let copy = { ...elementRef };
-      copy.name = 'Image';
+      copy.type = 'a';
+      return elementRef;
+      break;
+    }
+    case 'img': {      
+      let copy = { ...elementRef };
+      copy.type = 'img';
       copy.fill = true;
 
       // <div class="image-container">
@@ -187,12 +190,22 @@ export function evaluateTag(elementRef) {
       //   />
       // </div>
 
-      return <div>
-        { parse(copy) }
-      </div>
+      // console.log('img -> Image')
+      // console.log(copy);
+      // console.log('Sample Image');
+      // console.log(parse('<img href="src" fill="true" />'))
 
-      break;
+      return elementRef;
+
+    }  //break;
     default:
       break;
   }
+
+  console.log('Neither a nor img; name:');
+  console.log(elementRef.type);
+  console.log('Whole Object')
+  console.log(elementRef);
+
+  return null;
 }

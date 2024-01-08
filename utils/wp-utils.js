@@ -1,4 +1,5 @@
 import * as Backend from './backend';
+import parse from 'html-react-parser';
 
 /** Returns an object with useful values gotten from the given post reference.
  * 
@@ -66,11 +67,12 @@ function analyzeProfile(postRef) {
   let startDate = parse(contents[0]).props.children;
   let term = parseInt(parse(contents[1]).props.children);
   let position = parse(contents[2]).props.children;
-  let image = parse(Backend.evaluateTag(contents[3])); // TODO: FIND THAT FUNCTION (Backend.evaluateTag?)
+  let image = parse(contents[3]);
   let blurb = parse(contents[4]).props.children;
 
   return { 
     name: postRef.title,
+    startDate,
     term,
     position,
     image,
@@ -87,7 +89,7 @@ function analyzeProfile(postRef) {
 function appendToMemberTable(membersRef, data) {
   membersRef.push({ 
     key: membersRef.length,
-    name: data.title,
+    name: data.name,
     startDate: data.startDate,
     term: data.term,
     position: data.position,
@@ -96,7 +98,7 @@ function appendToMemberTable(membersRef, data) {
 
 /** Appends relevant data to `profilesRef`.
  * 
- * @param {{ key: int, name: string, position: string, img: Image, desc: string }[]} profilesRef A reference to the array of profile objects
+ * @param {{ key: int, name: string, position: string, img: string, desc: string }[]} profilesRef A reference to the array of profile objects
  * @param {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
 */
 function appendToProfileArray(profilesRef, data) {
@@ -104,7 +106,7 @@ function appendToProfileArray(profilesRef, data) {
     key: profilesRef.length,
     name: data.name,
     position: data.position,
-    image: data.image,
+    image: data.image.props.children.props.src,
     desc: data.blurb
   });
 }
