@@ -6,7 +6,7 @@ import Image from 'next/image';
 import styles from '../styles/CardPopup.module.css';
 import utils from '../styles/utils.module.css';
 
-const CardPopup = ({ title, location, date, time, desc, brief, detailedLocation }) => {
+const CardPopup = ({ title, location, date, time, desc }) => {
   let [isOpen, setIsOpen] = useState(false);
 
   function closePopup() {
@@ -23,7 +23,7 @@ const CardPopup = ({ title, location, date, time, desc, brief, detailedLocation 
       location={location}
       date={date}
       time={time}
-      desc={brief ?? desc}
+      desc={desc}
       whenClick={openPopup}
     />
 
@@ -43,7 +43,7 @@ const CardPopup = ({ title, location, date, time, desc, brief, detailedLocation 
               <div className={styles.info}>
                 <h4>Date: {date}</h4>
                 <h4>Time: {time} <span class={styles.est}>EST</span></h4>
-                <h4>Location: {detailedLocation ?? location}</h4>
+                <h4>Location: {location}</h4>
               </div>
               <p className={styles.description}>
                 {desc}

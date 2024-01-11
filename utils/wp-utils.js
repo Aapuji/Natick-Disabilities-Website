@@ -111,6 +111,24 @@ function appendToProfileArray(profilesRef, data) {
   });
 }
 
+/** 
+ *
+ * @param {{ title: string, date: string, time: string, location: string, desc: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
+ * @param {{ key: string, name: string, date: string }[]} ongoingEventsRef
+ * @param {{}[]} pastEventsRef
+*/
+function handleEventPost(postRef, ongoingEventsRef, pastEventsRef){
+  const data = analyzeEventPost(postRef);
+  
+  if (IF_POST_IS_ONGOING) {
+    ongoingEventsRef.push({
+      key: ongoingEventsRef.length,
+      name: postRef,
+      
+    })
+  }
+}
+
 /** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.
  * 
  * @param {string} categoryDesc Relevant part of description of category for the page listing the order of the content on the page.

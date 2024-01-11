@@ -3,8 +3,31 @@ import styles from '../styles/Events.module.css'
 import Card from '../components/Card';
 import Section from '../components/Section';
 import CardPopup from '../components/CardPopup';
+import * as Backend from '../utils/backend';
+import * as Utils from '../utils/wp-utils';
 
-export default function Events() {
+/* UNIFORM ORDER:
+
+-> TITLE (name of event)
+-> P (date)
+-> P (time)
+-> P (location)
+-> P (desc)
+
+*/
+
+export default function Events({ ongoingEventProps, pastEventProps }) {
+  console.log(1);
+
+  let ongoingEvents = [];
+  let pastEvents = [];
+
+  Utils.orderPageContent(ongoingEventProps.orderDesc, ongoingEventProps.posts.nodes);
+  Utils.orderPageContent(pastEventProps.orderDesc, pastEventProps.posts.nodes);
+
+// continue...
+
+
   return <>
     <Layout title="Events" altText="... alt text goes here ..." hero>
       <main>
@@ -92,4 +115,55 @@ export default function Events() {
       </main>
     </Layout>
   </>;
+}
+
+export async function getStaticProps() {
+  let ongoingEventsJson = await Backend.getRequestBoilerplate(`
+    query OngoingEventQuery {
+      posts(where: {categoryName: "Ongoing Event Category"}) {
+        nodes {
+          title
+          content
+          id
+          date
+        }
+      }
+      categories(where: {name: "Ongoing Event"}) {
+        nodes {
+          description
+        }
+      }
+    }
+  `);
+
+  let pastEventsJson = await Backend.getRequestBoilerplate(`
+  query PastEventQuery {
+    posts(where: {categoryName: "Past Event Category"}) {
+      nodes {
+        title
+        content
+        id
+        date
+      }
+    }
+    categories(where: {name: "Past Event"}) {
+      nodes {
+        description
+      }
+    }
+  }
+`);
+
+  return {
+    props: {
+        ongoingEventProps: {
+        posts: ongoingEventsJson.data.posts,
+        orderDesc: ongoingEventsJson.data.categories.nodes[0].description
+      },
+      pastEventProps: {
+        posts: pastEventsJson.data.posts,
+        orderDesc: pastEventsJson.data.categories.nodes[0].description
+      }
+    }
+  };
 }
