@@ -55,15 +55,6 @@ export function generatePageQuery(pageName) {
   `;
 }
 
-/** Makes a string workable in a GraphQL query (just removes spaces).
- * 
- * @param {string} string The string to remove spaces from
- * @returns {string} string without spaces
- */
-function combineWords(string) {
-  return string.replace(' ', '');
-}
-
 /** Allows for any query text to be passed in a request while keeping the other boilerplate the same.
  * 
  * @param {string} query
@@ -83,6 +74,14 @@ export async function getRequestBoilerplate(query) {
   return json;
 }
 
+/** Makes a string workable in a GraphQL query (just removes spaces).
+ * 
+ * @param {string} string The string to remove spaces from
+ * @returns {string} string without spaces
+ */
+function combineWords(string) {
+  return string.replace(' ', '');
+}
 
 // Weird stuff ahead, may be useless.
 

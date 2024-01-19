@@ -57,11 +57,10 @@ export default function About({ posts, orderDesc, profileProps }) {
         { 
           posts.nodes.map(
             post => {
-              let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
+              let { title, contents } = Utils.getBasicSectionInfo(post);
 
               return <Section 
                 title={title} 
-                subtitle={subtitle} 
                 imgName={title} 
                 key={post.id}
               >
@@ -81,21 +80,21 @@ export default function About({ posts, orderDesc, profileProps }) {
                   position={profile.position} 
                   desc={profile.desc} 
                   url={profile.image}
-                  key={`Profile: ${profile.name}`}
+                  key={"PROFILE-" + i}
                 /> :
                 <Profile 
                   name={profile.name}
                   position={profile.position}
                   desc={profile.desc}
                   url={profile.image}
-                  key={`Profile: ${profile.name}`}
+                  key={"PROFILE-" + i}
                   flipped
                 />
               )
             }
           </div>
         </Section>
-        <Section title="Member Roster" subtitle="Information about the Members" imgName="Member Roster">
+        <Section title="Member Roster" imgName="Member Roster">
           <br />
           <table className={styles.table}>
             <thead>
@@ -109,20 +108,21 @@ export default function About({ posts, orderDesc, profileProps }) {
             <tbody>
               {
                 members.map((member, i) => 
-                <tr key={`TABLE${member.key}`} className={i % 2 == 0 ? styles.evenRow : styles.oddRow}>
-                  <td 
-                    key={`${member.key}NAME${member.name}`}
-                  >{member.name}</td>
-                  <td 
-                    key={`${member.key}DATE${member.startDate}`}
-                  >{member.startDate}</td>
-                  <td 
-                    key={`${member.key}TERM${member.term}`}
-                  >{member.term}</td>
-                  <td 
-                    key={`${member.key}POS${member.position}`}
-                  >{member.position}</td>
-                </tr>)
+                  <tr key={"TABLE-TR-" + member.key} className={i % 2 == 0 ? styles.evenRow : styles.oddRow}>
+                    <td 
+                      key={"TABLE-NAME-" + member.key}
+                    >{member.name}</td>
+                    <td 
+                      key={"TABLE-DATE-" + member.key}
+                    >{member.startDate}</td>
+                    <td 
+                      key={"TABLE-TERM-" + member.key}
+                    >{member.term}</td>
+                    <td 
+                      key={"TABLE-POS-" + member.key}
+                    >{member.position}</td>
+                  </tr>
+                )
               }
             </tbody>
           </table>

@@ -35,8 +35,8 @@ export function getBasicSectionInfo(postRef) {
 /** Takes a profile post and adds the required data to  the `members` and `profiles` arrays. Assumes that this function is only being applied to the correct sections (doesn't check if it's being used in the right places).
  * 
  * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
- * @param {{ key: int, name: string, startDate: string, term: int, position: string }[]} membersRef A reference to the array of member objects
- * @param {{ key: int, name: string, position: string, img: Image, desc: string }[]} profilesRef A reference to the array of profile objects
+ * @param {{ key: number, name: string, startDate: string, term: number, position: string }[]} membersRef A reference to the array of member objects
+ * @param {{ key: number, name: string, position: string, img: Image, desc: string }[]} profilesRef A reference to the array of profile objects
  * 
  * Additionally, `postRef` must adhere to the following order:
  * 1. TITLE (name of member)
@@ -57,7 +57,7 @@ export function handleProfilePost(postRef, membersRef, profilesRef) {
 /** Gets the important data from an about-page-profile post and returns it as an object. Requires that the first 5 tags of content not have children, other than text (eg. <p>Hello</p>)
  * 
  * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
- * @returns {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }}
+ * @returns {{ name: string, startDate: string, term: number, position: string, image: Image, blurb: string }}
 */
 function analyzeProfile(postRef) {
   const contents = splitContent(postRef.content);
@@ -83,9 +83,8 @@ function analyzeProfile(postRef) {
 /** Appends relevant data to `membersRef`.
  * 
  * @param {{ name: string, startDate: string, term: number, position: string }[]} membersRef A reference to the array of member objects.
- * @param {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
+ * @param {{ name: string, startDate: string, term: number, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
 */
-
 function appendToMemberTable(membersRef, data) {
   membersRef.push({ 
     key: membersRef.length,
@@ -98,8 +97,8 @@ function appendToMemberTable(membersRef, data) {
 
 /** Appends relevant data to `profilesRef`.
  * 
- * @param {{ key: int, name: string, position: string, img: string, desc: string }[]} profilesRef A reference to the array of profile objects
- * @param {{ name: string, startDate: string, term: int, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
+ * @param {{ key: number, name: string, position: string, img: string, desc: string }[]} profilesRef A reference to the array of profile objects
+ * @param {{ name: string, startDate: string, term: number, position: string, image: Image, blurb: string }} data An object containing all the data gotten from `analyzeProfile`.
 */
 function appendToProfileArray(profilesRef, data) {
   profilesRef.push({
@@ -111,22 +110,63 @@ function appendToProfileArray(profilesRef, data) {
   });
 }
 
+/** Gets the important data from an event post and returns it as an object. Requires that the first 4 tags of content not have children, other than text (eg. <p>Hello</p>)
+ * 
+ * @param {{ title: string, content: string, id: string, date: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
+ * @returns {{ name: string, date: string, time: string, location: string, desc: Image }}
+*/
+function analyzeEventPost(postRef) {
+  const contents = splitContent(postRef.content);
+
+  // parse(...).props.children is a string if the tag holds text
+  let date = parse(contents[0]).props.children;
+  let time = parse(contents[1]).props.children;
+  let location = parse(contents[2]).props.children;
+  let desc = parse(contents[3]).props.children;
+
+  return { 
+    name: postRef.title,
+    date,
+    time,
+    location,
+    desc
+  };
+}
+
 /** 
  *
  * @param {{ title: string, date: string, time: string, location: string, desc: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
- * @param {{ key: string, name: string, date: string }[]} ongoingEventsRef
- * @param {{}[]} pastEventsRef
+ * @param {{ key: string, name: string, date: string, time: string, location: string, desc: string }[]} eventsRef
 */
-function handleEventPost(postRef, ongoingEventsRef, pastEventsRef){
+export function handleOngoingEventPost(postRef, eventsRef){
   const data = analyzeEventPost(postRef);
   
-  if (IF_POST_IS_ONGOING) {
-    ongoingEventsRef.push({
-      key: ongoingEventsRef.length,
-      name: postRef,
-      
-    })
-  }
+  eventsRef.push({
+    key: eventsRef.length,
+    name: data.name,
+    date: data.date,
+    time: data.time,
+    location: data.location,
+    desc: data.desc
+  });
+}
+
+/** 
+ *
+ * @param {{ title: string, date: string, time: string, location: string, desc: string }} postRef A reference to a post (ie. `posts.nodes[n]`).
+ * @param {{ key: string, name: string, date: string, time: string, location: string, desc: string }[]} eventsRef
+*/
+export function handlePastEventPost(postRef, eventsRef) {
+  const data = analyzeEventPost(postRef);
+
+  eventsRef.push({
+    key: eventsRef.length,
+    name: data.name,
+    date: data.date,
+    time: data.time,
+    location: data.location,
+    desc: data.desc
+  });
 }
 
 /** Given category description and a reference to an array of posts, this will sort the array to order the content on the page.

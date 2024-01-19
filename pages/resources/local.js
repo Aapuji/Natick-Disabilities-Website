@@ -7,9 +7,11 @@ import { useState } from 'react';
 import Link  from  'next/link';
 import Section from "/components/Section";
 
-export default function Local() {
+export default function Local({ posts, orderDesc }) {
+  Utils.orderPageContent(orderDesc, posts.nodes);
+
   return <Layout title="Local Resources" altText="... alt text goes here ..." hero>
-    <Section title="Agencies, Groups, and Services" imgName="Agencies, Groups, and Services">
+    {/* <Section title="Agencies, Groups, and Services" imgName="Agencies, Groups, and Services">
       <h3><Link href="https://www.natickma.gov/396/Commission-on-Disability">Commission on Disability</Link></h3>
       <p>Natick&apos;s Commission on Disability (NCOD) promotes the inclusion of people with disabilities in all aspects of community life. For more information, contact the NCOD at (email address to come).</p>
 
@@ -32,8 +34,23 @@ export default function Local() {
 
       <h3><Link href="https://mwcil.org/">MetroWest Center for Independent Living (MWCIL)</Link></h3>
       <p>MetroWest Center for Independent Living provides an array of independent living services that enable people with disabilities to live in the community. The center was created by people with disabilities seeking full integration into society. We empower people with disabilities by teaching the practical skills and confidence to take control over their lives and become active members of the communities in which they live. We promote access and change within society while advocating for programs and services needed by people of all ages with a wide range of disabilities.  MWCIL is a consumer-controlled, community-based, cross-disability, nonresidential private nonprofit agency.</p>
-    </Section>
+    </Section> */}
+    {
+      posts.nodes.map(
+        post => {
+          let { title, contents } = Utils.getBasicSectionInfo(post);
+
+          return <Section title={title} imgName={title} key={post.id}>
+            { contents.map(content => parse(content)) }
+          </Section>
+        }
+      )
+    }
   </Layout>;
+}
+
+export async function getStaticProps() {
+  return await Backend.getBasicRequest('Local Resource');
 }
 
 /* 

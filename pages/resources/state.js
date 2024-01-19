@@ -5,9 +5,11 @@ import Link  from  'next/link';
 //MassAccess (lines _-_) has links for "rental homes" and "home ownership" in the description
 //LINE 118: To find accessible and affordable <Link> rental homes </Link> and home ownership opportunities in Massachusetts.
 
-export default function State() {
+export default function State({ posts, orderDesc }) {
+  Utils.orderPageContent(orderDesc, posts.nodes);
+
   return <Layout title="Massachusetts Resources" altText="... alt text goes here ..." hero>
-    <Section title="State Agencies" imgName="State Agencies">
+    {/* <Section title="State Agencies" imgName="State Agencies">
       <h3><Link href="https://www.mass.gov/orgs/massachusetts-office-on-disability">Massachusetts Office on Disability (MOD)</Link></h3>
       <p>The Massachusetts Office on Disability (MOD) works to ensure that people with disabilities can equally participate in all aspects of life in Massachusetts. MOD serves as a resource to state agencies, municipalities, and members of the general public by providing information, guidance and training on matters concerning disability-related civil rights, equal access, and opportunity.</p>
 
@@ -20,8 +22,23 @@ export default function State() {
 
       <h3><Link href="https://www.mass.gov/info-details/overview-of-housing-discrimination">Massachusetts Commission Against Discrimination (Housing, Service Animals)</Link></h3>
       <p>MCAD enforces the anti-discrimination laws of Massachusetts which protects you if are treated differently or unfairly based on your membership in a protected class by your landlord or condo association, and when you are seeking new housing.</p>
-    </Section>
+    </Section> */}
+    {
+      posts.nodes.map(
+        post => {
+          let { title, contents } = Utils.getBasicSectionInfo(post);
+
+          return <Section title={title} imgName={title} key={post.id}>
+            { contents.map(content => parse(content)) }
+          </Section>
+        }
+      )
+    }
   </Layout>;
+}
+
+export async function getStaticProps() {
+  return await Backend.getBasicRequest('Local Resource');
 }
 
 /*

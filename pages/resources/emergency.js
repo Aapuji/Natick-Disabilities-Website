@@ -5,7 +5,7 @@ import parse from 'html-react-parser';
 import * as Backend from '/utils/backend';
 import * as Utils from '/utils/wp-utils';
 
-export default function Emergency({ posts, orderDesc  }) {
+export default function Emergency({ posts, orderDesc }) {
   Utils.orderPageContent(orderDesc, posts.nodes);
 
   return <Layout title="Emergency Resources" altText="... alt text goes here ..." hero>

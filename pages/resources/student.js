@@ -12,10 +12,12 @@ import Section from '/components/Section';
 
 // TODO: Make Links styled so that they look like links.
 
-export default function Student() {
+export default function Student({ posts, orderDesc }) {
+  Utils.orderPageContent(orderDesc, posts.nodes);
+
   return <>
     <Layout title="Student Resources" altText="... alt text goes here ..." hero>
-      <Section title="General Resources" imgName="General Resources">
+      {/* <Section title="General Resources" imgName="General Resources">
         <h3><Link href="https://www.northstarteens.org/">North Star: Self-Directed Learning for Teens</Link></h3>
         <p>North Star is not a school, but a hybrid with aspects of homeschooling and school, and does not offer diplomas, credits, or grades. Since 1996, we have provided an alternative to school where teens learn in the way that suits them best. </p>
         
@@ -24,12 +26,25 @@ export default function Student() {
 
         <h3><Link href="Parters for Youth with Disabilities"></Link></h3>
         <p>PYD&apos;s goal is to create a world where young people with disabilities will be able to live with dignity and pride in who they are, and to lead self-determined lives filled with purpose. To make this happen, we build the skills and abilities of young people with disabilities, and increase the inclusivity of workplaces, organizations, and communities.</p>
-      </Section>
+      </Section> */}
+      {
+        posts.nodes.map(
+          post => {
+            let { title, contents } = Utils.getBasicSectionInfo(post);
+
+            return <Section title={title} imgName={title} key={post.id}>
+              { contents.map(content => parse(content)) }
+            </Section>
+          }
+        )
+      }
     </Layout>
   </>;
 }
 
-
+export async function getStaticProps() {
+  return await Backend.getBasicRequest('Student Resource');
+}
 
 /*
 export default function Student() {

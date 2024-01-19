@@ -19,10 +19,8 @@ export default function Home({ posts, orderDesc }) {
           posts.nodes.map(
             post => {
               let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
-
-              // console.log(contents);
           
-              return <Section title={title} subtitle={subtitle} imgName={title} key={post.id}>
+              return <Section title={title} imgName={title} key={post.id}>
                 { contents.map((content, i) => parse(content)) }
               </Section>
             }
