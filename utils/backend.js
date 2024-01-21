@@ -10,6 +10,7 @@ import * as Utils from "./wp-utils";
  * @param {string} page Name of the page that this request is for. Capitalize the first letter of each word.
  * @returns {Promise<{ props: { posts: { nodes: { title: string, content: string, id: string, date: string }[] }, orderDesc: string }}>}
  */
+
 export async function getBasicRequest(page) {
   const res = await fetch(WP_SERVER + '/graphql', {
     method: 'POST',

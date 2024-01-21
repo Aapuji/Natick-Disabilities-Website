@@ -1,11 +1,14 @@
 import Head from 'next/head';
 import Layout from '/components/Layout';
-import  Hyperlink from '/components/Hyperlink'
+import Hyperlink from '/components/Hyperlink'
 import styles from '/styles/Local.module.css'
 import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link  from  'next/link';
 import Section from "/components/Section";
+import parse from 'html-react-parser';
+import * as Backend from '/utils/backend';
+import * as Utils from '/utils/wp-utils';
 
 export default function Local({ posts, orderDesc }) {
   Utils.orderPageContent(orderDesc, posts.nodes);

@@ -6,7 +6,9 @@ import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link  from  'next/link';
 import Section from '/components/Section';
-
+import parse from 'html-react-parser';
+import * as Backend from '/utils/backend';
+import * as Utils from '/utils/wp-utils';
 
 //massadvocates inline ("resources")
 
@@ -24,7 +26,7 @@ export default function Student({ posts, orderDesc }) {
         <h3><Link href="https://www.waypointadventure.org/">Waypoint Adventure</Link></h3>
         <p>Waypoint Adventure uses quality experiential and adventure-based education programs to transform the lives of individuals with disabilities. We work with school groups, social service organizations, families, and individuals to offer custom designed adventures that meet the goals and objectives of that group or person. These programs are not just about having fun outdoors; they are about positive individual and group development. They&apos;re about building social and character skills, forming teams, and transforming people&apos;s views of themselves and their abilities.</p>
 
-        <h3><Link href="Parters for Youth with Disabilities"></Link></h3>
+        <h3><Link href="https://something.com">Partners for Youth with Disabilities</Link></h3>
         <p>PYD&apos;s goal is to create a world where young people with disabilities will be able to live with dignity and pride in who they are, and to lead self-determined lives filled with purpose. To make this happen, we build the skills and abilities of young people with disabilities, and increase the inclusivity of workplaces, organizations, and communities.</p>
       </Section> */}
       {
