@@ -12,8 +12,6 @@ export function getBasicSectionInfo(postRef) {
 
   let contents = splitContent(postRef.content)/*.map(removeP)*/;
   
-  console.log(contents);
-
   for (let i = 0; i < contents.length; i++) {
     let { annot, text } = removeAnnotation(contents[i]);
 
@@ -28,7 +26,8 @@ export function getBasicSectionInfo(postRef) {
   return {
     title,
     subtitle,
-    contents
+    contents,
+    content: '<div>' + postRef.content + '</div>'
   }
 }
 

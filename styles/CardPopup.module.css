@@ -97,7 +97,7 @@
   border-radius: 0.375rem;
   border-width: 1px;
   border-color: transparent;
-  background-color: #d9e2f7;
+  background-color: #c2d1f8;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -108,7 +108,8 @@
 }
 
 .closeButton:hover {
-  background-color: #d7d9fe;
+  filter: brightness(95%);
+  cursor: pointer;
 }
 
 .closeButton:focus {

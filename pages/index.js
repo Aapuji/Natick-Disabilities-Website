@@ -18,10 +18,11 @@ export default function Home({ posts, orderDesc }) {
         {
           posts.nodes.map(
             post => {
-              let { title, subtitle, contents } = Utils.getBasicSectionInfo(post);
+              let { title, content } = Utils.getBasicSectionInfo(post);
           
               return <Section title={title} imgName={title} key={post.id}>
-                { contents.map((content, i) => parse(content)) }
+                {/* { contents.map((content, i) => parse(content)) } */}
+                { parse(content) }
               </Section>
             }
           )

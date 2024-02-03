@@ -57,7 +57,7 @@ export default function About({ posts, orderDesc, profileProps }) {
         { 
           posts.nodes.map(
             post => {
-              let { title, contents } = Utils.getBasicSectionInfo(post);
+              let { title, content } = Utils.getBasicSectionInfo(post);
 
               return <Section 
                 title={title} 
@@ -65,7 +65,8 @@ export default function About({ posts, orderDesc, profileProps }) {
                 key={post.id}
               >
                 {/* { contents.map((content, i) => <p key={`${post.id}#${i}`}>{content}</p>) } */}
-                { contents.map((content, i) => parse(content)) }
+                {/* { contents.map((content, i) => parse(content)) } */}
+                { parse(content) }
               </Section>;
             }
           )

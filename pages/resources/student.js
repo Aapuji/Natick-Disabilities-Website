@@ -32,10 +32,11 @@ export default function Student({ posts, orderDesc }) {
       {
         posts.nodes.map(
           post => {
-            let { title, contents } = Utils.getBasicSectionInfo(post);
+            let { title, content } = Utils.getBasicSectionInfo(post);
 
             return <Section title={title} imgName={title} key={post.id}>
-              { contents.map(content => parse(content)) }
+              {/* { contents.map(content => parse(content)) } */}
+              { parse(content) }
             </Section>
           }
         )

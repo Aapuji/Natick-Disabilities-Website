@@ -72,6 +72,9 @@ export async function getRequestBoilerplate(query) {
 
   const json = await res.json();
 
+  console.log('JSON');
+  console.log(json);
+
   return json;
 }
 
