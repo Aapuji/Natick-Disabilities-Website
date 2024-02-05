@@ -3,10 +3,6 @@ import styles from '../styles/Footer.module.css';
 import Image from 'next/image'
 
 const Footer = () => {
-  function colorblind(){
-    console.log("this is a test for the colorblind function");
-  }
-
   return <footer id={styles.footer} className={styles.footerContainer}>
     <div className={styles.linkContainer}>
       <div id={styles.contactNav} className={styles.large}>
@@ -36,10 +32,7 @@ const Footer = () => {
       <div id={styles.accessibilityNav} className={styles.large}>
             <div className={styles.accessibilityText}>Accessibility</div>
             <div id={styles.footerLinks} className={styles.footerContainer}>
-              <Link className={styles.inline} href='/' onClick = {colorblind()}>Colorblind Mode</Link>
-              <Link className={styles.inline} href="https://www.natickma.gov/accessibility#">Website Accessibility</Link>
-              <div id="google-translate" className={styles.inline}>Translate Page</div> {/* At end of accessibility section */}
-              <br />
+              <Link className={styles.inline} href="https://www.natickma.gov/accessibility#">Natick Accessibility</Link>
             </div>
       </div>
       <div id={styles.followNav} className={styles.large}>

@@ -42,11 +42,9 @@
   padding: 10px;
 }
 
-
 .nav li {
   display: inline;
 }
-
 
 /*NCOD glitches into home at 446px - looks unnatrual, though i dont believe phone resolutions go that low*/
 /*mobile devices*/
@@ -55,20 +53,20 @@
   .wholeNav {
     position: sticky;
     height: 80px;
-    background: rgb(55, 62, 111);
+    background: rgba(55, 62, 111, 0.75);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgb(238, 197, 98);
+    color: white;
   }
 
-  .commissionLogo{
+  .commissionLogo {
     left: 0rem;
     margin-top: -0.3rem;
     font-size: 1.5rem;
   }
 
-  .nav{
+  .nav {
     font-size: 1.1rem;
     position: absolute;
     top: 0rem;
@@ -83,12 +81,3 @@
     padding-right: 1rem;
   }
 }
-
-/*
-@media(prefers-color-scheme: dark){
-  :root{
-    background = foreground
-    foreground = background
-    maybe they  wont use dark mode so just idea
-}
-*/

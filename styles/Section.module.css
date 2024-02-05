@@ -51,6 +51,16 @@
 
 /* STYLING INSIDE CONTENT */
 
+/* For inline links */
+.content p > a {
+  color: rgb(51, 102, 204);
+  text-decoration: none;
+}
+
+.content p > a:hover {
+  text-decoration: underline;
+}
+
 /* For resource page link headers */
 .content h3 > a {
   color: rgb(55, 62, 111);
