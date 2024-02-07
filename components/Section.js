@@ -25,7 +25,6 @@ const Section = ({
           height={5300}
         />
       </div>
-      
       { title ? <h1 className={styles.header}>{title}</h1> : <></> }
       <div className={styles.content}>
         { children }

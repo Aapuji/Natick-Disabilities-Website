@@ -71,6 +71,6 @@
   text-decoration: underline;
 }
 
-.content h3 > a:visited {
-  /* color: ; ??? */
+.content img {
+  width: 100%;
 }

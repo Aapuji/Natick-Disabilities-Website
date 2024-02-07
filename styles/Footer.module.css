@@ -65,12 +65,14 @@ a.inline:hover {
     flex-direction: row;
     justify-content: space-around;
     width: 88rem;
+    height: fit-content;
 }
 
 #footer {
     background-color: whitesmoke;
     width: 100%;
-    height: 350px;
+    min-height: 350px;
+    height: fit-content;
     margin-top: 2rem;
 }
 
@@ -118,7 +120,7 @@ a.inline:hover {
     text-align: left;
 }
 
-#footerLinks {
+.footerLinks {
     margin-top: 15px;
     flex-direction: column;
     justify-content: space-between;
@@ -158,3 +160,21 @@ a.inline:hover {
     color: rgb(55, 62, 111);
 }
 
+@media (max-width: 642px) {
+    #contentContainer {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .footerLinks {
+        margin-top: 5px;
+    }
+
+    #contactNav,
+    #navigationNav,
+    #accessibilityNav,
+    #followNav,
+    #emergencyNav {
+        padding-top: 10px;
+    }
+}
