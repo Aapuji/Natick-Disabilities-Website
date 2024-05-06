@@ -32,12 +32,6 @@ export default function About({ posts, orderDesc, profileProps }) {
     Utils.handleProfilePost(post, members, profiles);
   }
 
-  console.log('Members');
-  console.dir(members);
-
-  console.log('Profile');
-  console.dir(profiles);
-
   // let { members, profiles } = profileProps;
 
   return <>

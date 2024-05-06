@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
       </div>
     </div>
-    {/* <div id={styles.creators} className={styles.small}>Created by Devashish Das & Om Sharma &copy;&thinsp;2023</div> */}
+    <div id={styles.creators} className={styles.small}>Created by Devashish Das & Om Sharma &copy;&thinsp;2024</div>
   </footer>;
 };
 

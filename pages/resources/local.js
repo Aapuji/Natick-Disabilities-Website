@@ -44,7 +44,6 @@ export default function Local({ posts, orderDesc }) {
           let { title, content } = Utils.getBasicSectionInfo(post);
 
           return <Section title={title} imgName={title} key={post.id}>
-            {/* { contents.map(content => parse(content)) } */}
             { parse(content) }
           </Section>
         }
