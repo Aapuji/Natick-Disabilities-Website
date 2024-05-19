@@ -4,10 +4,8 @@
     margin: auto;
 }
 
-.purpose {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.innerHeader {
+    margin-bottom: -10px;
 }
 
 .img {
@@ -16,20 +14,7 @@
     flex-basis: 40%;
 }
 
-.headingBGM {
-    margin-top: -20px;
-}
-
-.headingHIS {
-    margin-top: -15px;
-}
-
-.textBGM {
-    margin-top: -10px;
-}
-
 #profiles {
-    width: 80%;
     margin: auto;
     display: flex;
     justify-content: space-around;

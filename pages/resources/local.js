@@ -1,12 +1,119 @@
 import Head from 'next/head';
 import Layout from '/components/Layout';
-import  Hyperlink from '/components/Hyperlink'
+import Hyperlink from '/components/Hyperlink'
 import styles from '/styles/Local.module.css'
 import Dropdown from '/components/Dropdown';
 import { useState } from 'react';
 import Link  from  'next/link';
+import Section from "/components/Section";
+import parse from 'html-react-parser';
+import * as Backend from '/utils/backend';
+import * as Utils from '/utils/wp-utils';
 
+export default function Local({ posts, orderDesc }) {
+  Utils.orderPageContent(orderDesc, posts.nodes);
 
+  return <Layout title="Local Resources" altText="... alt text goes here ..." hero>
+    {/* <Section title="Agencies, Groups, and Services" imgName="Agencies, Groups, and Services">
+      <h3><Link href="https://www.natickma.gov/396/Commission-on-Disability">Commission on Disability</Link></h3>
+      <p>Natick&apos;s Commission on Disability (NCOD) promotes the inclusion of people with disabilities in all aspects of community life. For more information, contact the NCOD at (email address to come).</p>
+
+      <h3><Link href="https://www.natickma.gov/1609/ADA-Coordinator">ADA Coordinator</Link></h3>
+      <p>Natick&apos;s ADA Coordinator is a local point of contact and resource if you have questions or concerns about the application of the Americans with Disabilities Act in Natick.</p>
+
+      <h3><Link href="https://www.natickma.gov/626/Council-on-Aging-Human-Services">Council on Aging</Link></h3>
+      <p>The Council on Aging seeks to provide an array of activities, programs and services to meet the educational, social, health and wellness of elders, families and individuals with disabilities living in the community. Alone and in partnership with community organizations and other town departments, the Council on Aging focuses on empowering Natick residents of all incomes and abilities to make informed decisions, to remain actively engaged, and to maintain their health, vitality and independence.</p>
+    </Section>
+    <Section title="Natick Laws and Regulations" imgName="Natick Laws and Regulations">
+      <h3><Link href="https://something.com">Town of Natick ADA Grievance Procedure</Link></h3>
+      <p>Lorem ipsum ...</p>
+
+      <h3><Link href="https://something.com">Natick Transition Plan</Link></h3>
+      <p>Lorem ipsum ...</p>
+    </Section>
+    <Section title="Other Local Resources">
+      <h3><Link href="https://www.mwrta.com/senior-and-disabled">MetroWest Regional Transit Authority</Link></h3>
+      <p>Provides information for seniors and disabled individuals about para-transit transportation routes and services within the Framingham/Natick service area.</p>
+
+      <h3><Link href="https://mwcil.org/">MetroWest Center for Independent Living (MWCIL)</Link></h3>
+      <p>MetroWest Center for Independent Living provides an array of independent living services that enable people with disabilities to live in the community. The center was created by people with disabilities seeking full integration into society. We empower people with disabilities by teaching the practical skills and confidence to take control over their lives and become active members of the communities in which they live. We promote access and change within society while advocating for programs and services needed by people of all ages with a wide range of disabilities.  MWCIL is a consumer-controlled, community-based, cross-disability, nonresidential private nonprofit agency.</p>
+    </Section> */}
+    {
+      posts.nodes.map(
+        post => {
+          let { title, content } = Utils.getBasicSectionInfo(post);
+
+          return <Section title={title} imgName={title} key={post.id}>
+            { parse(content) }
+          </Section>
+        }
+      )
+    }
+  </Layout>;
+}
+
+export async function getStaticProps() {
+  return await Backend.getBasicRequest('Local Resource');
+}
+
+/* 
+
+MOVE NATICK INFO HERE
+
+export default function Natick() {
+  return <>
+    <Layout title="Natick Resources" altText="... alt text goes here ..." hero>
+      <h1 className={styles.federalheading}>Links for Federal Resources</h1>
+
+      <h2 className={styles.federalsectionheading}>Laws, Regulations, and Rules</h2>
+      <div className={styles.federalsectioncontent}>
+        <Hyperlink 
+          url = "https://www.something.com"
+          name = "Town of Natick ADA Grievance Procedure"
+          desc = "Something"
+        />
+        <Hyperlink 
+          url = "https://www.something.com"
+          name = "Natick Transition Plan"
+          desc = "Something"
+        />
+      </div>
+
+      <h2 className = {styles.federalsectionheading}>Agencies and Other Resources</h2>
+      <div className={styles.federalsectioncontent}>
+        <Hyperlink 
+          url = "https://www.natickma.gov/396/Commission-on-Disability"
+          name = "Commission on Disability"
+          desc = "Natick’s COD promotes the inclusion of people with disabilities in all aspects of community life. For more information contact COD at (email address to come)"
+        />
+        <Hyperlink 
+          url = "https://www.natickma.gov/1609/ADA-Coordinator"
+          name = "ADA Coordinator"
+          desc = "Natick’s ADA Coordinator is a local point of contact and resource if you have questions or concerns about the application of the ADA in Natick."
+        />
+        <Hyperlink 
+          url = "https://www.natickma.gov/626/Council-on-Aging-Human-Services"
+          name = "Council on Aging"
+          desc = "The Council on Aging seeks to provide an array of activities, programs and services to meet the educational, social, health and wellness of elders, families and individuals with disabilities living in the community. Alone and in partnership with community organizations and other town departments, the Council on Aging focuses on empowering Natick residents of all incomes and abilities to make informed decisions, to remain actively engaged, and to maintain their health, vitality and independence."
+        />
+        <Hyperlink 
+          url = "https://www.natickma.gov/591/Veterans-Services"
+          name = "Veterans Services"
+          desc = "Veterans Services is responsible for the needs of the veterans of Natick and their dependents. It assists in filing for Veterans Benefits Program, which is a state-run program, or filing for federal benefits, such as, Veterans Affairs (VA) service-connected or non-service-connected disabilities or compensation."
+        />
+        <Hyperlink 
+          url = "https://www.sepacnatick.org/"
+          name = "Special Education Parent Advisory Council (SEPAC)"
+          desc = "The Natick Special Education Parent Advisory Council (SEPAC) is an all-volunteer organization of parents and caregivers of children receiving support services in the Natick public schools and private school settings. In the Natick school system, there are more than 800 children on Individualized Education Plans (IEP), and 504 plans. Whether your child is already receiving support, or you are trying to determine if your child needs services, we are here to provide a parent’s perspective and connections."
+        />
+      </div>
+    </Layout>
+  </>;
+}
+
+*/
+
+/*
 export default function Local() {
   return <>
     <Layout title="Local Information & Resources" altText="... alt text goes here ..." hero>
@@ -66,3 +173,4 @@ export default function Local() {
     </Layout>
   </>;
 }
+*/

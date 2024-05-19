@@ -24,6 +24,13 @@
   margin-top: 1rem;
 }
 
+/* TODO: Add this style to children, perhaps in div. This will keep all children within the Section bounds. */
+.content {
+  text-align: left;
+  width: 80%; /* 80% - Margin till ends of section, children can have additional margin to squeeze content further. */
+  margin: auto;
+}
+
 .header {
   /* margin-block-start: 0; */
   margin-top: 0;
@@ -40,4 +47,30 @@
   text-align: center;
   composes: contentFont from 'utils.module.css';
   font-style: italic;
+}
+
+/* STYLING INSIDE CONTENT */
+
+/* For inline links */
+.content p > a {
+  color: rgb(51, 102, 204);
+  text-decoration: none;
+}
+
+.content p > a:hover {
+  text-decoration: underline;
+}
+
+/* For resource page link headers */
+.content h3 > a {
+  color: rgb(55, 62, 111);
+  text-decoration: none;
+}
+
+.content h3 > a:hover {
+  text-decoration: underline;
+}
+
+.content img {
+  width: 100%;
 }

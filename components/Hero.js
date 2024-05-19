@@ -9,35 +9,7 @@ const Hero = ({ title, altText, img }) => {
   return <>
     <header className={`${utils.flexBase} ${styles.heroHeader}`}>
       <Navbar />
-        <div className = {styles.wrapperOne}>
-          <Image
-            className={utils.back}
-            priority
-            fill
-            src={img ?? bgImg}
-            id={styles.heroImg}
-            alt={altText}
-            style={{border: 'yellow solid 0px'}}
-          /> 
-          <div id={styles.heroImgText}>
-            <h1 className={utils.center} id = {styles.headerText} role="title">{title}</h1>
-          </div>
-        </div>
-        <div className = {styles.wrapperTwo}>
-          <Image
-            className={utils.back}
-            priority
-            fill
-            src={img ?? bgBackup}
-            id={styles.heroImg}
-            alt={altText}
-            style={{border: 'yellow solid 0px'}}
-          /> 
-          <div id={styles.heroImgText}>
-            <h1 className={utils.center} id = {styles.headerText} role="title">{title}</h1>
-          </div>
-        </div>
-        <div className = {styles.wrapperThree}>
+        <div className={styles.wrapper}>
           <Image
             className={utils.back}
             priority

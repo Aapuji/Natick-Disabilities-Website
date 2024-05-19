@@ -10,13 +10,13 @@ const Profile = ({ name, position, desc, url, flipped = false }) => {
         {
             flipped ? 
                 <>
-                    <Image
-                        src={url}
-                        alt={`Picture of ${ name }`}
-                        width={200} 
-                        height={200}
-                        className={`${styles.img} ${styles.imgFlipped}`}
-                    />
+                    <div className={`${styles.img} ${styles.imgFlipped}`}>
+                        <Image
+                            src={url}
+                            alt={`Picture of ${ name }`}
+                            fill
+                        />
+                    </div>
                     <div className={styles.content}>
                         <h2 className={styles.name}>{name}</h2>
                         <h4 className={styles.position}>{position.toUpperCase()}</h4>
