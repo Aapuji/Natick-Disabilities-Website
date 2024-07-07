@@ -74,6 +74,10 @@ a.inline:hover {
     min-height: 350px;
     height: fit-content;
     margin-top: 2rem;
+    /**/
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 #footerNav {
