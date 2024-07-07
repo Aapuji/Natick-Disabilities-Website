@@ -38,16 +38,6 @@ export default function About({ posts, orderDesc, profileProps }) {
     <Layout title="About" altText="... alt text goes here ..." hero>
       <main>
         <br />
-        { <Section id="aboutTheCommission" imgName="About the Commission" title="About the Commission">
-            <div>
-              <h3 className={styles.innerHeader}>Background and Mission Statement</h3>
-              <p className={styles.textBGM}>The Natick Commission on Disability is a group dedicated to promoting accessibility, equal opportunity, and full participation in community life for all citizens with disabilities in the town of Natick, Massachusetts. They strive to enhance the quality of life for individuals with disabilities and their families by advocating for their rights and needs. As an advisory group to town officials, the Commission provides guidance on matters related to accessibility and disability-related issues. They ensure that all town programs, services, and facilities comply with the Americans with Disabilities Act (ADA) and other relevant regulations to guarantee accessibility. Additionally, the Commission provides information and resources to individuals with disabilities, their families, and the broader community on issues related to disability rights, employment, housing, and education. Collaborating with other organizations and agencies, the Commission promotes disability awareness and advocates for policies that improve the lives of individuals with disabilities. They also engage in outreach activities to increase public awareness about the needs of individuals with disabilities and foster a culture of inclusion and acceptance.</p>
-            </div>
-            <div>
-                <h3 className={styles.innerHeader}>Our History</h3>
-                <p className={styles.textBGM}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum neque egestas congue quisque. Ac tortor dignissim convallis aenean et. Nibh cras pulvinar mattis nunc sed blandit libero volutpat. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae. Dolor morbi non arcu risus quis. Malesuada fames ac turpis egestas maecenas pharetra convallis. Parturient montes nascetur ridiculus mus. Felis imperdiet proin fermentum leo vel orci porta. Eu volutpat odio facilisis mauris sit amet massa vitae.</p>
-            </div>
-        </Section> }
         { 
           posts.nodes.map(
             post => {
